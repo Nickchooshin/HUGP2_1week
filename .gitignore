@@ -26,3 +26,11 @@
 *.exe
 *.out
 *.app
+
+#git ignore
+/PC/ipch
+/PC/Debug
+/PC/Release
+/PC/Project-FW/Debug
+/PC/Project-FW/Release
+*.sdf

@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Camera.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="InputDevice.cpp">
+      <Filter>Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Keyboard.cpp">
+      <Filter>Input\Keyboard</Filter>
+    </ClCompile>
+    <ClCompile Include="Joystick.cpp">
+      <Filter>Input\Joystick</Filter>
+    </ClCompile>
+    <ClCompile Include="Mouse.cpp">
+      <Filter>Input\Mouse</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="WinSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="D3dSystem.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="UISprite.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="TextureManager.cpp">
+      <Filter>Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraManager.cpp">
+      <Filter>Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="MusicManager.cpp">
+      <Filter>Music</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="SampleScene.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Camera.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="InputDevice.h">
+      <Filter>Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Keyboard.h">
+      <Filter>Input\Keyboard</Filter>
+    </ClInclude>
+    <ClInclude Include="Joystick.h">
+      <Filter>Input\Joystick</Filter>
+    </ClInclude>
+    <ClInclude Include="Mouse.h">
+      <Filter>Input\Mouse</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="WinSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="D3dSystem.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="UISprite.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="TextureManager.h">
+      <Filter>Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="D3dDevice.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraManager.h">
+      <Filter>Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="MusicManager.h">
+      <Filter>Music</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="SampleScene.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Input">
+      <UniqueIdentifier>{4ced6e0d-f5e9-4bf6-b17c-a5adb70956d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Camera">
+      <UniqueIdentifier>{afaa3fdc-b837-41e6-9732-5e3b106d2e2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sprite">
+      <UniqueIdentifier>{a6ebb11c-4d13-4acf-b135-c7a60bd95b89}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{b458d96c-cd47-42f0-8dce-17f4139ce764}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input\Keyboard">
+      <UniqueIdentifier>{a98dc42d-dfe3-4853-be59-a0f6e4dc2185}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input\Joystick">
+      <UniqueIdentifier>{567428eb-5b7e-4b87-9c03-b75fbddfbf9d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Input\Mouse">
+      <UniqueIdentifier>{da6eebf9-eaf7-4ba7-bc59-e83facc8b3b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Music">
+      <UniqueIdentifier>{20f3370a-ac2e-4037-9d8c-c2dd436c93e7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene">
+      <UniqueIdentifier>{09e25e2d-2eaa-43b0-b1ef-6b3f56621ca4}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
