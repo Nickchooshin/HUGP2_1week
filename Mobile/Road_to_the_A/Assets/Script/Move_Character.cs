@@ -7,8 +7,13 @@ public class Move_Character : MonoBehaviour
 	Transform _transform;
 
 	// move
-	public float moveSpeed = 1.0f;
-	bool direction = false;		// false : right, true : left
+	public float moveSpeed = 1.5f;
+	static public bool m_dir = false;		// false : right, true : left
+
+	// jump
+	Vector3 j_dir = Vector3.zero;
+	public float jumpSpeed = 5.0f;
+	static public bool m_jump = false;		// false : none, true : jump
 
 	// object size
 	private float halfsize_x = 25.0f;
@@ -22,20 +27,21 @@ public class Move_Character : MonoBehaviour
 	void Update ()
 	{
 		Move_Process ();
+		Jump_Process ();
 	}
 
 	void Move_Process()
 	{
 		Vector3 dir = Vector3.zero;
 
-		if( direction == false )
+		if( m_dir == false )
 		{
 			dir = new Vector3(1, 0, 0);
 			dir.Normalize ();
 
 			_transform.position += dir * moveSpeed * Time.deltaTime;
 		}
-		else if( direction == true )
+		else if( m_dir == true )
 		{
 			dir = new Vector3(-1, 0, 0);
 			dir.Normalize ();
@@ -47,5 +53,20 @@ public class Move_Character : MonoBehaviour
 		_transform.localPosition = new Vector3 (Mathf.Clamp (_transform.localPosition.x, -640.0f + halfsize_x, 640.0f - halfsize_x),
 		                                        Mathf.Clamp (_transform.localPosition.y, -360.0f + halfsize_y, 360.0f - halfsize_y),
 		                                        _transform.localPosition.z);
+	}
+
+	void Jump_Process()
+	{
+		if( m_jump == true )
+		{
+			j_dir = new Vector3(0, 1, 0);
+
+			m_jump = false;
+		}
+
+		if( m_jump == false && j_dir.y > 0 )
+			j_dir.Set(0, j_dir.y - 0.1f, 0);
+
+		_transform.position += j_dir * jumpSpeed * Time.deltaTime;
 	}
 }
