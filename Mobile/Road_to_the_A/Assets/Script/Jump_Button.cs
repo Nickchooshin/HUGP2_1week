@@ -5,6 +5,9 @@ public class Jump_Button : MonoBehaviour
 {
 	void Click()
 	{
-		Move_Character.m_jump = true;
+		if( Move_Character.m_move == true )
+		{
+			Move_Character.m_jump = true;
+		}
 	}
 }

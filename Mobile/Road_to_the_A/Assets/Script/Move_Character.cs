@@ -9,11 +9,13 @@ public class Move_Character : MonoBehaviour
 	// move
 	public float moveSpeed = 1.5f;
 	static public bool m_dir = false;		// false : right, true : left
+	static public bool m_move = false;
 
 	// jump
 	Vector3 j_dir = Vector3.zero;
 	public float jumpSpeed = 5.0f;
 	static public bool m_jump = false;		// false : none, true : jump
+	private bool reclick = false;
 
 	// object size
 	private float halfsize_x = 25.0f;
@@ -26,7 +28,9 @@ public class Move_Character : MonoBehaviour
 
 	void Update ()
 	{
-		Move_Process ();
+		if( m_move == true )
+			Move_Process ();
+
 		Jump_Process ();
 	}
 
@@ -57,16 +61,27 @@ public class Move_Character : MonoBehaviour
 
 	void Jump_Process()
 	{
-		if( m_jump == true )
+		if( m_jump == true && reclick == false )
 		{
 			j_dir = new Vector3(0, 1, 0);
 
 			m_jump = false;
+			reclick = true;
+			Debug.Log("click");
 		}
 
-		if( m_jump == false && j_dir.y > 0 )
+		if( m_jump == false && reclick == true && j_dir.y > 0 )
 			j_dir.Set(0, j_dir.y - 0.1f, 0);
 
 		_transform.position += j_dir * jumpSpeed * Time.deltaTime;
+	}
+
+	void OnCollisionEnter2D( Collision2D other )
+	{
+		if( other.collider.tag == "Tile" )
+		{
+			reclick = false;
+			Debug.Log("trigger");
+		}
 	}
 }
