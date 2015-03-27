@@ -41,7 +41,27 @@
     <ClCompile Include="SceneManager.cpp">
       <Filter>Scene</Filter>
     </ClCompile>
-    <ClCompile Include="SampleScene.cpp" />
+    <ClCompile Include="TitleScene.cpp">
+      <Filter>Scene\TitleScene</Filter>
+    </ClCompile>
+    <ClCompile Include="HowToScene.cpp">
+      <Filter>Scene\HowToScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Scene\GameScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Collider.cpp">
+      <Filter>Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="Objects.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Hero.cpp">
+      <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="DataLoader.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Singleton.h" />
@@ -90,7 +110,27 @@
     <ClInclude Include="SceneManager.h">
       <Filter>Scene</Filter>
     </ClInclude>
-    <ClInclude Include="SampleScene.h" />
+    <ClInclude Include="TitleScene.h">
+      <Filter>Scene\TitleScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Scene\GameScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Objects.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Bounding.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Collider.h">
+      <Filter>Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="Hero.h">
+      <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="DataLoader.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -120,5 +160,28 @@
     <Filter Include="Scene">
       <UniqueIdentifier>{09e25e2d-2eaa-43b0-b1ef-6b3f56621ca4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Scene\TitleScene">
+      <UniqueIdentifier>{389def6d-f84b-405c-8e79-00df9462ed97}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\HowToScene">
+      <UniqueIdentifier>{1ece794c-f912-4208-8e1e-e1f500daf60b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\GameScene">
+      <UniqueIdentifier>{5d9654b3-e4a4-4bef-89ec-f409791d867e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Objects">
+      <UniqueIdentifier>{a3e06fd2-2adc-4c62-a6f0-ff9bde737376}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Collision">
+      <UniqueIdentifier>{55734359-515e-4aa0-abe8-af328062e25f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Manager">
+      <UniqueIdentifier>{c95ed06c-be06-413f-9740-987bc667acd2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HowToScene.h">
+      <Filter>Scene\HowToScene</Filter>
+    </None>
   </ItemGroup>
 </Project>

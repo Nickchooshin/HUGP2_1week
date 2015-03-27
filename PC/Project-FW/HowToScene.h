@@ -3,19 +3,17 @@
 #include "Scene.h"
 
 class CSprite ;
-class CUISprite ;
 
-class SampleScene : public Scene
+class HowToScene : public Scene
 {
 private :
-	CSprite *m_pSprite1, *m_pSprite2 ;
-	CUISprite *m_pUISprite1, *m_pUISprite2 ;
+	CSprite *m_pHowToPlay ;
 
 public :
 	static Scene* scene() ;
 
-	SampleScene() ;
-	virtual ~SampleScene() ;
+	HowToScene() ;
+	virtual ~HowToScene() ;
 
 	void Init() ;
 	void Destroy() ;

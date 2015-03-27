@@ -77,40 +77,55 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="D3dSystem.cpp" />
+    <ClCompile Include="GameScene.cpp" />
+    <ClCompile Include="Hero.cpp" />
+    <ClCompile Include="HowToScene.cpp" />
     <ClCompile Include="InputDevice.cpp" />
     <ClCompile Include="Joystick.cpp" />
     <ClCompile Include="Keyboard.cpp" />
+    <ClCompile Include="DataLoader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="MusicManager.cpp" />
+    <ClCompile Include="Objects.cpp" />
     <ClCompile Include="SceneManager.cpp" />
-    <ClCompile Include="SampleScene.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TextureManager.cpp" />
+    <ClCompile Include="TitleScene.cpp" />
     <ClCompile Include="UISprite.cpp" />
     <ClCompile Include="WinSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Collider.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />
+    <ClInclude Include="Bounding.h" />
     <ClInclude Include="D3dSystem.h" />
     <ClInclude Include="D3dDevice.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="Hero.h" />
     <ClInclude Include="InputDevice.h" />
     <ClInclude Include="Joystick.h" />
     <ClInclude Include="Keyboard.h" />
+    <ClInclude Include="DataLoader.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="MusicManager.h" />
+    <ClInclude Include="Objects.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
-    <ClInclude Include="SampleScene.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextureManager.h" />
+    <ClInclude Include="TitleScene.h" />
     <ClInclude Include="UISprite.h" />
     <ClInclude Include="WinSystem.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HowToScene.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

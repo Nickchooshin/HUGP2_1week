@@ -6,12 +6,7 @@ TextureManager::TextureManager()
 }
 TextureManager::~TextureManager()
 {
-	map<string, LPDIRECT3DTEXTURE9>::iterator iter ;
-
-	for(iter=m_Texture.begin(); iter!=m_Texture.end(); iter++)
-		iter->second->Release() ;
-
-	m_Texture.clear() ;
+	ClearTexture() ;
 }
 
 LPDIRECT3DTEXTURE9 TextureManager::GetTexture(string texfile, D3DXIMAGE_INFO **pTexInfo)
@@ -52,6 +47,9 @@ D3DXIMAGE_INFO TextureManager::GetTexInfo(string texfile)
 
 void TextureManager::ClearTexture()
 {
+	if(m_Texture.empty())
+		return ;
+
 	map<string, LPDIRECT3DTEXTURE9>::iterator iter ;
 
 	for(iter=m_Texture.begin(); iter!=m_Texture.end(); iter++)

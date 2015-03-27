@@ -12,7 +12,7 @@
 
 #include "WinSystem.h"
 #include "SceneManager.h"
-#include "SampleScene.h"
+#include "TitleScene.h"
 
 INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR, INT )
 {
@@ -22,9 +22,9 @@ INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR, INT )
 #endif
 	CWinSystem WinSystem(hInst) ;
 
-	g_SceneManager->StartScene(SampleScene::scene()) ;
+	g_SceneManager->StartScene(TitleScene::scene()) ;
 
-	WinSystem.WinSet() ;	// WS_THICKFRAME - 윈도우창 늘리기/줄이기 크기조정 지원안함.
+	WinSystem.WinSet("Roads to the A - alpha", WS_OVERLAPPED | WS_SYSMENU | WS_MINIMIZEBOX, 1280, 720) ;	// WS_THICKFRAME - 윈도우창 늘리기/줄이기 크기조정 지원안함.
 	WinSystem.WinMsg() ;
 	WinSystem.WinEnd() ;
 
