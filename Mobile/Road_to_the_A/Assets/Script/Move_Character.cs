@@ -13,9 +13,9 @@ public class Move_Character : MonoBehaviour
 
 	// jump
 	Vector3 j_dir = Vector3.zero;
-	public float jumpSpeed = 5.0f;
+	public float jumpSpeed = 7.0f;
 	static public bool m_jump = false;		// false : none, true : jump
-	private bool reclick = false;
+	static public bool reclick = false;
 
 	// object size
 	private float halfsize_x = 25.0f;
@@ -67,7 +67,6 @@ public class Move_Character : MonoBehaviour
 
 			m_jump = false;
 			reclick = true;
-			Debug.Log("click");
 		}
 
 		if( m_jump == false && reclick == true && j_dir.y > 0 )
@@ -81,7 +80,6 @@ public class Move_Character : MonoBehaviour
 		if( other.collider.tag == "Tile" )
 		{
 			reclick = false;
-			Debug.Log("trigger");
 		}
 	}
 }

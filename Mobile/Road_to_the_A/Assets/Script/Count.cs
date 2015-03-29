@@ -12,7 +12,7 @@ public class Count : MonoBehaviour
 	{
 		sprite = gameObject.GetComponent<UISprite>();
 
-		for ( int num = 0; num < 4; ++num )
+		for ( int num = 0; num < 5; ++num )
 		{
 			StartCoroutine ("Change_Image");
 		}
@@ -31,6 +31,9 @@ public class Count : MonoBehaviour
 
 		sprite.spriteName = "0";
 		Move_Character.m_move = true;
+		yield return new WaitForSeconds(1);
+
+		Destroy(gameObject);
 		yield return new WaitForSeconds(1);
 	}
 }
