@@ -15,6 +15,7 @@ public :
 	const bool CloseData() ;
 	
 	const bool GetItem(char *item) ;
+	const bool GetCommand(char *command) ;
 	void GetString(char *str) ;
 	void GetValue(int &value) ;
 	void GetValue(float &value) ;

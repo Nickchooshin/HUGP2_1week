@@ -77,6 +77,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Boss.cpp" />
+    <ClCompile Include="BossManager.cpp" />
     <ClCompile Include="Collider.cpp" />
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
@@ -100,6 +102,8 @@
     <ClCompile Include="WinSystem.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Boss.h" />
+    <ClInclude Include="BossManager.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="Camera.h" />
     <ClInclude Include="CameraManager.h" />

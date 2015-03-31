@@ -87,6 +87,52 @@ const bool CDataLoader::GetItem(char *item)
 	return true ;
 }
 
+const bool CDataLoader::GetCommand(char *command)
+{
+	std::string data="" ;
+	char key=NULL ;
+	bool comment=false ;
+
+	while(1)
+	{
+		key = fgetc(m_pFile) ;
+		if(key==EOF)
+			break ;
+
+		if(comment)
+		{
+			if(key==10)
+				comment = false ;
+		}
+		else if(key=='#')
+		{
+			comment = true ;
+		}
+		else if(key==10 || key==' ')
+		{
+			if(data=="")
+				continue ;
+			else
+				break ;
+		}
+		else
+		{
+			if(key>='a' && key<='z')
+				key -= 32 ;
+
+			char temp[] = { key, NULL } ;
+			data.append(temp) ;
+		}
+	}
+
+	if(key==EOF && data.empty())
+		return false ;
+
+	strcpy(command, data.c_str()) ;
+
+	return true ;
+}
+
 void CDataLoader::GetString(char *str)
 {
 	std::string data="" ;

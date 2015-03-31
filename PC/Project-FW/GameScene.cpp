@@ -11,6 +11,7 @@
 #include "TextureManager.h"
 
 #include "Hero.h"
+#include "BossManager.h"
 
 #include "D3dDevice.h"
 
@@ -63,6 +64,8 @@ void GameScene::Init()
 	m_pHero->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 
 	m_pfnLoop = &GameScene::Count ;
+
+	g_BossManager->SetupBoss("Test") ;
 }
 
 void GameScene::Destroy()
@@ -88,6 +91,8 @@ void GameScene::Render()
 	m_pHero->Render() ;
 
 	m_pCount->Render() ;
+
+	g_BossManager->Render() ;
 }
 
 void GameScene::Count()

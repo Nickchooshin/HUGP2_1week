@@ -48,13 +48,16 @@ void CHero::Update()
 	}
 
 	m_fX += m_fSpeed ;
+	if(m_fX<32.0f)
+		m_fX = 32.0f ;
 	Gravity() ;
 }
 
 void CHero::Gravity()
 {
-	m_fYVelocity -= m_fGravity ;
-	m_fY += m_fYVelocity ;
+	const float time = g_D3dDevice->GetTime() ;
+	m_fYVelocity -= m_fGravity * time ;
+	m_fY += m_fYVelocity * time ;
 
 	if(m_fY<32.0f)
 	{
