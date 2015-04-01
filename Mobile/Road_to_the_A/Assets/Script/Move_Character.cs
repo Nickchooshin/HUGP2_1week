@@ -7,26 +7,41 @@ public class Move_Character : MonoBehaviour
 	Transform _transform;
 
 	// move
-	public float moveSpeed = 1.5f;
+	public float moveSpeed;
 	static public bool m_dir = false;		// false : right, true : left
 	static public bool m_move = false;
 
 	// jump
-	Vector3 j_dir = Vector3.zero;
-	public float jumpSpeed = 7.0f;
+	public float jumpSpeed;
+	private Vector3 j_dir;
 	static public bool m_jump = false;		// false : none, true : jump
 	static public bool reclick = false;
+	private float m_time;
+
+	private float t;
+	private Vector3 dest;
+	private float v;
 
 	// object size
-	private float halfsize_x = 25.0f;
-	private float halfsize_y = 45.0f;
+	private float halfsize_x;
+	private float halfsize_y;
 
 	void Awake()
 	{
+		// move time : 1.0f / jump time : 0.7f
+		moveSpeed = 450.0f / 1.0f;
+		jumpSpeed = 130.0f / 0.7f;
+
+		halfsize_x = 25.0f;
+		halfsize_y = 45.0f;
+
+		t = 0.7f;
+		v = 130.0f / 0.7f;
+
 		_transform = GetComponent<Transform> ();
 	}
 
-	void Update ()
+	void FixedUpdate ()
 	{
 		if( m_move == true )
 			Move_Process ();
@@ -43,14 +58,14 @@ public class Move_Character : MonoBehaviour
 			dir = new Vector3(1, 0, 0);
 			dir.Normalize ();
 
-			_transform.position += dir * moveSpeed * Time.deltaTime;
+			_transform.localPosition += dir * (moveSpeed * Time.deltaTime);
 		}
 		else if( m_dir == true )
 		{
 			dir = new Vector3(-1, 0, 0);
 			dir.Normalize ();
 			
-			_transform.position += dir * moveSpeed * Time.deltaTime;
+			_transform.localPosition += dir * (moveSpeed * Time.fixedDeltaTime);
 		}
 
 		// 이동 제한
@@ -59,26 +74,36 @@ public class Move_Character : MonoBehaviour
 		                                        _transform.localPosition.z);
 	}
 
+	void Jump_Calculate()
+	{
+
+	}
+
 	void Jump_Process()
 	{
 		if( m_jump == true && reclick == false )
 		{
+			m_time = Time.time;
+			dest = _transform.localPosition;
 			j_dir = new Vector3(0, 1, 0);
 
 			m_jump = false;
 			reclick = true;
 		}
 
-		if( m_jump == false && reclick == true && j_dir.y > 0 )
-			j_dir.Set(0, j_dir.y - 0.1f, 0);
-
-		_transform.position += j_dir * jumpSpeed * Time.deltaTime;
+		if( reclick == true )
+		{
+			_transform.localPosition += j_dir * (0.5f * jumpSpeed * (0.7f * 0.7f));
+			jumpSpeed += Physics.gravity.y;
+		}
+				//j_dir * (jumpSpeed * Time.fixedDeltaTime);
 	}
 
 	void OnCollisionEnter2D( Collision2D other )
 	{
 		if( other.collider.tag == "Tile" )
 		{
+			jumpSpeed = 130.0f / 0.7f;
 			reclick = false;
 		}
 	}
