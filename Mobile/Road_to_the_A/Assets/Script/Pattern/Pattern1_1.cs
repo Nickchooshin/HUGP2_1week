@@ -24,6 +24,8 @@ public class Pattern1_1 : Pattern_State
 			obj_warning[i].gameObject.SetActive(false);
 		}
 
+		Move ();
+
 		m_time = Time.time;
 	}
 
