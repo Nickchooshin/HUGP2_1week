@@ -5,16 +5,21 @@
 #include "DataLoader.h"
 #include "Bounding.h"
 #include "Boss.h"
+#include "Pattern.h"
 
 BossManager::BossManager()
 {
 }
 BossManager::~BossManager()
 {
-	std::map<std::string, CBoss*>::iterator iter, iter_end=m_BossList.end() ;
+	std::map<std::string, CBoss*>::iterator iter_boss ;
+	std::vector<CPattern*>::iterator iter_pattern ;
 
-	for(iter=m_BossList.begin(); iter!=iter_end; iter++)
-		delete iter->second ;
+	for(iter_boss=m_BossList.begin(); iter_boss!=m_BossList.end(); iter_boss++)
+		delete iter_boss->second ;
+
+	for(iter_pattern=m_PatternList.begin(); iter_pattern!=m_PatternList.end(); iter_pattern++)
+		delete *iter_pattern ;
 }
 
 void BossManager::SetupBoss(char *strBossName)
@@ -67,8 +72,8 @@ void BossManager::SetupBoss(char *strBossName)
 
 			m_BossList[name] = pBoss ;
 
-			memset(name, NULL, strlen(name)) ;
-			memset(image, NULL, strlen(image)) ;
+			memset(name, 0, strlen(name)) ;
+			memset(image, 0, strlen(image)) ;
 			width = height = 0.0f ;
 			box._left = box._top = box._right = box._bottom = 0.0f ;
 		}
@@ -77,15 +82,46 @@ void BossManager::SetupBoss(char *strBossName)
 	DataLoader.CloseData() ;
 }
 
+void BossManager::AddPattern(CPattern *pPattern)
+{
+	m_PatternList.push_back(pPattern) ;
+}
+
+CBoss* BossManager::GetBossInstance(std::string name)
+{
+	CBoss *pBoss = new CBoss(m_BossList[name]) ;
+
+	return pBoss ;
+}
+
+void BossManager::Update()
+{
+	int num=m_PatternList.size() ;
+	CPattern *pPattern ;
+
+	for(int i=0; i<num; i++)
+	{
+		pPattern = m_PatternList[i] ;
+		pPattern->Update() ;
+
+		if(!pPattern->BeLife())
+		{
+			m_PatternList.erase(m_PatternList.begin() + i) ;
+			delete pPattern ;
+			--num ;
+			--i ;
+		}
+	}
+}
+
 void BossManager::Render()
 {
-	std::map<std::string, CBoss*>::iterator iter, iter_end=m_BossList.end() ;
-	CBoss *pBoss ;
+	const int num=m_PatternList.size() ;
+	CPattern *pPattern ;
 
-	for(iter=m_BossList.begin(); iter!=iter_end; iter++)
+	for(int i=0; i<num; i++)
 	{
-		pBoss = iter->second ;
-		pBoss->SetPosition(100.0f, 100.0f) ;
-		pBoss->Render() ;
+		pPattern = m_PatternList[i] ;
+		pPattern->Render() ;
 	}
 }

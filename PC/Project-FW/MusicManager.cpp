@@ -46,7 +46,7 @@ void MusicManager::Terminate()
 	System->release();
 }
 
-FMOD::Sound* MusicManager::LoadMusic(char *Filename, bool isStream, bool isLoop)
+FMOD::Sound* MusicManager::LoadMusic(const char *Filename, bool isStream, bool isLoop)
 {
 	FMOD::Sound * temp;
 	

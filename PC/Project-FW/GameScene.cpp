@@ -12,6 +12,7 @@
 
 #include "Hero.h"
 #include "BossManager.h"
+#include "PatternQueueManager.h"
 
 #include "D3dDevice.h"
 
@@ -65,7 +66,8 @@ void GameScene::Init()
 
 	m_pfnLoop = &GameScene::Count ;
 
-	g_BossManager->SetupBoss("Test") ;
+	g_BossManager->SetupBoss("Boss1") ;
+	g_PatternQueueManager->LoadScript("Boss1_Pattern3") ;
 }
 
 void GameScene::Destroy()
@@ -126,4 +128,7 @@ void GameScene::Count()
 void GameScene::GameLoop()
 {
 	m_pHero->Update() ;
+
+	g_PatternQueueManager->Update() ;
+	g_BossManager->Update() ;
 }

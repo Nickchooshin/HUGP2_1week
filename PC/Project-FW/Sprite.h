@@ -20,6 +20,7 @@ private :
 
 public :
 	CSprite() ;
+	CSprite(const CSprite *pSprite) ;
 	~CSprite() ;
 
 	bool Init(char *texfile) ;

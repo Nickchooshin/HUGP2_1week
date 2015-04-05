@@ -20,7 +20,7 @@ public:
 	bool Initialize();
 	void Terminate();
 
-	FMOD::Sound* LoadMusic(char *Filename, bool isStream, bool isLoop = true);
+	FMOD::Sound* LoadMusic(const char *Filename, bool isStream, bool isLoop = true);
 	void PlayMusic(FMOD::Sound* Sound, int Channel = 0);
 	void PauseMusic(bool bPause = true, int Channel = 0) ;
 	void StopMusic(int Channel = 0);

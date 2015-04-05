@@ -68,6 +68,34 @@
     <ClCompile Include="Boss.cpp">
       <Filter>Objects</Filter>
     </ClCompile>
+    <ClCompile Include="PatternQueueManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand.cpp">
+      <Filter>PatternCommand</Filter>
+    </ClCompile>
+    <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Pattern_Move.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand_Move.cpp">
+      <Filter>PatternCommand\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand_Wait.cpp">
+      <Filter>PatternCommand\Wait</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Stay.cpp">
+      <Filter>Pattern</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand_Stay.cpp">
+      <Filter>PatternCommand\Stay</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand_Sound.cpp">
+      <Filter>PatternCommand\Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -143,6 +171,34 @@
       <Filter>Objects</Filter>
     </ClInclude>
     <ClInclude Include="Singleton.h" />
+    <ClInclude Include="PatternQueueManager.h">
+      <Filter>Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand.h">
+      <Filter>PatternCommand</Filter>
+    </ClInclude>
+    <ClInclude Include="Position.h" />
+    <ClInclude Include="Pattern_Move.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand_Move.h">
+      <Filter>PatternCommand\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand_Wait.h">
+      <Filter>PatternCommand\Wait</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Stay.h">
+      <Filter>Pattern</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand_Stay.h">
+      <Filter>PatternCommand\Stay</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand_Sound.h">
+      <Filter>PatternCommand\Sound</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -189,6 +245,24 @@
     </Filter>
     <Filter Include="Manager">
       <UniqueIdentifier>{c95ed06c-be06-413f-9740-987bc667acd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand">
+      <UniqueIdentifier>{fe20f031-6b77-44e3-b7fd-b42d5aa26842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern">
+      <UniqueIdentifier>{96897db7-a36d-4beb-96ce-08bf552fc3e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand\Move">
+      <UniqueIdentifier>{92eb4d9e-927c-488a-a755-0f210e965237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand\Wait">
+      <UniqueIdentifier>{1a864b8d-f8bd-401c-b791-b91b550ac4f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand\Stay">
+      <UniqueIdentifier>{302b248e-15a9-4e3f-a7c0-e847af479a17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand\Sound">
+      <UniqueIdentifier>{a2be8ea0-768c-4f84-8d6d-1d9967ab1b9c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

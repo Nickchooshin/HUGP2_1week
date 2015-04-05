@@ -47,9 +47,9 @@ void CHero::Update()
 		m_bJump = true ;
 	}
 
-	m_fX += m_fSpeed ;
-	if(m_fX<32.0f)
-		m_fX = 32.0f ;
+	m_Position.x += m_fSpeed ;
+	if(m_Position.x<32.0f)
+		m_Position.x = 32.0f ;
 	Gravity() ;
 }
 
@@ -57,11 +57,11 @@ void CHero::Gravity()
 {
 	const float time = g_D3dDevice->GetTime() ;
 	m_fYVelocity -= m_fGravity * time ;
-	m_fY += m_fYVelocity * time ;
+	m_Position.y += m_fYVelocity * time ;
 
-	if(m_fY<32.0f)
+	if(m_Position.y<32.0f)
 	{
-		m_fY = 32.0f ;
+		m_Position.y = 32.0f ;
 		m_fYVelocity = 0.0f ;
 		m_bJump = false ;
 	}

@@ -3,7 +3,7 @@
 
 CObjects::CObjects() : m_pSprite(NULL),
 					   m_BBox(),
-					   m_fX(0.0f), m_fY(0.0f)
+					   m_Position()
 {
 }
 CObjects::~CObjects()
@@ -12,10 +12,15 @@ CObjects::~CObjects()
 		delete m_pSprite ;
 }
 
-void CObjects::SetPosition(float X, float Y)
+void CObjects::SetPosition(POSITION Position)
 {
-	m_fX = X ;
-	m_fY = Y ;
+	m_Position = Position ;
+}
+
+void CObjects::SetPosition(float x, float y)
+{
+	m_Position.x = x ;
+	m_Position.y = y ;
 }
 
 void CObjects::Update()
@@ -24,6 +29,6 @@ void CObjects::Update()
 
 void CObjects::Render()
 {
-	m_pSprite->SetPosition(m_fX, m_fY) ;
+	m_pSprite->SetPosition(m_Position.x, m_Position.y) ;
 	m_pSprite->Render() ;
 }

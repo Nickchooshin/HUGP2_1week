@@ -1,0 +1,38 @@
+SOUND "SE_bss1_05.mp3"
+WAIT 2.2f
+# warning 0.5s
+WAIT 0.8f
+STAY "obj4", 190.0f, 560.0f, 2.2f
+STAY "obj4", 490.0f, 560.0f, 2.2f
+STAY "obj4", 790.0f, 560.0f, 2.2f
+STAY "obj4", 1090.0f, 560.0f, 2.2f
+WAIT 0.5f
+SOUND "SE_bss1_06.mp3"
+WAIT 1.7f
+MOVE "obj4", 190.0f, 560.0f, -50.0f, 560.0f, 2.4f
+MOVE "obj4", 490.0f, 560.0f, 250.0f, 560.0f, 2.4f
+MOVE "obj4", 790.0f, 560.0f, 550.0f, 560.0f, 2.4f
+MOVE "obj4", 1090.0f, 560.0f, 850.0f, 560.0f, 2.4f
+WAIT 0.8f
+SOUND "SE_bss1_07.mp3"
+WAIT 1.6f ;
+MOVE "obj4", -50.0f, 560.0f, 140.0f, 560.0f, 1.9f
+MOVE "obj4", 250.0f, 560.0f, 440.0f, 560.0f, 1.9f
+MOVE "obj4", 550.0f, 560.0f, 740.0f, 560.0f, 1.9f
+MOVE "obj4", 850.0f, 560.0f, 1040.0f, 560.0f, 1.9f
+WAIT 0.8f
+SOUND "SE_bss1_08.mp3"
+WAIT 1.1f
+STAY "obj4", 140.0f, 560.0f, 1.2f
+STAY "obj4", 440.0f, 560.0f, 1.2f
+STAY "obj4", 740.0f, 560.0f, 1.2f
+STAY "obj4", 1040.0f, 560.0f, 1.2f
+WAIT 0.5f
+SOUND "SE_bss1_09.mp3"
+WAIT 0.7f
+MOVE "obj4", 140.0f, 560.0f, -375.0f, 560.0f, 1.2875f
+MOVE "obj4", 440.0f, 560.0f, -75.0f, 560.0f, 1.2875f
+MOVE "obj4", 740.0f, 560.0f, 1255.0f, 560.0f, 1.2875f
+MOVE "obj4", 1040.0f, 560.0f, 1555.0f, 560.0f, 1.2875f
+
+#WAIT 1.0f

@@ -4,8 +4,12 @@
 
 class CBoss : public CObjects
 {
+protected :
+	bool m_bLife ;
+
 public :
 	CBoss() ;
+	CBoss(const CBoss *pBoss) ;
 	~CBoss() ;
 
 	void Init() ;

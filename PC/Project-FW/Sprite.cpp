@@ -20,6 +20,27 @@ CSprite::CSprite() : m_pVB(NULL),
 	m_tu[2] = 0.0f ;	m_tv[2] = 1.0f ;
 	m_tu[3] = 1.0f ;	m_tv[3] = 1.0f ;
 }
+CSprite::CSprite(const CSprite *pSprite) : m_pVB(NULL),
+										   m_pIB(NULL),
+										   m_pTexture(pSprite->m_pTexture), m_pTexInfo(pSprite->m_pTexInfo),
+										   m_fWidth(pSprite->m_fWidth), m_fHeight(pSprite->m_fHeight),
+										   m_Position(pSprite->m_Position),
+										   m_CenterPosition(pSprite->m_CenterPosition),
+										   m_fScaleX(pSprite->m_fScaleX), m_fScaleY(pSprite->m_fScaleY),
+										   m_R(pSprite->m_R), m_G(pSprite->m_G), m_B(pSprite->m_B),
+										   m_nAlpha(pSprite->m_nAlpha)
+{
+	for(int i=0; i<3; i++)
+		m_fAngle[i] = pSprite->m_fAngle[i] ;
+
+	for(int i=0; i<4; i++)
+	{
+		m_tu[i] = pSprite->m_tu[i] ;
+		m_tv[i] = pSprite->m_tv[i] ;
+	}
+
+	InitVB() ;
+}
 CSprite::~CSprite()
 {
 	if(m_pVB!=NULL)
