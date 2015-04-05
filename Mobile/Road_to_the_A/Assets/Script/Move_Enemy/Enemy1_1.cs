@@ -4,13 +4,17 @@ using System.Collections;
 public class Enemy1_1 : MonoBehaviour
 {
 	Transform _transform;
+	public AudioClip _sound;
 
 	public float moveSpeed;
 
 	void Start ()
 	{
-		moveSpeed = 1000.0f / 0.5f;
+		moveSpeed = 2160.0f / 0.5f;
 		_transform = GetComponent<Transform> ();
+
+		GetComponent<AudioSource> ().clip = _sound;
+		GetComponent<AudioSource> ().Play ();
 	}
 
 	void FixedUpdate ()
@@ -23,13 +27,10 @@ public class Enemy1_1 : MonoBehaviour
 		Vector3 dir = new Vector3 (0.0f, 1.0f, 0.0f);
 
 		_transform.localPosition += dir * (moveSpeed * Time.fixedDeltaTime);
-
-		StartCoroutine ("Change_Speed");
 	}
 
-	IEnumerator Change_Speed()
+	public void Destroy_obj()
 	{
-		moveSpeed = -1000.0f / 0.5f;
-		yield return new WaitForSeconds(0.25f);
+		Destroy (_transform.gameObject);
 	}
 }

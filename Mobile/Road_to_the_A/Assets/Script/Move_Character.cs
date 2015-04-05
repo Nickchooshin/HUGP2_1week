@@ -31,7 +31,7 @@ public class Move_Character : MonoBehaviour
 	{
 		// move time : 1.0f / jump time : 0.7f
 		moveSpeed = 450.0f / 1.0f;
-		jumpSpeed = 130.0f;
+		jumpSpeed = 130.0f / 0.7f;
 
 		halfsize_x = 25.0f;
 		halfsize_y = 45.0f;
@@ -95,11 +95,9 @@ public class Move_Character : MonoBehaviour
 
 		if( reclick == true )
 		{
-			float a = (Jump_Calculate(m_time, m_pos, 9.8f, 0.7f));
-			//Debug.Log(a);
 			_transform.localPosition +=
-				j_dir * (Jump_Calculate(m_time, m_pos, 9.8f, 0.7f));
-			// jumpSpeed += Physics.gravity.y;
+				j_dir * ((0.5f * jumpSpeed * (0.7f * 0.7f)) - (0.5f * (-Physics.gravity.y) * (0.7f * 0.7f)));
+			jumpSpeed += Physics.gravity.y;
 		}
 				//j_dir * (jumpSpeed * Time.fixedDeltaTime);
 	}
@@ -108,7 +106,7 @@ public class Move_Character : MonoBehaviour
 	{
 		if( other.collider.tag == "Tile" )
 		{
-			// jumpSpeed = 130.0f / 0.7f;
+			jumpSpeed = 130.0f / 0.7f;
 			reclick = false;
 		}
 	}

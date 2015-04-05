@@ -8,4 +8,10 @@ public class Hit_Character : MonoBehaviour
 		if( other.collider.tag == "Enemy" )
 			Application.LoadLevel ("End");
 	}
+
+	void OnTriggerEnter2D( Collider2D other )
+	{
+		if( other.tag == "Enemy" )
+			Application.LoadLevel ("End");
+	}
 }

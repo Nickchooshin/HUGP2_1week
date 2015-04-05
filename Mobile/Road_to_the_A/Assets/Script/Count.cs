@@ -12,10 +12,7 @@ public class Count : MonoBehaviour
 	{
 		sprite = gameObject.GetComponent<UISprite>();
 
-		for ( int num = 0; num < 5; ++num )
-		{
-			StartCoroutine ("Change_Image");
-		}
+		StartCoroutine ("Change_Image");
 	}
 
 	IEnumerator Change_Image()
