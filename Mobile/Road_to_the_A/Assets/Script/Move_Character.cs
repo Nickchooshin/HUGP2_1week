@@ -13,11 +13,13 @@ public class Move_Character : MonoBehaviour
 
 	// jump
 	private float jumpSpeed;
-	private Vector3 j_dir;
-	static public bool m_jump = false;		// false : none, true : jump
-	static public bool reclick = false;
+	private float gr;
 	private float m_time;
 	private float m_pos;
+	private Vector3 j_dir;
+	public bool midair;
+	static public bool m_jump = false;	// false : none, true : jump
+	static public bool reclick = false;
 
 	private float t;
 	private Vector3 dest;
@@ -31,13 +33,16 @@ public class Move_Character : MonoBehaviour
 	{
 		// move time : 1.0f / jump time : 0.7f
 		moveSpeed = 450.0f / 1.0f;
-		jumpSpeed = 130.0f / 0.7f;
+		jumpSpeed = 742.85715f;
+		gr = -2122.499f;
 
 		halfsize_x = 25.0f;
 		halfsize_y = 45.0f;
 
 		t = 0.7f;
 		v = 130.0f / 0.7f;
+
+		midair = true;
 
 		_transform = GetComponent<Transform> ();
 	}
@@ -69,6 +74,12 @@ public class Move_Character : MonoBehaviour
 			_transform.localPosition += dir * (moveSpeed * Time.fixedDeltaTime);
 		}
 
+		// 중력
+		if( true == midair )
+		{
+			_transform.localPosition += (new Vector3(0.0f, 1.0f, 0.0f) * (gr * Time.fixedDeltaTime));
+		}
+
 		// 이동 제한
 		_transform.localPosition = new Vector3 (Mathf.Clamp (_transform.localPosition.x, -640.0f + halfsize_x, 640.0f - halfsize_x),
 		                                        Mathf.Clamp (_transform.localPosition.y, -360.0f + halfsize_y, 360.0f - halfsize_y),
@@ -95,9 +106,8 @@ public class Move_Character : MonoBehaviour
 
 		if( reclick == true )
 		{
-			_transform.localPosition +=
-				j_dir * ((0.5f * jumpSpeed * (0.7f * 0.7f)) - (0.5f * (-Physics.gravity.y) * (0.7f * 0.7f)));
-			jumpSpeed += Physics.gravity.y;
+			_transform.localPosition += j_dir * (jumpSpeed * Time.fixedDeltaTime);
+			jumpSpeed += gr * Time.fixedDeltaTime;
 		}
 				//j_dir * (jumpSpeed * Time.fixedDeltaTime);
 	}
@@ -106,8 +116,9 @@ public class Move_Character : MonoBehaviour
 	{
 		if( other.collider.tag == "Tile" )
 		{
-			jumpSpeed = 130.0f / 0.7f;
+			jumpSpeed = 742.85715f;
 			reclick = false;
+			midair = false;
 		}
 	}
 }

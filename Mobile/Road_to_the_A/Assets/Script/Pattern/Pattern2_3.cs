@@ -48,17 +48,18 @@ public class Pattern2_3 : Pattern_State
 			obj_warning [i].SetActive (true);
 		yield return new WaitForSeconds(0.5f);
 
-		for( int i = 0; i < 3; ++i )
+		for( int i = 0; i < 4; ++i )
 		{
 			obj_warning [i].GetComponent<Enemy2_3> ().move_check = true;
-			yield return new WaitForSeconds(1.0f);
+
+			if( i < 3 )
+				yield return new WaitForSeconds(1.0f);
+			else
+				yield return new WaitForSeconds(0.5f);
 		}
 
 		obj_warning[4].GetComponent<Enemy2_3> ().move_check = true;
-		yield return new WaitForSeconds(0.5f);
-
-		obj_warning[4].GetComponent<Enemy2_3> ().move_check = true;
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
 
 		for( int i = 0; i < 5; ++i )
 			DestroyObject(obj_warning[i]);

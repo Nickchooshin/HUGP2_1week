@@ -4,19 +4,35 @@ using System.Collections;
 public class Enemy3_3 : MonoBehaviour
 {
 	Transform _transform;
-	public AudioClip _sound;
+	public AudioClip[] _sound = new AudioClip[2];
 
 	public float moveSpeed;
-	public bool move_dir;	// false : down, true : up
+	public bool move_dir = false;	// false : updown, true : side
+
+	Vector3 dir;
 
 	void Start ()
 	{
-		move_dir = false;
-		moveSpeed = 1000.0f / 0.3f;
-		
 		_transform = GetComponent<Transform> ();
-		GetComponent<AudioSource> ().clip = _sound;
-		GetComponent<AudioSource> ().Play ();
+
+		if( false == move_dir )
+		{
+			GetComponent<AudioSource> ().clip = _sound[0];
+			GetComponent<AudioSource> ().Play ();
+
+			moveSpeed = 900.0f / 0.3f;
+			dir = new Vector3(0.0f, 1.0f, 0.0f);
+			dir.Normalize();
+		}
+		else
+		{
+			GetComponent<AudioSource> ().clip = _sound[1];
+			GetComponent<AudioSource> ().Play ();
+
+			moveSpeed = 900.0f / 1.0f;
+			dir = new Vector3(1.0f, 0.0f, 0.0f);
+			dir.Normalize();
+		}
 	}
 
 	void FixedUpdate () 
@@ -28,17 +44,20 @@ public class Enemy3_3 : MonoBehaviour
 	{
 		if( false == move_dir )
 		{
-			Vector3 _dir = new Vector3(0.0f, -1.0f, 0.0f);
-			_dir.Normalize ();
-		
-			_transform.transform.localPosition += _dir * (moveSpeed * Time.fixedDeltaTime);
+			_transform.transform.localPosition += dir * (moveSpeed * Time.fixedDeltaTime);
+
+			if( _transform.localPosition.y > -134.0f )
+				dir = new Vector3(0.0f, -1.0f, 0.0f);
 		}
 		else
 		{
-			Vector3 _dir = new Vector3(0.0f, 1.0f, 0.0f);
-			_dir.Normalize ();
+			// 회전
+			_transform.eulerAngles = new Vector3 (0, 0.0f, 90.0f);
 			
-			_transform.transform.localPosition += _dir * (moveSpeed * Time.fixedDeltaTime);
+			_transform.transform.localPosition += dir * (moveSpeed * Time.fixedDeltaTime);
+
+			if( _transform.localPosition.x > 640.0f )
+				dir = new Vector3(-1.0f, 0.0f, 0.0f);
 		}
 	}
 }

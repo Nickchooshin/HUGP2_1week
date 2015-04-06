@@ -37,7 +37,6 @@ public class Enemy2_1 : MonoBehaviour
 
 			GetComponent<AudioSource> ().clip = _sound;
 			GetComponent<AudioSource> ().Play ();
-			Debug.Log("다롱");
 		}
 	}
 }

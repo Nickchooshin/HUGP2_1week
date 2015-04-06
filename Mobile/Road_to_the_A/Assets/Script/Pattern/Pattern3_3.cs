@@ -5,7 +5,7 @@ public class Pattern3_3 : Pattern_State
 {
 	public AudioClip _sound;
 
-	private GameObject[] obj_warning = new GameObject[4];
+	private GameObject[] obj_warning = new GameObject[5];
 	private GameObject[] obj_caution = new GameObject[2];
 	
 	void Start ()
@@ -22,7 +22,7 @@ public class Pattern3_3 : Pattern_State
 		obj_caution[1].gameObject.SetActive(false);
 
 		// warning
-		for( int i = 0; i < 4; ++i )
+		for( int i = 0; i < 5; ++i )
 		{
 			obj_warning[i] = Instantiate (Resources.Load ("Boss3_6", typeof(GameObject))) as GameObject;
 			obj_warning[i].transform.parent = GameObject.Find ("Boss").transform;
@@ -49,49 +49,46 @@ public class Pattern3_3 : Pattern_State
 		GetComponent<AudioSource> ().Play ();
 		yield return new WaitForSeconds(1.5f);
 
+		for( int i = 0; i < 4; ++i )
+		{
+			// caution
+			for( int j = 0; j < 2; ++j )
+			{
+				obj_caution[j].gameObject.SetActive(true);
+				obj_caution[j].GetComponent<Warning> ().chase_check = true;
+			}
+			yield return new WaitForSeconds(0.3f);
+
+			// false caution
+			for( int j = 0; j < 2; ++j )
+				obj_caution[j].gameObject.SetActive(false);
+			yield return new WaitForSeconds(0.2f);
+
+			// Make enemy
+			obj_warning[i].gameObject.SetActive (true);
+			obj_warning[i].transform.localPosition =
+				new Vector3(obj_caution[0].transform.localPosition.x, -450.0f, 0.0f);
+		}
+
+		// caution
 		for( int i = 0; i < 2; ++i )
 		{
 			obj_caution[i].gameObject.SetActive(true);
-			obj_caution[i].GetComponent<Warning> ().chase_check = true;
-		}
-		yield return new WaitForSeconds(0.3f);
+			obj_caution[i].GetComponent<Warning> ().chase_check = false;
+			obj_caution[i].transform.localPosition = new Vector3(0.0f, -310.0f, 0.0f);
 
-		for( int i = 0; i < 2; ++i )
-			obj_caution[i].gameObject.SetActive(false);
+			if( 0 == i )
+				obj_caution[i].transform.localScale = new Vector3(1280.0f, 100.0f, 0.0f);
+			else
+				obj_caution[i].transform.localScale = new Vector3(80.0f, 80.0f, 0.0f);
+		}
 		yield return new WaitForSeconds(0.2f);
 
-		obj_warning[0].gameObject.SetActive (true);
-		obj_warning[0].transform.localPosition =
-			new Vector3(obj_caution[0].transform.localPosition.x, 500.0f, 0.0f);
-
-		for( int i = 0; i < 2; ++i )
-			obj_caution[i].gameObject.SetActive(false);
-		yield return new WaitForSeconds(1.5f);
-		
-		for( int i = 0; i < 2; ++i )
-			obj_caution[i].GetComponent<Warning> ().chase_check = true;
-		
-		for( int i = 0; i < 3; ++i )
-		{
-			for( int j = 0; j < 2; ++j )
-				obj_caution[j].gameObject.SetActive(true);
-			yield return new WaitForSeconds(1.5f);
-			
-			for( int j = 0; j < 2; ++j )
-				obj_caution[j].gameObject.SetActive(false);
-			
-			yield return new WaitForSeconds(0.5f);
-			
-			obj_warning[i].SetActive(true);
-			obj_warning[i].transform.localPosition =
-				new Vector3(obj_caution[0].transform.localPosition.x, 500.0f, 0.0f);
-			yield return new WaitForSeconds(0.2f);
-		}
 		for (int i = 0; i < 2; ++i)
-			DestroyObject (obj_caution [i]);
-		yield return new WaitForSeconds(2.1f);
-		
-		for (int i = 0; i < 3; ++i)
-			DestroyObject (obj_warning [i]);
+			obj_caution [i].SetActive (false);
+
+		obj_warning[4].transform.localPosition = new Vector3(-680.0f, -310.0f, 0.0f);
+		obj_warning[4].GetComponent<Enemy3_3> ().move_dir = true;
+		obj_warning[4].SetActive (true);
 	}
 }
