@@ -4,7 +4,7 @@
 
 CPatternCommand_Stay::CPatternCommand_Stay(std::string strName, POSITION stayPosition, float stayTime) : m_strName(strName),
 																										 m_stayPosition(stayPosition),
-																										 m_fTime(0.0f), m_fStayTime(stayTime)
+																										 m_fStayTime(stayTime)
 {
 }
 CPatternCommand_Stay::~CPatternCommand_Stay()

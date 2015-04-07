@@ -9,7 +9,7 @@ private :
 
 public :
 	CPatternCommand_Wait(float delayTime) ;
-	virtual ~CPatternCommand_Wait() ;
+	~CPatternCommand_Wait() ;
 
 	void Update() ;
 } ;

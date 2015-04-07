@@ -1,24 +1,30 @@
 SOUND "SE_bss1_03.mp3"
 WAIT 3.2f
-# warning 0.5s
+WARNING NORMAL 200.0f, 720.0f, 140.0f, 360.0f, 0.5f
+WARNING NORMAL 200.0f, 720.0f, 540.0f, 360.0f, 0.5f
+WARNING NORMAL 200.0f, 720.0f, 940.0f, 360.0f, 0.5f
 WAIT 0.5f
-# warning 0.5s
+WARNING NORMAL 200.0f, 720.0f, 340.0f, 360.0f, 0.5f
+WARNING NORMAL 200.0f, 720.0f, 740.0f, 360.0f, 0.5f
+WARNING NORMAL 200.0f, 720.0f, 1040.0f, 360.0f, 0.5f
 WAIT 0.5f
-# warning 0.5s
+WARNING NORMAL 200.0f, 720.0f, 140.0f, 360.0f, 0.5f
+WARNING NORMAL 200.0f, 720.0f, 540.0f, 360.0f, 0.5f
+WARNING NORMAL 200.0f, 720.0f, 940.0f, 360.0f, 0.5f
 WAIT 0.8f
-MOVE "obj3", 140.0f, 1002.0f, 140.0f, -282.0f, 0.5f
-MOVE "obj3", 440.0f, 1002.0f, 440.0f, -282.0f, 0.5f
-MOVE "obj3", 840.0f, 1002.0f, 840.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 140.0f, 1002.0f, 140.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 440.0f, 1002.0f, 440.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 840.0f, 1002.0f, 840.0f, -282.0f, 0.5f
 SOUND "SE_bss1_04.mp3"
 WAIT 0.3f
-MOVE "obj3", 340.0f, 1002.0f, 340.0f, -282.0f, 0.5f
-MOVE "obj3", 640.0f, 1002.0f, 640.0f, -282.0f, 0.5f
-MOVE "obj3", 1040.0f, 1002.0f, 1040.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 340.0f, 1002.0f, 340.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 640.0f, 1002.0f, 640.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 1040.0f, 1002.0f, 1040.0f, -282.0f, 0.5f
 SOUND "SE_bss1_04.mp3"
 WAIT 0.3f
-MOVE "obj3", 140.0f, 1002.0f, 140.0f, -282.0f, 0.5f
-MOVE "obj3", 440.0f, 1002.0f, 440.0f, -282.0f, 0.5f
-MOVE "obj3", 840.0f, 1002.0f, 840.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 140.0f, 1002.0f, 140.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 440.0f, 1002.0f, 440.0f, -282.0f, 0.5f
+MOVE NORMAL "obj3", 840.0f, 1002.0f, 840.0f, -282.0f, 0.5f
 SOUND "SE_bss1_04.mp3"
 
 #WAIT 1.0f

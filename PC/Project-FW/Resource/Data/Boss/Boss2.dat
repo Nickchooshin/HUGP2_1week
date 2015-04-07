@@ -1,0 +1,31 @@
+<NAME>
+"obj1"
+<IMAGE>
+"Resource/Image/Boss/obj_bss2_01.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<END>
+
+<NAME>
+"obj2"
+<IMAGE>
+"Resource/Image/Boss/obj_bss2_02.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<END>
+
+<NAME>
+"obj3"
+<IMAGE>
+"Resource/Image/Boss/obj_bss2_03.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<END>
+
+<NAME>
+"obj4"
+<IMAGE>
+"Resource/Image/Boss/obj_bss2_04.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<END>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Singleton.h"
+#include "DataLoader.h"
 #include <queue>
 
 class CPatternCommand ;
@@ -23,6 +24,15 @@ public :
 	void ClearQueue() ;
 
 	void Update() ;
+private :
+	void CommandWait(CDataLoader &DataLoader) ;
+	void CommandMove(CDataLoader &DataLoader) ;
+	void CommandDrop(CDataLoader &DataLoader) ;
+	void CommandStay(CDataLoader &DataLoader) ;
+	void CommandSound(CDataLoader &DataLoader) ;
+	void CommandShake(CDataLoader &DataLoader) ;
+	void CommandWarning(CDataLoader &DataLoader) ;
+	void CommandIrregular(CDataLoader &DataLoader) ;
 } ;
 
 #define g_PatternQueueManager CPatternQueueManager::GetInstance()

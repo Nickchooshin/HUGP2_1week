@@ -3,7 +3,7 @@
 #include "Scene.h"
 
 class CSprite ;
-class CHero ;
+//class CHero ;
 
 class GameScene : public Scene
 {
@@ -11,7 +11,7 @@ private :
 	CSprite *m_pBackground ;
 	CSprite *m_pCount ;
 
-	CHero *m_pHero ;
+	//CHero *m_pHero ;
 
 	float m_fTime ;
 

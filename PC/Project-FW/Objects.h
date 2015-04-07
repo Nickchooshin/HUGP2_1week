@@ -22,6 +22,8 @@ public :
 	void SetPosition(POSITION Position) ;
 	void SetPosition(float x, float y) ;
 
+	const POSITION GetPosition() const ;
+
 	virtual void Update() ;
 
 	virtual void Render() ;

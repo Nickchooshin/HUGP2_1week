@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Objects.h"
+#include "Singleton.h"
 
-class CHero : public CObjects
+class CHero : public CObjects, public Singleton<CHero>
 {
 private :
 	float m_fSpeed ;
@@ -22,3 +23,5 @@ private :
 	void Move() ;
 	void Gravity() ;
 } ;
+
+#define g_Hero CHero::GetInstance()

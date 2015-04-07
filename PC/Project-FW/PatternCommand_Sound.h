@@ -10,7 +10,7 @@ private :
 
 public :
 	CPatternCommand_Sound(std::string strName) ;
-	virtual ~CPatternCommand_Sound() ;
+	~CPatternCommand_Sound() ;
 
 	void Update() ;
 } ;

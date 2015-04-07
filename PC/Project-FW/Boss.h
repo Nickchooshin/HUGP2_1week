@@ -15,5 +15,6 @@ public :
 	void Init() ;
 
 	void SetImage(char *strImage) ;
+	void SetImage(float fWidth, float fHeight, char *strImage) ;
 	void SetBoundingBox(BBox Box) ;
 } ;

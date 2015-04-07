@@ -23,6 +23,11 @@ void CObjects::SetPosition(float x, float y)
 	m_Position.y = y ;
 }
 
+const POSITION CObjects::GetPosition() const
+{
+	return m_Position ;
+}
+
 void CObjects::Update()
 {
 }

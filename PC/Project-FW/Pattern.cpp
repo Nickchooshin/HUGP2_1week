@@ -5,12 +5,12 @@
 
 CPattern::CPattern() : m_pBoss(NULL),
 					   m_fTime(0.0f), m_fTargetTime(0.0f),
-					   m_bLife(true)
+					   m_bStartTime(false), m_bLife(true)
 {
 }
 CPattern::CPattern(float targetTime) : m_pBoss(NULL),
 									   m_fTime(0.0f), m_fTargetTime(targetTime),
-									   m_bLife(true)
+									   m_bStartTime(false), m_bLife(true)
 {
 }
 CPattern::~CPattern()
@@ -36,8 +36,15 @@ const bool CPattern::BeLife() const
 
 void CPattern::Time()
 {
-	if(m_fTime>=m_fTargetTime)
+	/*if(m_fTime>=m_fTargetTime)
 		m_bLife = false ;
 	
-	m_fTime += g_D3dDevice->GetTime() ;
+	m_fTime += g_D3dDevice->GetTime() ;*/
+	if(m_bStartTime)
+		m_fTime += g_D3dDevice->GetTime() ;
+	else
+		m_bStartTime = true ;
+
+	if(m_fTime>=m_fTargetTime)
+		m_bLife = false ;
 }

@@ -17,7 +17,7 @@
 #include "D3dDevice.h"
 
 GameScene::GameScene() : m_pBackground(NULL),
-						 m_pHero(NULL),
+						 //m_pHero(NULL),
 						 m_fTime(0.0f),
 						 m_pfnLoop(NULL)
 {
@@ -27,8 +27,8 @@ GameScene::~GameScene()
 	if(m_pBackground!=NULL)
 		delete m_pBackground ;
 
-	if(m_pHero!=NULL)
-		delete m_pHero ;
+	//if(m_pHero!=NULL)
+	//	delete m_pHero ;
 
 	if(m_pCount!=NULL)
 		delete m_pCount ;
@@ -60,14 +60,16 @@ void GameScene::Init()
 	m_pCount->SetScale(2.0f, 2.0f) ;
 	m_pCount->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 
-	m_pHero = new CHero ;
-	m_pHero->Init() ;
-	m_pHero->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
+	//m_pHero = new CHero ;
+	//m_pHero->Init() ;
+	//m_pHero->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
+	g_Hero->Init() ;
+	g_Hero->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 
 	m_pfnLoop = &GameScene::Count ;
 
-	g_BossManager->SetupBoss("Boss1") ;
-	g_PatternQueueManager->LoadScript("Boss1_Pattern3") ;
+	g_BossManager->SetupBoss("Boss2") ;
+	g_PatternQueueManager->LoadScript("Boss2_Pattern2") ;
 }
 
 void GameScene::Destroy()
@@ -90,7 +92,8 @@ void GameScene::Render()
 
 	m_pBackground->Render() ;
 
-	m_pHero->Render() ;
+	//m_pHero->Render() ;
+	g_Hero->Render() ;
 
 	m_pCount->Render() ;
 
@@ -127,7 +130,8 @@ void GameScene::Count()
 
 void GameScene::GameLoop()
 {
-	m_pHero->Update() ;
+	//m_pHero->Update() ;
+	g_Hero->Update() ;
 
 	g_PatternQueueManager->Update() ;
 	g_BossManager->Update() ;

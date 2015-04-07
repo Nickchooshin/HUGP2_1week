@@ -8,7 +8,7 @@ protected :
 	CBoss *m_pBoss ;
 	float m_fTime, m_fTargetTime ;
 
-	bool m_bLife ;
+	bool m_bStartTime, m_bLife ;
 
 public :
 	CPattern() ;

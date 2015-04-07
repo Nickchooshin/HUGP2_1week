@@ -75,9 +75,6 @@
       <Filter>PatternCommand</Filter>
     </ClCompile>
     <ClCompile Include="Position.cpp" />
-    <ClCompile Include="Pattern_Move.cpp">
-      <Filter>Pattern</Filter>
-    </ClCompile>
     <ClCompile Include="Pattern.cpp">
       <Filter>Pattern</Filter>
     </ClCompile>
@@ -87,14 +84,41 @@
     <ClCompile Include="PatternCommand_Wait.cpp">
       <Filter>PatternCommand\Wait</Filter>
     </ClCompile>
-    <ClCompile Include="Pattern_Stay.cpp">
-      <Filter>Pattern</Filter>
-    </ClCompile>
     <ClCompile Include="PatternCommand_Stay.cpp">
       <Filter>PatternCommand\Stay</Filter>
     </ClCompile>
     <ClCompile Include="PatternCommand_Sound.cpp">
       <Filter>PatternCommand\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand_Shake.cpp">
+      <Filter>PatternCommand\Shake</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand_Drop.cpp">
+      <Filter>PatternCommand\Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Move.cpp">
+      <Filter>Pattern\Move</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Drop.cpp">
+      <Filter>Pattern\Drop</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Stay.cpp">
+      <Filter>Pattern\Stay</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand_Warning.cpp">
+      <Filter>PatternCommand\Warning</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Warning.cpp">
+      <Filter>Pattern\Warning</Filter>
+    </ClCompile>
+    <ClCompile Include="PatternCommand_Irregular.cpp">
+      <Filter>PatternCommand\Irregular</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Irregular22.cpp">
+      <Filter>Pattern\Irregular</Filter>
+    </ClCompile>
+    <ClCompile Include="LineEffect.cpp">
+      <Filter>Effect</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -178,9 +202,6 @@
       <Filter>PatternCommand</Filter>
     </ClInclude>
     <ClInclude Include="Position.h" />
-    <ClInclude Include="Pattern_Move.h">
-      <Filter>Pattern</Filter>
-    </ClInclude>
     <ClInclude Include="Pattern.h">
       <Filter>Pattern</Filter>
     </ClInclude>
@@ -190,14 +211,41 @@
     <ClInclude Include="PatternCommand_Wait.h">
       <Filter>PatternCommand\Wait</Filter>
     </ClInclude>
-    <ClInclude Include="Pattern_Stay.h">
-      <Filter>Pattern</Filter>
-    </ClInclude>
     <ClInclude Include="PatternCommand_Stay.h">
       <Filter>PatternCommand\Stay</Filter>
     </ClInclude>
     <ClInclude Include="PatternCommand_Sound.h">
       <Filter>PatternCommand\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand_Shake.h">
+      <Filter>PatternCommand\Shake</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand_Drop.h">
+      <Filter>PatternCommand\Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Move.h">
+      <Filter>Pattern\Move</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Drop.h">
+      <Filter>Pattern\Drop</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Stay.h">
+      <Filter>Pattern\Stay</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand_Warning.h">
+      <Filter>PatternCommand\Warning</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Warning.h">
+      <Filter>Pattern\Warning</Filter>
+    </ClInclude>
+    <ClInclude Include="PatternCommand_Irregular.h">
+      <Filter>PatternCommand\Irregular</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Irregular22.h">
+      <Filter>Pattern\Irregular</Filter>
+    </ClInclude>
+    <ClInclude Include="LineEffect.h">
+      <Filter>Effect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -263,6 +311,36 @@
     </Filter>
     <Filter Include="PatternCommand\Sound">
       <UniqueIdentifier>{a2be8ea0-768c-4f84-8d6d-1d9967ab1b9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand\Shake">
+      <UniqueIdentifier>{e0721b1b-accf-42ad-bda7-344f299f41f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand\Drop">
+      <UniqueIdentifier>{8db6a133-01ca-4bf4-a686-62fb2015f302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Move">
+      <UniqueIdentifier>{4bd308b8-fccc-419b-aa1e-584743e17ec2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Drop">
+      <UniqueIdentifier>{0eba3285-1fd9-448f-af7b-a3a784c1fcf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Stay">
+      <UniqueIdentifier>{da249a2c-48a5-48ff-92e7-209d3a060e2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand\Warning">
+      <UniqueIdentifier>{d9baf1fc-27bd-4793-bdc8-bf1e22f10c26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Warning">
+      <UniqueIdentifier>{8a2b2eaf-e94d-4be5-879c-1d030f78aff4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Irregular">
+      <UniqueIdentifier>{fa05d3dc-c107-458f-8c4d-ba4d2ab018bc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="PatternCommand\Irregular">
+      <UniqueIdentifier>{a5d07ca7-0e41-451b-a4d5-f08668ce8b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Effect">
+      <UniqueIdentifier>{49943b7a-a18c-4b52-ad88-035c8a7d9ab2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

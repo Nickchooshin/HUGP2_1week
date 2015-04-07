@@ -1,15 +1,15 @@
-STAY "obj1" 640.0f, 340.0f, 2.5f
+STAY "obj1", 640.0f, 340.0f, 2.5f
 SOUND "SE_bss1_01.mp3"
 WAIT 2.5f
 WAIT 0.5f
-# warning 1s
+WARNING NORMAL 400.0f, 720.0f, 350.0f, 360.0f, 1.0f
 WAIT 1.2f
-MOVE "obj2" 350.0f, -282.0f, 350.0f, 1002.0f, 0.5f
+MOVE NORMAL "obj2", 350.0f, -282.0f, 350.0f, 1002.0f, 0.5f
 SOUND "SE_bss1_02.mp3"
 WAIT 0.2f
-# warning 1s
+WARNING NORMAL 400.0f, 720.0f, 930.0f, 360.0f, 1.0f
 WAIT 1.2f
-MOVE "obj2" 400.0f, -282.0f, 400.0f, 1002.0f, 0.5f
+MOVE NORMAL "obj2", 930.0f, -282.0f, 930.0f, 1002.0f, 0.5f
 SOUND "SE_bss1_02.mp3"
 
 #WAIT 1.0f
