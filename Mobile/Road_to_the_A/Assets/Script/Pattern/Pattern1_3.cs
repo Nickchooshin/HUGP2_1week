@@ -6,9 +6,12 @@ public class Pattern1_3 : Pattern_State
 	private GameObject[] obj_warning = new GameObject[4];
 	private GameObject[] obj_caution = new GameObject[8];
 	public AudioClip _sound;
+	public bool end_check;
 
 	void Start ()
 	{
+		end_check = false;
+
 		for( int i = 0; i < 4; ++i )
 		{
 			obj_warning[i] = Instantiate (Resources.Load ("Boss1_4", typeof(GameObject))) as GameObject;
@@ -120,5 +123,11 @@ public class Pattern1_3 : Pattern_State
 			// Speed
 			obj_warning [i].GetComponent<Enemy1_3> ().moveSpeed = 400.0f / 1.0f;
 		}
+		yield return new WaitForSeconds (2.0f);
+
+		for (int i = 0; i < 4; ++i)
+			DestroyObject (obj_warning [i]);
+
+		end_check = true;
 	}
 }

@@ -6,9 +6,12 @@ public class Pattern1_2 : Pattern_State
 	private GameObject[] obj_warning = new GameObject[9];
 	private GameObject[] obj_caution = new GameObject[2];
 	public AudioClip _sound;
+	public bool end_check;
 	
 	void Start () 
 	{
+		end_check = false;
+
 		// Warning Setting
 		for( int i = 0; i < 9; ++i )
 		{
@@ -102,5 +105,8 @@ public class Pattern1_2 : Pattern_State
 		{
 			DestroyObject(obj_warning[i]);
 		}
+		yield return new WaitForSeconds(2.0f);
+		
+		end_check = true;
 	}
 }

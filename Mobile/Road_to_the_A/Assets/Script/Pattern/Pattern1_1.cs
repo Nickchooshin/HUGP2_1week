@@ -6,9 +6,12 @@ public class Pattern1_1 : Pattern_State
 	private GameObject obj_safe;
 	private GameObject[] obj_warning = new GameObject[2];
 	private GameObject[] obj_caution = new GameObject[2];
-
-	void Start () 
+	public bool end_check;
+	
+	void Start ()
 	{
+		end_check = false;
+
 		// safe
 		obj_safe = Instantiate (Resources.Load ("Boss1_1", typeof(GameObject))) as GameObject;
 		obj_safe.transform.parent = GameObject.Find ("Boss").transform;
@@ -56,11 +59,6 @@ public class Pattern1_1 : Pattern_State
 
 	}
 
-	void Sound_Play(  )
-	{
-
-	}
-
 	IEnumerator Change_Image()
 	{
 		obj_safe.SetActive (true);
@@ -82,7 +80,7 @@ public class Pattern1_1 : Pattern_State
 		}
 		yield return new WaitForSeconds(0.2f);
 
-		obj_warning[0].transform.localPosition = new Vector3(-290.0f, 0.0f, 0.0f);
+		obj_warning[0].transform.localPosition = new Vector3(-290.0f, -640.0f, 0.0f);
 		obj_warning[0].SetActive (true);
 		yield return new WaitForSeconds(0.2f);
 
@@ -100,10 +98,13 @@ public class Pattern1_1 : Pattern_State
 			DestroyObject (obj_caution[i]);
 		yield return new WaitForSeconds(0.2f);
 
-		obj_warning[1].transform.localPosition = new Vector3(290.0f, 0.0f, 0.0f);
+		obj_warning[1].transform.localPosition = new Vector3(290.0f, -640.0f, 0.0f);
 		obj_warning[1].SetActive (true);
 		yield return new WaitForSeconds(0.5f);
 
 		DestroyObject (obj_warning [1]);
+		yield return new WaitForSeconds(2.0f);
+
+		end_check = true;
 	}
 }

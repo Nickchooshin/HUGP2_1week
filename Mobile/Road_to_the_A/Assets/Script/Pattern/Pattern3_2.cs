@@ -6,8 +6,12 @@ public class Pattern3_2 : Pattern_State
 	private GameObject obj_safe;
 	private GameObject[] obj_warning = new GameObject[42];
 	
+	public bool end_check;
+	
 	void Start ()
 	{
+		end_check = false;
+
 		// safe
 		obj_safe = Instantiate (Resources.Load ("Boss3_4", typeof(GameObject))) as GameObject;
 		obj_safe.transform.parent = GameObject.Find ("Boss").transform;
@@ -64,9 +68,11 @@ public class Pattern3_2 : Pattern_State
 				new Vector3(Random.Range(-640.0f, 640.0f), 410.0f , 0.0f);
 			obj_warning [i].SetActive (true);
 		}
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(4.0f);
 
+		DestroyObject (obj_safe);
 		for( int i = 0; i < 42; ++i )
 			DestroyObject (obj_warning[i]);
+		end_check = true;
 	}
 }

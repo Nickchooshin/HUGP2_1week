@@ -7,8 +7,12 @@ public class Pattern2_3 : Pattern_State
 
 	private GameObject[] obj_warning = new GameObject[5];
 
+	public bool end_check;
+
 	void Start ()
 	{
+		end_check = false;
+
 		for( int i = 0; i < 5; ++i )
 		{
 			// Enemy
@@ -63,5 +67,8 @@ public class Pattern2_3 : Pattern_State
 
 		for( int i = 0; i < 5; ++i )
 			DestroyObject(obj_warning[i]);
+		yield return new WaitForSeconds(2.0f);
+		
+		end_check = true;
 	}
 }

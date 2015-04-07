@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Hit_Character : MonoBehaviour
 {
+	/*
 	void OnCollisionEnter2D( Collision2D other )
 	{
 		if( other.collider.tag == "Enemy" )
@@ -14,4 +15,5 @@ public class Hit_Character : MonoBehaviour
 		if( other.tag == "Enemy" )
 			Application.LoadLevel ("End");
 	}
+	*/
 }

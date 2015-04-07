@@ -7,9 +7,13 @@ public class Pattern3_3 : Pattern_State
 
 	private GameObject[] obj_warning = new GameObject[5];
 	private GameObject[] obj_caution = new GameObject[2];
+
+	public bool end_check;
 	
 	void Start ()
 	{
+		end_check = false;
+
 		// caution
 		obj_caution[0] = Instantiate (Resources.Load ("Warning_back", typeof(GameObject))) as GameObject;
 		obj_caution[0].transform.parent = GameObject.Find ("Boss").transform;
@@ -90,5 +94,13 @@ public class Pattern3_3 : Pattern_State
 		obj_warning[4].transform.localPosition = new Vector3(-680.0f, -310.0f, 0.0f);
 		obj_warning[4].GetComponent<Enemy3_3> ().move_dir = true;
 		obj_warning[4].SetActive (true);
+		yield return new WaitForSeconds(2.0f);
+
+		for (int i = 0; i < 2; ++i)
+			DestroyObject (obj_caution [i]);
+		for (int i = 0; i < 5; ++i)
+			DestroyObject (obj_warning [i]);
+		
+		end_check = true;
 	}
 }

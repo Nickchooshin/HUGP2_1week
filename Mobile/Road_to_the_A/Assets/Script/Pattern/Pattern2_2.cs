@@ -5,11 +5,15 @@ public class Pattern2_2 : Pattern_State
 {
 	private GameObject[] obj_warning = new GameObject[20];
 	private GameObject obj_caution;
-	private bool check;
 	public AudioClip _sound;
+
+	private bool check;
+	public bool end_check;
 	
 	void Start ()
 	{
+		end_check = false;
+
 		for( int i = 0; i < 20; ++i )
 		{
 			// Enemy
@@ -74,5 +78,8 @@ public class Pattern2_2 : Pattern_State
 		DestroyObject (obj_caution);
 		for (int i = 0; i < 20; ++i)
 			DestroyObject (obj_warning[i]);
+		yield return new WaitForSeconds(2.0f);
+		
+		end_check = true;
 	}
 }
