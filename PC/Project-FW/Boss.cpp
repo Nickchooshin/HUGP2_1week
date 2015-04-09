@@ -1,10 +1,11 @@
 #include "Boss.h"
 #include "Sprite.h"
 
-CBoss::CBoss() : m_bLife(false)
+CBoss::CBoss() : m_bLife(false), m_bCollision(false)
 {
 }
-CBoss::CBoss(const CBoss *pBoss) : m_bLife(pBoss->m_bLife)
+CBoss::CBoss(const CBoss *pBoss) : m_bLife(pBoss->m_bLife),
+								   m_bCollision(pBoss->m_bCollision)
 {
 	m_pSprite = new CSprite(pBoss->m_pSprite) ;
 	m_BBox = pBoss->m_BBox ;
@@ -33,4 +34,14 @@ void CBoss::SetImage(float fWidth, float fHeight, char *strImage)
 void CBoss::SetBoundingBox(BBOX Box)
 {
 	m_BBox = Box ;
+}
+
+void CBoss::SetCollision(bool bCollision)
+{
+	m_bCollision = bCollision ;
+}
+
+bool CBoss::BeCollision() const
+{
+	return m_bCollision ;
 }

@@ -35,6 +35,7 @@ void BossManager::SetupBoss(char *strBossName)
 	char name[100], image[100] ;
 	float width, height ;
 	BBOX box ;
+	bool collision ;
 
 	while(DataLoader.GetItem(item))
 	{
@@ -63,12 +64,20 @@ void BossManager::SetupBoss(char *strBossName)
 			DataLoader.GetValue(box._right) ;
 			DataLoader.GetValue(box._bottom) ;
 		}
+		else if(len==9 && strcmp(item, "COLLISION")==0)
+		{
+			int temp ;
+
+			DataLoader.GetValue(temp) ;
+			collision = (bool)temp ;
+		}
 		else if(len==3 && strcmp(item, "END")==0)
 		{
 			CBoss *pBoss = new CBoss ;
 			pBoss->Init() ;
 			pBoss->SetImage(image) ;
 			pBoss->SetBoundingBox(box) ;
+			pBoss->SetCollision(collision) ;
 
 			m_BossList[name] = pBoss ;
 
@@ -76,6 +85,7 @@ void BossManager::SetupBoss(char *strBossName)
 			memset(image, 0, strlen(image)) ;
 			width = height = 0.0f ;
 			box._left = box._top = box._right = box._bottom = 0.0f ;
+			collision = false ;
 		}
 	}
 

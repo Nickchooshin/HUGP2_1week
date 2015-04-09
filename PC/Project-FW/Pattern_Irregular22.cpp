@@ -6,7 +6,7 @@
 #include "D3dDevice.h"
 #include "BossManager.h"
 
-CPattern_Irregular22::CPattern_Irregular22() : CPattern(3.7f),
+CPattern_Irregular22::CPattern_Irregular22() : CPattern(9999.0f),
 											   m_pWarning(NULL),
 											   m_pLineEffect(NULL),
 											   m_pfnEvent(&CPattern_Irregular22::EventWarning)

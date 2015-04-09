@@ -120,6 +120,9 @@
     <ClCompile Include="LineEffect.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
+    <ClCompile Include="Pattern_Irregular23.cpp">
+      <Filter>Pattern\Irregular</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -246,6 +249,9 @@
     </ClInclude>
     <ClInclude Include="LineEffect.h">
       <Filter>Effect</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Irregular23.h">
+      <Filter>Pattern\Irregular</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

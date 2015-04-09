@@ -4,6 +4,8 @@
 "Resource/Image/Boss/obj_bss1_01.png"
 <BOUNDING_BOX>
 0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
 <END>
 
 <NAME>
@@ -12,6 +14,8 @@
 "Resource/Image/Boss/obj_bss1_02.png"
 <BOUNDING_BOX>
 0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
 <END>
 
 <NAME>
@@ -20,6 +24,8 @@
 "Resource/Image/Boss/obj_bss1_03.png"
 <BOUNDING_BOX>
 0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
 <END>
 
 <NAME>
@@ -28,4 +34,6 @@
 "Resource/Image/Boss/obj_bss1_04.png"
 <BOUNDING_BOX>
 0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
 <END>

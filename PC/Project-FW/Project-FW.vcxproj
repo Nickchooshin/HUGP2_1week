@@ -107,6 +107,7 @@
     <ClCompile Include="PatternCommand_Warning.cpp" />
     <ClCompile Include="Pattern_Drop.cpp" />
     <ClCompile Include="Pattern_Irregular22.cpp" />
+    <ClCompile Include="Pattern_Irregular23.cpp" />
     <ClCompile Include="Pattern_Move.cpp" />
     <ClCompile Include="PatternQueueManager.cpp" />
     <ClCompile Include="Pattern_Stay.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="PatternCommand_Warning.h" />
     <ClInclude Include="Pattern_Drop.h" />
     <ClInclude Include="Pattern_Irregular22.h" />
+    <ClInclude Include="Pattern_Irregular23.h" />
     <ClInclude Include="Pattern_Move.h" />
     <ClInclude Include="PatternQueueManager.h" />
     <ClInclude Include="Pattern_Stay.h" />
