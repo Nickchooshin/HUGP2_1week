@@ -30,7 +30,7 @@ void CBoss::SetImage(float fWidth, float fHeight, char *strImage)
 	m_pSprite->Init(fWidth, fHeight, strImage) ;
 }
 
-void CBoss::SetBoundingBox(BBox Box)
+void CBoss::SetBoundingBox(BBOX Box)
 {
 	m_BBox = Box ;
 }

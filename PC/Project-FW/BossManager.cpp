@@ -34,7 +34,7 @@ void BossManager::SetupBoss(char *strBossName)
 	int len ;
 	char name[100], image[100] ;
 	float width, height ;
-	BBox box ;
+	BBOX box ;
 
 	while(DataLoader.GetItem(item))
 	{

@@ -9,7 +9,7 @@ class CObjects
 {
 protected :
 	CSprite *m_pSprite ;
-	BBox m_BBox ;
+	BBOX m_BBox ;
 	
 	POSITION m_Position ;
 
