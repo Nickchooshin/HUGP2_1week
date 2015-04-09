@@ -45,8 +45,21 @@ public class Pattern5_2 : Pattern_State
 	IEnumerator Change_Image()
 	{
 		for (int i = 0; i < 2; ++i)
-			obj_caution [i].GetComponent<Warning> ().chase_check = true;
-		yield return new WaitForSeconds(1.2f);
+		{
+			obj_caution[i].transform.localPosition =
+				new Vector3(GameObject.FindGameObjectWithTag ("Player").transform.localPosition.x, 0.0f, 0.0f); 
+			obj_caution[i].GetComponent<Warning> ().chaseA_check = true;
+			obj_caution[i].SetActive(true);
+		}
+		yield return new WaitForSeconds(6.0f);
+
+		for (int i = 0; i < 2; ++i)
+			obj_caution [i].SetActive (false);
+		yield return new WaitForSeconds(0.3f);
+
+		obj_warning.transform.localPosition =
+			new Vector3 (obj_caution[0].transform.localPosition.x, 770.0f, 0.0f);
+		yield return new WaitForSeconds(2.0f);
 
 		end_check = true;
 	}

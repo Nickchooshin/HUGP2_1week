@@ -7,14 +7,19 @@ public class Warning : MonoBehaviour
 	Transform _transform;
 
 	public bool chase_check = false;
-	public bool move_check = false;
+	public bool chaseA_check = false;
 	private bool first;
-	private float dis;
+	private Vector3 dis;
+	public float speed;
+	public float accel;
 
 	void Start ()
 	{
 		first = false;
-		dis = 200.0f;
+		speed = 0.0f;
+		accel = 1000.0f;
+		dis = Vector3.zero;
+
 		_mytransform = GetComponent<Transform> ();
 		_transform = GameObject.FindGameObjectWithTag ("Player").transform;
 	}
@@ -23,6 +28,9 @@ public class Warning : MonoBehaviour
 	{
 		if( true == chase_check )
 			Move_Character ();
+
+		if (true == chaseA_check)
+			Move_aCharacter ();
 	}
 
 	void Move_Character()
@@ -36,23 +44,23 @@ public class Warning : MonoBehaviour
 
 	void Move_aCharacter()
 	{
-		Vector3 dir = Vector3.zero;
+		Vector3 dir = new Vector3(1.0f, 0.0f, 0.0f);
+		dir.Normalize ();
+
+		_mytransform.localPosition += dir * (speed * Time.fixedDeltaTime);
+
+		if( _transform.position.x - _mytransform.position.x > 0.0f )
+			speed += (dir.x * (accel * Time.fixedDeltaTime));
+		else if( _transform.position.x - _mytransform.position.x < 0.0f )
+			speed -= (dir.x * (accel * Time.fixedDeltaTime));
+
+		/*
 		dir = new Vector3 (_transform.position.x - _mytransform.position.x, 0.0f, 0.0f);
-		//dir.Normalize ();
-
-		if (dir.x > 0.0f)
-			move_check = true;
-
-		if (true == move_check)
-		{
-			if( false == first )
-			{
-				if( dir.x < 0.0f )
-					dis = -200.0f;
-				else if( dir.x > 0.0f )
-					dis = 200.0f;
-			}
-			_mytransform.localPosition += (  );
-		}
+		dir.Normalize ();
+		Debug.Log (dir);
+		
+		_mytransform.localPosition += dir * (speed * Time.fixedDeltaTime);
+		speed += (dir.x * (accel * Time.fixedDeltaTime));
+		*/
 	}
 }
