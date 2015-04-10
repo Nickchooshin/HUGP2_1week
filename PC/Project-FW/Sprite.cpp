@@ -310,13 +310,13 @@ void CSprite::SetupMatrices()
 
 	D3DXMATRIXA16 matWorld, matX, matY, matZ, matT, matT2, matS ;
 	D3DXMatrixIdentity( &matWorld ) ;
-	D3DXMatrixRotationZ(&matX, m_fAngle[0]) ;
-	D3DXMatrixRotationZ(&matY, m_fAngle[1]) ;
+	D3DXMatrixRotationX(&matX, m_fAngle[0]) ;
+	D3DXMatrixRotationY(&matY, m_fAngle[1]) ;
 	D3DXMatrixRotationZ(&matZ, m_fAngle[2]) ;
 	D3DXMatrixTranslation( &matT, m_Position.x, m_Position.y, m_Position.z ) ;
 	D3DXMatrixTranslation( &matT2, m_CenterPosition.x, m_CenterPosition.y, 0.0f) ;
 	D3DXMatrixScaling( &matS, m_fScaleX, m_fScaleY, 0.0f ) ;
 
-	matWorld = matWorld * matT2 * matX * matY * matZ * matS * matT ;
+	matWorld = matWorld * matT2 * matS * matX * matY * matZ * matT ;
 	pd3dDevice->SetTransform( D3DTS_WORLD, &matWorld ) ;
 }

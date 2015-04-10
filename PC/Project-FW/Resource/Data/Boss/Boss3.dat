@@ -1,0 +1,59 @@
+<NAME>
+"obj1"
+<IMAGE>
+"Resource/Image/Boss/obj_bss3_01.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
+<END>
+
+<NAME>
+"obj2"
+<IMAGE>
+"Resource/Image/Boss/obj_bss3_02.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
+<END>
+
+<NAME>
+"obj3"
+<IMAGE>
+"Resource/Image/Boss/obj_bss3_03.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
+<END>
+
+<NAME>
+"obj4"
+<IMAGE>
+"Resource/Image/Boss/obj_bss3_04.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+0
+<END>
+
+<NAME>
+"obj5"
+<IMAGE>
+"Resource/Image/Boss/obj_bss3_05.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
+<END>
+
+<NAME>
+"obj6"
+<IMAGE>
+"Resource/Image/Boss/obj_bss3_06.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
+<END>

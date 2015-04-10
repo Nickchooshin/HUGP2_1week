@@ -90,6 +90,7 @@
     <ClCompile Include="Joystick.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="DataLoader.cpp" />
+    <ClCompile Include="Lazer.cpp" />
     <ClCompile Include="LineEffect.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mouse.cpp" />
@@ -108,6 +109,7 @@
     <ClCompile Include="Pattern_Drop.cpp" />
     <ClCompile Include="Pattern_Irregular22.cpp" />
     <ClCompile Include="Pattern_Irregular23.cpp" />
+    <ClCompile Include="Pattern_Irregular31.cpp" />
     <ClCompile Include="Pattern_Move.cpp" />
     <ClCompile Include="PatternQueueManager.cpp" />
     <ClCompile Include="Pattern_Stay.cpp" />
@@ -135,6 +137,7 @@
     <ClInclude Include="Joystick.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="DataLoader.h" />
+    <ClInclude Include="Lazer.h" />
     <ClInclude Include="LineEffect.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="MusicManager.h" />
@@ -152,6 +155,7 @@
     <ClInclude Include="Pattern_Drop.h" />
     <ClInclude Include="Pattern_Irregular22.h" />
     <ClInclude Include="Pattern_Irregular23.h" />
+    <ClInclude Include="Pattern_Irregular31.h" />
     <ClInclude Include="Pattern_Move.h" />
     <ClInclude Include="PatternQueueManager.h" />
     <ClInclude Include="Pattern_Stay.h" />

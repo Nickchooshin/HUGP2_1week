@@ -1,0 +1,5 @@
+SOUND "SE_bss3_01.mp3"
+IRREGULAR "Boss3_Pattern1"
+WAIT 5.0f
+
+#WAIT 1.0f

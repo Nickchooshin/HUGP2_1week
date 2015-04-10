@@ -47,8 +47,8 @@ POSITION POSITION::operator / (float f) const
 {
 	POSITION temp(*this) ;
 
-	temp.x *= f ;
-	temp.y *= f ;
+	temp.x /= f ;
+	temp.y /= f ;
 
 	return temp ;
 }
