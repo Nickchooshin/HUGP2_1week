@@ -5,7 +5,8 @@
 
 CLazer::CLazer() : m_LazerPosition(), m_endLazerPosition(),
 				   m_LazerVector(),
-				   m_fLength(0.0f), m_fDegree(0.0f)
+				   m_fLength(0.0f), m_fDegree(0.0f),
+				   m_fTime(0.0f)
 {
 }
 CLazer::~CLazer()
@@ -17,8 +18,7 @@ void CLazer::Init()
 	m_pSprite = new CSprite ;
 	m_pSprite->Init("Resource/Image/Boss/obj_bss3_03.png") ;
 	m_pSprite->SetCenterPosition(0.5f, 1.0f) ;
-	//m_pSprite->Init("Resource/Image/Dummy/arrow2.png") ;
-	//m_pSprite->SetCenterPosition(0.5f, 1.0f) ;
+	m_pSprite->SetScale(0.0f, 0.0f) ;
 }
 
 void CLazer::SetLazerPosition(POSITION startPosition, POSITION endPosition)
@@ -27,6 +27,9 @@ void CLazer::SetLazerPosition(POSITION startPosition, POSITION endPosition)
 	m_endLazerPosition = endPosition ;
 	m_LazerVector = m_endLazerPosition - m_LazerPosition ;
 	m_LazerVector = (m_LazerVector / abs(m_LazerVector.x)) * 300.0f ;
+	
+	Degree() ;
+	Length() ;
 }
 
 void CLazer::SetLazerPosition(float startX, float startY, float endX, float endY)
@@ -37,11 +40,33 @@ void CLazer::SetLazerPosition(float startX, float startY, float endX, float endY
 	m_endLazerPosition.y = endY ;
 	m_LazerVector = m_endLazerPosition - m_LazerPosition ;
 	m_LazerVector = (m_LazerVector / abs(m_LazerVector.x)) * 300.0f ;
+	
+	Degree() ;
+	Length() ;
 }
 
 void CLazer::Update()
 {
+	if(m_fTime<=0.5f)
+		Shoot() ;
+	else
+		Move() ;
+
+	m_fTime += g_D3dDevice->GetTime() ;
+}
+
+void CLazer::Shoot()
+{
+	m_pSprite->SetAngle(m_fDegree) ;
+	m_pSprite->SetScale(1.0f, m_fLength * (m_fTime/0.5f)) ;
+}
+
+void CLazer::Move()
+{
 	m_LazerPosition += (m_LazerVector * g_D3dDevice->GetTime()) ;
+	if(	(m_LazerVector.x>=0 && (m_LazerPosition.x>m_endLazerPosition.x)) ||
+		(m_LazerVector.x<0 && (m_LazerPosition.x<m_endLazerPosition.x)) )
+		m_LazerPosition.x = m_endLazerPosition.x ;
 	Degree() ;
 	Length() ;
 

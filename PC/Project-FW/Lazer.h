@@ -10,6 +10,8 @@ private :
 
 	float m_fLength, m_fDegree ;
 
+	float m_fTime ;
+
 public :
 	CLazer() ;
 	~CLazer() ;
@@ -21,6 +23,9 @@ public :
 
 	void Update() ;
 private :
+	void Shoot() ;
+	void Move() ;
+
 	void Degree() ;
 	void Length() ;
 } ;

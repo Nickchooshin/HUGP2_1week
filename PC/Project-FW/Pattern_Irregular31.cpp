@@ -59,6 +59,9 @@ void CPattern_Irregular31::EventWait()
 
 void CPattern_Irregular31::EventShootLazer()
 {
+	for(int i=0; i<2; i++)
+		m_pLazer[i]->Update() ;
+
 	if(m_fTime>=2.7f)
 	{
 		m_pfnEvent = &CPattern_Irregular31::EventMoveLazer ;
@@ -73,5 +76,6 @@ void CPattern_Irregular31::EventMoveLazer()
 
 	if(m_fTime>=5.0f)
 	{
+		m_bLife = false ;
 	}
 }
