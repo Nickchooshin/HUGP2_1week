@@ -6,8 +6,8 @@
 
 #include "D3dDevice.h"
 
-CHero::CHero() : m_fSpeed(10.0f),
-				 m_fJump(0.0f), m_fGravity(0.0),
+CHero::CHero() : m_fSpeed(430.0f),
+				 m_fJump(742.85715f), m_fGravity(2122.449f),
 				 m_fYVelocity(0.0f),
 				 m_bJump(false)
 {
@@ -39,6 +39,8 @@ void CHero::Init()
 
 void CHero::Update()
 {
+	const float time = g_D3dDevice->GetTime() ;
+
 	if(g_Keyboard->IsPressDown(DIK_Z))
 		m_fSpeed = -m_fSpeed ;
 	if(!m_bJump && g_Keyboard->IsPressDown(DIK_X))
@@ -47,9 +49,11 @@ void CHero::Update()
 		m_bJump = true ;
 	}
 
-	m_Position.x += m_fSpeed ;
+	m_Position.x += (m_fSpeed * time) ;
 	if(m_Position.x<32.0f)
 		m_Position.x = 32.0f ;
+	else if(m_Position.x>1248.0f)
+		m_Position.x = 1248.0f ;
 	Gravity() ;
 }
 

@@ -47,57 +47,6 @@ bool CPatternQueueManager::LoadScript(char *filename)
 				CommandMove(DataLoader) ;
 			else if(strcmp(command, "DROP")==0)
 				CommandDrop(DataLoader) ;
-			/*else if(strcmp(command, "MOVE")==0 || strcmp(command, "DROP")==0)
-			{
-				char option[30] ;
-				bool bStay ;
-				DataLoader.GetCommand(option) ;
-				if(strcmp(command, "DROP")==0)
-					bStay = true ;
-
-				char strName[20] ;
-				float moveTime ;
-
-				if(strcmp(option, "NORMAL")==0)
-				{
-					POSITION startPosition, endPosition ;
-				
-					DataLoader.GetString(strName) ;
-					DataLoader.GetValue(startPosition.x) ;
-					DataLoader.GetValue(startPosition.y) ;
-					DataLoader.GetValue(endPosition.x) ;
-					DataLoader.GetValue(endPosition.y) ;
-					DataLoader.GetValue(moveTime) ;
-
-					if(!bStay)
-						pPatternCommand = new CPatternCommand_Move(strName, startPosition, endPosition, moveTime) ;
-					else
-					{
-						float stayTime ;
-						DataLoader.GetValue(stayTime) ;
-						pPatternCommand = new CPatternCommand_Move(strName, startPosition, endPosition, moveTime, stayTime) ;
-					}
-				}
-				else if(strcmp(option, "TRACE")==0)
-				{
-					float startAxis, endAxis ;
-
-					DataLoader.GetCommand(option) ;
-					DataLoader.GetString(strName) ;
-					DataLoader.GetValue(startAxis) ;
-					DataLoader.GetValue(endAxis) ;
-					DataLoader.GetValue(moveTime) ;
-
-					if(!bStay)
-						pPatternCommand = new CPatternCommand_Move(option[0], strName, startAxis, endAxis, moveTime) ;
-					else
-					{
-						float stayTime ;
-						DataLoader.GetValue(stayTime) ;
-						pPatternCommand = new CPatternCommand_Move(option[0], strName, startAxis, endAxis, moveTime, stayTime) ;
-					}
-				}
-			}*/
 			else if(strcmp(command, "STAY")==0)
 				CommandStay(DataLoader) ;
 		}
