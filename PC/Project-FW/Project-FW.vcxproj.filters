@@ -114,20 +114,23 @@
     <ClCompile Include="PatternCommand_Irregular.cpp">
       <Filter>PatternCommand\Irregular</Filter>
     </ClCompile>
-    <ClCompile Include="Pattern_Irregular22.cpp">
-      <Filter>Pattern\Irregular</Filter>
-    </ClCompile>
     <ClCompile Include="LineEffect.cpp">
       <Filter>Effect</Filter>
     </ClCompile>
-    <ClCompile Include="Pattern_Irregular23.cpp">
-      <Filter>Pattern\Irregular</Filter>
-    </ClCompile>
-    <ClCompile Include="Pattern_Irregular31.cpp">
-      <Filter>Pattern\Irregular</Filter>
-    </ClCompile>
     <ClCompile Include="Lazer.cpp">
       <Filter>Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Irregular22.cpp">
+      <Filter>Pattern\Irregular\Boss2</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Irregular23.cpp">
+      <Filter>Pattern\Irregular\Boss2</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Irregular31.cpp">
+      <Filter>Pattern\Irregular\Boss3</Filter>
+    </ClCompile>
+    <ClCompile Include="Pattern_Irregular32.cpp">
+      <Filter>Pattern\Irregular\Boss3</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -250,20 +253,23 @@
     <ClInclude Include="PatternCommand_Irregular.h">
       <Filter>PatternCommand\Irregular</Filter>
     </ClInclude>
-    <ClInclude Include="Pattern_Irregular22.h">
-      <Filter>Pattern\Irregular</Filter>
-    </ClInclude>
     <ClInclude Include="LineEffect.h">
       <Filter>Effect</Filter>
     </ClInclude>
-    <ClInclude Include="Pattern_Irregular23.h">
-      <Filter>Pattern\Irregular</Filter>
-    </ClInclude>
-    <ClInclude Include="Pattern_Irregular31.h">
-      <Filter>Pattern\Irregular</Filter>
-    </ClInclude>
     <ClInclude Include="Lazer.h">
       <Filter>Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Irregular22.h">
+      <Filter>Pattern\Irregular\Boss2</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Irregular23.h">
+      <Filter>Pattern\Irregular\Boss2</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Irregular31.h">
+      <Filter>Pattern\Irregular\Boss3</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Irregular32.h">
+      <Filter>Pattern\Irregular\Boss3</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -359,6 +365,12 @@
     </Filter>
     <Filter Include="Effect">
       <UniqueIdentifier>{49943b7a-a18c-4b52-ad88-035c8a7d9ab2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Irregular\Boss2">
+      <UniqueIdentifier>{e50d4db0-0240-4f82-88c7-37b42a22f85a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Irregular\Boss3">
+      <UniqueIdentifier>{05afa7f4-bfc9-4b5e-8019-fa39b3fe6e06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
