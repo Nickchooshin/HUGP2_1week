@@ -111,11 +111,13 @@
     <ClCompile Include="Pattern_Irregular23.cpp" />
     <ClCompile Include="Pattern_Irregular31.cpp" />
     <ClCompile Include="Pattern_Irregular32.cpp" />
+    <ClCompile Include="Pattern_Irregular33.cpp" />
     <ClCompile Include="Pattern_Move.cpp" />
     <ClCompile Include="PatternQueueManager.cpp" />
     <ClCompile Include="Pattern_Stay.cpp" />
     <ClCompile Include="Pattern_Warning.cpp" />
     <ClCompile Include="Position.cpp" />
+    <ClCompile Include="Return.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TextureManager.cpp" />
@@ -158,11 +160,13 @@
     <ClInclude Include="Pattern_Irregular23.h" />
     <ClInclude Include="Pattern_Irregular31.h" />
     <ClInclude Include="Pattern_Irregular32.h" />
+    <ClInclude Include="Pattern_Irregular33.h" />
     <ClInclude Include="Pattern_Move.h" />
     <ClInclude Include="PatternQueueManager.h" />
     <ClInclude Include="Pattern_Stay.h" />
     <ClInclude Include="Pattern_Warning.h" />
     <ClInclude Include="Position.h" />
+    <ClInclude Include="Return.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Singleton.h" />

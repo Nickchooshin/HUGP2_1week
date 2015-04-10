@@ -1,0 +1,16 @@
+SOUND "SE_bss3_03.mp3"
+WAIT 1.5f
+IRREGULAR "Boss3_Pattern3"
+WAIT 0.5f
+SOUND "SE_bss3_04.mp3"
+WAIT 0.5f
+SOUND "SE_bss3_04.mp3"
+WAIT 0.5f
+SOUND "SE_bss3_04.mp3"
+WAIT 0.5f
+SOUND "SE_bss3_04.mp3"
+WAIT 0.5f
+WARNING NORMAL 1280.0f, 100.0f, 640.0f, 50.0f, 0.2f
+MOVE NORMAL "obj7", 1354.0f, 50.0f, -74.0f, 50.0f, 1.586667f
+
+#WAIT 1.0f

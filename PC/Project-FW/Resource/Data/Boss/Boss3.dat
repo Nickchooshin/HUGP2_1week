@@ -57,3 +57,13 @@
 <COLLISION>
 1
 <END>
+
+<NAME>
+"obj7"
+<IMAGE>
+"Resource/Image/Boss/obj_bss3_07.png"
+<BOUNDING_BOX>
+0.0f, 0.0f, 0.0f, 0.0f
+<COLLISION>
+1
+<END>

@@ -34,15 +34,10 @@ void CLazer::SetLazerPosition(POSITION startPosition, POSITION endPosition)
 
 void CLazer::SetLazerPosition(float startX, float startY, float endX, float endY)
 {
-	m_LazerPosition.x = startX ;
-	m_LazerPosition.y = startY ;
-	m_endLazerPosition.x = endX ;
-	m_endLazerPosition.y = endY ;
-	m_LazerVector = m_endLazerPosition - m_LazerPosition ;
-	m_LazerVector = (m_LazerVector / abs(m_LazerVector.x)) * 300.0f ;
-	
-	Degree() ;
-	Length() ;
+	POSITION startPosition(startX, startY) ;
+	POSITION endPosition(endX, endY) ;
+
+	SetLazerPosition(startPosition, endPosition) ;
 }
 
 void CLazer::Update()

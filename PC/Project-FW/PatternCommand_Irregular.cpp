@@ -3,6 +3,7 @@
 #include "Pattern_Irregular23.h"
 #include "Pattern_Irregular31.h"
 #include "Pattern_Irregular32.h"
+#include "Pattern_Irregular33.h"
 
 #include "BossManager.h"
 
@@ -25,6 +26,8 @@ void CPatternCommand_Irregular::Update()
 		pPattern = new CPattern_Irregular31() ;
 	else if(m_strName=="Boss3_Pattern2")
 		pPattern = new CPattern_Irregular32() ;
+	else if(m_strName=="Boss3_Pattern3")
+		pPattern = new CPattern_Irregular33() ;
 
 	g_BossManager->AddPattern(pPattern) ;
 
