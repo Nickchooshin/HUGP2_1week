@@ -31,18 +31,30 @@ bool CCollider::BeCollision(BOUNDING_BOX A, BOUNDING_CIRCLE B)
 	return false ;
 }
 
-bool CCollider::BeCollision(BOUNDING_BOX A, BOUNDING_LINE B)
+bool CCollider::BeCollision(BOUNDING_BOX A, BOUNDING_ELLIPSE B)
 {
-	BOUNDING_LINE ALine[4] ;
-
-	ALine[0] = BOUNDING_LINE(A._left, A._top, A._right, A._top) ;
-	ALine[1] = BOUNDING_LINE(A._right, A._top, A._right, A._bottom) ;
-	ALine[2] = BOUNDING_LINE(A._right, A._bottom, A._left, A._bottom) ;
-	ALine[3] = BOUNDING_LINE(A._left, A._bottom, A._left, A._top) ;
+	POSITION vertex[4] = { POSITION(A._left, A._top), POSITION(A._right, A._top),
+						   POSITION(A._left, A._bottom), POSITION(A._right, A._bottom) } ;
 
 	for(int i=0; i<4; i++)
 	{
-		if(!BeCollision(ALine[i], B))
+		if(BeCollision(vertex[i], B))
+			return true ;
+	}
+
+	return false ;
+}
+
+bool CCollider::BeCollision(BOUNDING_BOX A, BOUNDING_LINE B)
+{
+	BOUNDING_LINE Line[4] = { BOUNDING_LINE(A._left, A._top, A._right, A._top),
+							  BOUNDING_LINE(A._right, A._top, A._right, A._bottom),
+							  BOUNDING_LINE(A._right, A._bottom, A._left, A._bottom),
+							  BOUNDING_LINE(A._left, A._bottom, A._left, A._top) } ;
+
+	for(int i=0; i<4; i++)
+	{
+		if(!BeCollision(Line[i], B))
 			return false ;
 	}
 
@@ -70,6 +82,18 @@ bool CCollider::BeCollision(POSITION A, BOUNDING_CIRCLE B)
 	float distance = sqrt(pow(x, 2.0f) + pow(y, 2.0f)) ;
 
 	if(distance<=B._radius)
+		return true ;
+
+	return false ;
+}
+
+bool CCollider::BeCollision(POSITION A, BOUNDING_ELLIPSE B)
+{
+	float x = B._x - A.x ;
+	float y = B._y - A.y ;
+	float temp = (pow(x, 2.0f) / pow(B._a, 2.0f)) + (pow(y, 2.0f) / pow(B._b, 2.0f)) ;
+
+	if(temp<=1.0f)
 		return true ;
 
 	return false ;

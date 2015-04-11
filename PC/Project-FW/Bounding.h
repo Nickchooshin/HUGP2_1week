@@ -22,6 +22,15 @@ typedef struct BOUNDING_CIRCLE : public IBounding
 	{}
 } BCIRCLE ;
 
+typedef struct BOUNDING_ELLIPSE : public IBounding
+{
+	float _x, _y ;
+	float _a, _b ;
+
+	BOUNDING_ELLIPSE(float x=0.0f, float y=0.0f, float a=0.0f, float b=0.0f) : _x(x), _y(y), _a(a), _b(b)
+	{}
+} BELLIPSE ;
+
 typedef struct BOUNDING_LINE : public IBounding
 {
 	float _x1, _y1 ;
