@@ -85,5 +85,5 @@ void CLazer::Length()
 
 	float squareX = temp.x * temp.x ;
 	float squareY = temp.y * temp.y ;
-	m_fLength = pow(squareX + squareY, 0.5f) / 245.0f ;
+	m_fLength = sqrt(squareX + squareY) / 245.0f ;
 }

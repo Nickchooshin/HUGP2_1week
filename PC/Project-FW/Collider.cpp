@@ -1,4 +1,5 @@
 #include "Collider.h"
+#include <math.h>
 
 CCollider::CCollider()
 {
@@ -16,9 +17,19 @@ bool CCollider::BeCollision(BOUNDING_BOX A, BOUNDING_BOX B)
 	return false ;
 }
 
-/*bool CCollider::BeCollision(BOUNDING_BOX Box, BOUNDING_CIRCLE Circle)
+bool CCollider::BeCollision(BOUNDING_BOX A, BOUNDING_CIRCLE B)
 {
-}*/
+	POSITION vertex[4] = { POSITION(A._left, A._top), POSITION(A._right, A._top),
+						   POSITION(A._left, A._bottom), POSITION(A._right, A._bottom) } ;
+
+	for(int i=0; i<4; i++)
+	{
+		if(BeCollision(vertex[i], B))
+			return true ;
+	}
+
+	return false ;
+}
 
 bool CCollider::BeCollision(BOUNDING_BOX A, BOUNDING_LINE B)
 {
@@ -47,6 +58,18 @@ bool CCollider::BeCollision(BOUNDING_LINE A, BOUNDING_LINE B)
 
 	if( (u>0.0f && u<1.0f) &&
 		(v>0.0f && v<1.0f) )
+		return true ;
+
+	return false ;
+}
+
+bool CCollider::BeCollision(POSITION A, BOUNDING_CIRCLE B)
+{
+	float x = B._x - A.x ;
+	float y = B._y - A.y ;
+	float distance = sqrt(pow(x, 2.0f) + pow(y, 2.0f)) ;
+
+	if(distance<=B._radius)
 		return true ;
 
 	return false ;
