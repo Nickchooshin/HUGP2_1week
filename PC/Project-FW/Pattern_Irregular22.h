@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Pattern.h"
+#include <fmod.hpp>
 
 class CBoss ;
 class CLineEffect ;
@@ -10,6 +11,8 @@ class CPattern_Irregular22 : public CPattern
 private :
 	CBoss *m_pWarning ;
 	CLineEffect *m_pLineEffect ;
+
+	FMOD::Sound *m_pSound ;
 
 	void (CPattern_Irregular22::*m_pfnEvent)(void) ;
 

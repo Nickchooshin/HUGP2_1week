@@ -14,8 +14,6 @@ SOUND "SE_bss3_04.mp3"
 WAIT 0.5f
 
 SOUND "SE_bss3_04.mp3"
-WAIT 0.5f
-
 WARNING NORMAL 1280.0f, 100.0f, 640.0f, 50.0f, 0.2f
 WAIT 0.3f
 

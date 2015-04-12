@@ -5,16 +5,20 @@
 
 #include "D3dDevice.h"
 #include "BossManager.h"
+#include "MusicManager.h"
 
 CPattern_Irregular22::CPattern_Irregular22() : CPattern(9999.0f),
 											   m_pWarning(NULL),
 											   m_pLineEffect(NULL),
+											   m_pSound(NULL),
 											   m_pfnEvent(&CPattern_Irregular22::EventWarning)
 {
 	m_pWarning = g_BossManager->GetBossInstance("obj3") ;
 	m_pWarning->SetPosition(g_Hero->GetPosition().x, 360.0f) ;
 
 	m_pLineEffect = new CLineEffect ;
+
+	m_pSound = g_MusicManager->LoadMusic("Resource/Sound/SE_bss/SE_bss2_04.mp3", false, false) ;
 }
 CPattern_Irregular22::~CPattern_Irregular22()
 {
@@ -44,6 +48,8 @@ void CPattern_Irregular22::EventWarning()
 {
 	if(m_fTime>=0.5f)
 	{
+		g_MusicManager->PlayMusic(m_pSound, 1) ;
+
 		m_pfnEvent = &CPattern_Irregular22::EventWaitLineEffect ;
 		(this->*m_pfnEvent)() ;
 	}

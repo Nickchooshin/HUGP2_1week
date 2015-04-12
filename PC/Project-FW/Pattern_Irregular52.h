@@ -2,6 +2,7 @@
 
 #include "Pattern.h"
 #include "Position.h"
+#include <fmod.hpp>
 
 class CSprite ;
 
@@ -11,6 +12,8 @@ private :
 	CSprite *m_pWarning ;
 	POSITION m_Position ;
 	VECTOR m_moveVector, m_accVector ;
+
+	FMOD::Sound *m_pSound ;
 
 	enum State { CHASE=0, WAIT, ATTACK } ;
 	State m_State ;

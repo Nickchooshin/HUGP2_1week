@@ -1,0 +1,7 @@
+SOUND "SE_bss6_06.mp3"
+WAIT 1.0f
+
+IRREGULAR "Boss6_Pattern2"
+WAIT 4.0f
+
+#WAIT 2.0f

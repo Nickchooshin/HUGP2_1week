@@ -1,15 +1,15 @@
+SOUND "SE_bss6_01.mp3"
 MOVE NORMAL "obj1", 640.0f, -225.0f, 640.0f, 355.0f, 2.0f
 SHAKE
-SOUND "SE_bss6_01.mp3"
 WAIT 2.0f
 STAY "obj1", 640.0f, 355.0f, 2.0f
 
 SOUND "SE_bss6_02.mp3"
 WAIT 2.0f
 
+SOUND "SE_bss6_01.mp3"
 MOVE NORMAL "obj1", 640.0f, 355.0f, 640.0f, -225.0f, 2.0f
 SHAKE
-SOUND "SE_bss6_01.mp3"
 WAIT 2.5f
 
 SOUND "SE_bss6_03.mp3"

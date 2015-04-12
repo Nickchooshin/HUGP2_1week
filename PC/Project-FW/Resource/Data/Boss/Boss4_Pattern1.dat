@@ -1,5 +1,5 @@
-STAY "obj1", 640.0f, 380.0f, 2.5f
 SOUND "SE_bss4_01.mp3"
+STAY "obj1", 640.0f, 380.0f, 2.5f
 WAIT 2.5f
 
 MOVE NORMAL "obj1", 640.0f, 380.0f, 490.0f, 380.0f, 0.5f
@@ -14,10 +14,11 @@ WAIT 1.0f
 
 MOVE NORMAL "obj2", 1200.0f, 1040.0f, 1200.0f, 380.0f, 1.1f
 WAIT 1.1f
-STAY "obj2", 1200.0f, 380.0f, 1.4f
+STAY "obj2", 1200.0f, 380.0f, 1.3f
 SHAKE
+
 SOUND "SE_bss4_02.mp3"
-WAIT 0.2f
+WAIT 0.1f
 
 MOVE NORMAL "obj3", 1150.0f, 70.0f, -125.0f, 70.0f, 1.275f
 WAIT 0.2f
@@ -25,15 +26,16 @@ WAIT 0.2f
 SOUND "SE_bss4_04.mp3"
 WAIT 1.0f
 
-# 7 event
+# 8 event
 MOVE NORMAL "obj2", 1200.0f, 380.0f, 1200.0f, 420.0f, 0.25f
 WAIT 0.25f
 MOVE NORMAL "obj2", 1200.0f, 420.0f, 1200.0f, 380.0f, 0.25f
 WAIT 0.25f
-STAY "obj2", 1200.0f, 380.0f, 1.5f
+STAY "obj2", 1200.0f, 380.0f, 1.3f
 SHAKE
+
 SOUND "SE_bss4_02.mp3"
-WAIT 0.3f
+WAIT 0.1f
 
 MOVE NORMAL "obj3", 1150.0f, 70.0f, -125.0f, 70.0f, 1.275f
 WAIT 0.2f
@@ -41,30 +43,32 @@ WAIT 0.2f
 SOUND "SE_bss4_05.mp3"
 WAIT 1.0f
 
-# 10 event
-MOVE NORMAL "obj2", 1200.0f, 380.0f, 1200.0f, 420.0f, 0.25f
-WAIT 0.25f
-MOVE NORMAL "obj2", 1200.0f, 420.0f, 1200.0f, 380.0f, 0.25f
-WAIT 0.25f
-STAY "obj2", 1200.0f, 380.0f, 1.5f
-SHAKE
-SOUND "SE_bss4_02.mp3"
-WAIT 0.3f
-
-MOVE NORMAL "obj3", 1150.0f, 70.0f, -125.0f, 70.0f, 1.275f
-WAIT 0.2f
-
 # 12 event
 MOVE NORMAL "obj2", 1200.0f, 380.0f, 1200.0f, 420.0f, 0.25f
 WAIT 0.25f
 MOVE NORMAL "obj2", 1200.0f, 420.0f, 1200.0f, 380.0f, 0.25f
 WAIT 0.25f
-STAY "obj2", 1200.0f, 380.0f, 1.5f
+STAY "obj2", 1200.0f, 380.0f, 0.5f
 SHAKE
+
 SOUND "SE_bss4_02.mp3"
-WAIT 0.3f
+WAIT 0.1f
 
 MOVE NORMAL "obj3", 1150.0f, 70.0f, -125.0f, 70.0f, 1.275f
-WAIT 1.275f
+WAIT 0.4f
+
+# 15 event
+MOVE NORMAL "obj2", 1200.0f, 380.0f, 1200.0f, 420.0f, 0.25f
+WAIT 0.25f
+MOVE NORMAL "obj2", 1200.0f, 420.0f, 1200.0f, 380.0f, 0.25f
+WAIT 0.25f
+STAY "obj2", 1200.0f, 380.0f, 1.4f
+SHAKE
+
+SOUND "SE_bss4_02.mp3"
+WAIT 0.1f
+
+MOVE NORMAL "obj3", 1150.0f, 70.0f, -125.0f, 70.0f, 1.275f
+WAIT 1.3f
 
 #WAIT 2.0f

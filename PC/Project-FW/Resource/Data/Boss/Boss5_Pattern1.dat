@@ -4,7 +4,7 @@ WAIT 1.0f
 STAY "obj1", 1080.0f, 300.0f, 0.5f
 WAIT 0.5f
 MOVE NORMAL "obj1", 1080.0f, 300.0f, 1505.0f, 300.0f, 1.0f
-WAIT 0.5f
+WAIT 2.0f
 
 WARNING NORMAL 1280.0f, 100.0f, 640.0f, 50.0f, 1.0f
 WAIT 0.5f
@@ -39,10 +39,12 @@ MOVE NORMAL "obj2", 1175.0f, 745.0f, 1175.0f, -25.0f, 1.283333f
 MOVE NORMAL "obj2", 1275.0f, 745.0f, 1275.0f, -25.0f, 1.283333f
 WAIT 0.5f
 
+SOUND "SE_bss5_02.mp3"
 MOVE NORMAL "obj3", 640.0f, -50.0f, 640.0f, 50.0f, 0.3f
 WAIT 0.3f
 MOVE NORMAL "obj3", 640.0f, 50.0f, 640.0f, -50.0f, 0.3f
 WAIT 0.3f
-SOUND "SE_bss5_02.mp3"
+
+WAIT 0.4f
 
 #WAIT 2.0f

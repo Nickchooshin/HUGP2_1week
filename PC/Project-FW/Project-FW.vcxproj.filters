@@ -144,6 +144,9 @@
     <ClCompile Include="Pattern_Irregular61.cpp">
       <Filter>Pattern\Irregular\Boss6</Filter>
     </ClCompile>
+    <ClCompile Include="Pattern_Irregular62.cpp">
+      <Filter>Pattern\Irregular\Boss6</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -293,6 +296,9 @@
       <Filter>Pattern\Irregular\Boss5</Filter>
     </ClInclude>
     <ClInclude Include="Pattern_Irregular61.h">
+      <Filter>Pattern\Irregular\Boss6</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Irregular62.h">
       <Filter>Pattern\Irregular\Boss6</Filter>
     </ClInclude>
   </ItemGroup>

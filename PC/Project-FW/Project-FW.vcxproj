@@ -114,6 +114,7 @@
     <ClCompile Include="Pattern_Irregular33.cpp" />
     <ClCompile Include="Pattern_Irregular52.cpp" />
     <ClCompile Include="Pattern_Irregular61.cpp" />
+    <ClCompile Include="Pattern_Irregular62.cpp" />
     <ClCompile Include="Pattern_Move.cpp" />
     <ClCompile Include="PatternQueueManager.cpp" />
     <ClCompile Include="Pattern_Stay.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="Pattern_Irregular33.h" />
     <ClInclude Include="Pattern_Irregular52.h" />
     <ClInclude Include="Pattern_Irregular61.h" />
+    <ClInclude Include="Pattern_Irregular62.h" />
     <ClInclude Include="Pattern_Move.h" />
     <ClInclude Include="PatternQueueManager.h" />
     <ClInclude Include="Pattern_Stay.h" />
