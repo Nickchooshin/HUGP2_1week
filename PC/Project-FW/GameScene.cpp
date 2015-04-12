@@ -68,8 +68,8 @@ void GameScene::Init()
 
 	m_pfnLoop = &GameScene::Count ;
 
-	g_BossManager->SetupBoss("Boss4") ;
-	g_PatternQueueManager->LoadScript("Boss4_Pattern2") ;
+	g_BossManager->SetupBoss("Boss6") ;
+	g_PatternQueueManager->LoadScript("Boss6_Pattern1") ;
 }
 
 void GameScene::Destroy()

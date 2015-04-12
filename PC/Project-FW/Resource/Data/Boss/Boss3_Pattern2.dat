@@ -1,9 +1,13 @@
-SOUND "SE_bss3_02.mp3"
 STAY "obj4", 646.0f, 318.0f, 2.0f
+SOUND "SE_bss3_02.mp3"
 WAIT 2.0f
+
 MOVE NORMAL "obj4", 646.0f, 318.0f, 646.0f, 1030.0f, 2.373333f
 WAIT 3.0f
+
 IRREGULAR "Boss3_Pattern2"
 WAIT 2.0f
 
-#WAIT 1.0f
+WAIT 4.11f
+
+#WAIT 2.0f

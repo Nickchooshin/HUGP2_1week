@@ -1,5 +1,5 @@
-SOUND "SE_bss4_01.mp3"
 STAY "obj1", 640.0f, 380.0f, 2.5f
+SOUND "SE_bss4_01.mp3"
 WAIT 2.5f
 
 MOVE NORMAL "obj1", 640.0f, 380.0f, 490.0f, 380.0f, 0.5f
@@ -7,8 +7,7 @@ WAIT 0.5f
 MOVE NORMAL "obj1", 490.0f, 380.0f, 790.0f, 380.0f, 0.5f
 WAIT 0.5f
 MOVE NORMAL "obj1", 790.0f, 380.0f, -295.0f, 380.0f, 0.5f
-WAIT 0.5f
-WAIT 0.3f
+WAIT 0.8f
 
 SOUND "SE_bss4_03.mp3"
 WAIT 1.0f
@@ -66,6 +65,6 @@ SOUND "SE_bss4_02.mp3"
 WAIT 0.3f
 
 MOVE NORMAL "obj3", 1150.0f, 70.0f, -125.0f, 70.0f, 1.275f
-WAIT 0.2f
+WAIT 1.275f
 
-#WAIT 1.0f
+#WAIT 2.0f

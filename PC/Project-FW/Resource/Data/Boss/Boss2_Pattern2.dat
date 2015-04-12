@@ -1,6 +1,7 @@
 SOUND "SE_bss2_03.mp3"
 WAIT 2.0f
+
 IRREGULAR "Boss2_Pattern2"
 WAIT 3.7f
 
-#WAIT 1.0f
+#WAIT 2.0f

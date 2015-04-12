@@ -45,4 +45,4 @@ MOVE NORMAL "obj3", 640.0f, 50.0f, 640.0f, -50.0f, 0.3f
 WAIT 0.3f
 SOUND "SE_bss5_02.mp3"
 
-#WAIT 1.0f
+#WAIT 2.0f

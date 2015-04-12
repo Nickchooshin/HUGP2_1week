@@ -141,6 +141,9 @@
     <ClCompile Include="Pattern_Irregular52.cpp">
       <Filter>Pattern\Irregular\Boss5</Filter>
     </ClCompile>
+    <ClCompile Include="Pattern_Irregular61.cpp">
+      <Filter>Pattern\Irregular\Boss6</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -289,6 +292,9 @@
     <ClInclude Include="Pattern_Irregular52.h">
       <Filter>Pattern\Irregular\Boss5</Filter>
     </ClInclude>
+    <ClInclude Include="Pattern_Irregular61.h">
+      <Filter>Pattern\Irregular\Boss6</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -392,6 +398,9 @@
     </Filter>
     <Filter Include="Pattern\Irregular\Boss5">
       <UniqueIdentifier>{3e13e3f3-3b73-4b29-bf60-2a03bb4f1ebc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Pattern\Irregular\Boss6">
+      <UniqueIdentifier>{c0c067bd-e179-434c-b3b3-1382c4d1bf38}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
