@@ -4,6 +4,7 @@
 
 #include "D3dDevice.h"
 #include "BossManager.h"
+#include "CollisionManager.h"
 
 CPattern_Irregular23::CPattern_Irregular23() : CPattern(9999.0f),
 											   m_nBossNum(0),

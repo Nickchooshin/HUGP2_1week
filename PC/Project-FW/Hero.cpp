@@ -26,6 +26,8 @@ CHero::CHero() : m_fSpeed(430.0f),
 	}
 
 	Data.CloseData() ;
+
+	m_pBounding = new BBOX(-20.0f, -20.0f, 20.0f, 20.0f) ;
 }
 CHero::~CHero()
 {
@@ -34,7 +36,11 @@ CHero::~CHero()
 void CHero::Init()
 {
 	m_pSprite = new CSprite ;
-	m_pSprite->Init(64.0f, 64.0f, "Resource/Image/Dummy/Hero.png") ;
+	m_pSprite->Init(40.0f, 40.0f, "Resource/Image/Dummy/Hero.png") ;
+}
+
+void CHero::Dead()
+{
 }
 
 void CHero::Update()
@@ -50,10 +56,10 @@ void CHero::Update()
 	}
 
 	m_Position.x += (m_fSpeed * time) ;
-	if(m_Position.x<32.0f)
-		m_Position.x = 32.0f ;
-	else if(m_Position.x>1248.0f)
-		m_Position.x = 1248.0f ;
+	if(m_Position.x<20.0f)
+		m_Position.x = 20.0f ;
+	else if(m_Position.x>1260.0f)
+		m_Position.x = 1260.0f ;
 	Gravity() ;
 }
 
@@ -63,9 +69,9 @@ void CHero::Gravity()
 	m_fYVelocity -= m_fGravity * time ;
 	m_Position.y += m_fYVelocity * time ;
 
-	if(m_Position.y<32.0f)
+	if(m_Position.y<98.0f)
 	{
-		m_Position.y = 32.0f ;
+		m_Position.y = 98.0f ;
 		m_fYVelocity = 0.0f ;
 		m_bJump = false ;
 	}

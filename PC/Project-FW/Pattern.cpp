@@ -2,6 +2,7 @@
 #include "Boss.h"
 
 #include "D3dDevice.h"
+#include "CollisionManager.h"
 
 CPattern::CPattern() : m_pBoss(NULL),
 					   m_fTime(0.0f), m_fTargetTime(0.0f),

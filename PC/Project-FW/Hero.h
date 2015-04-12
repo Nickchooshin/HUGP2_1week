@@ -17,6 +17,8 @@ public :
 	~CHero() ;
 
 	void Init() ;
+	
+	void Dead() ;
 
 	void Update() ;
 private :

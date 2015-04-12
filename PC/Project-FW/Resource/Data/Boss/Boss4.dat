@@ -5,7 +5,7 @@
 <BOUNDING_BOX>
 0.0f, 0.0f, 0.0f, 0.0f
 <COLLISION>
-1
+0
 <END>
 
 <NAME>
@@ -15,15 +15,15 @@
 <BOUNDING_BOX>
 0.0f, 0.0f, 0.0f, 0.0f
 <COLLISION>
-1
+0
 <END>
 
 <NAME>
 "obj3"
 <IMAGE>
 "Resource/Image/Boss/obj_bss4_03.png"
-<BOUNDING_BOX>
-0.0f, 0.0f, 0.0f, 0.0f
+<BOUNDING_ELLIPSE>
+0.0f, 0.0f, 246.0f, 40.0f
 <COLLISION>
 1
 <END>
@@ -35,15 +35,15 @@
 <BOUNDING_BOX>
 0.0f, 0.0f, 0.0f, 0.0f
 <COLLISION>
-0
+1
 <END>
 
 <NAME>
 "obj5"
 <IMAGE>
 "Resource/Image/Boss/obj_bss4_05.png"
-<BOUNDING_BOX>
-0.0f, 0.0f, 0.0f, 0.0f
+<BOUNDING_CIRCLE>
+0.0f, 0.0f, 40.0f
 <COLLISION>
 1
 <END>
@@ -52,8 +52,8 @@
 "obj6"
 <IMAGE>
 "Resource/Image/Boss/obj_bss4_06.png"
-<BOUNDING_BOX>
-0.0f, 0.0f, 0.0f, 0.0f
+<BOUNDING_CIRCLE>
+0.0f, 0.0f, 40.0f
 <COLLISION>
 1
 <END>

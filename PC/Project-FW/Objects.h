@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Bounding.h"
 #include "Position.h"
+#include "Bounding.h"
 
 class CSprite ;
 
@@ -9,9 +9,10 @@ class CObjects
 {
 protected :
 	CSprite *m_pSprite ;
-	BBOX m_BBox ;
+	IBounding *m_pBounding ;
 	
 	POSITION m_Position ;
+	bool m_bCollision ;
 
 public :
 	CObjects() ;
@@ -21,8 +22,12 @@ public :
 
 	void SetPosition(POSITION Position) ;
 	void SetPosition(float x, float y) ;
+	void SetBounding(IBounding *pBounding) ;
+	void SetCollision(bool bCollision) ;
 
-	const POSITION GetPosition() const ;
+	POSITION GetPosition() const ;
+	IBounding* GetBounding() const ;
+	bool BeCollision() const ;
 
 	virtual void Update() ;
 

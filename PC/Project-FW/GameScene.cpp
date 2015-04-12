@@ -12,6 +12,7 @@
 
 #include "Hero.h"
 #include "BossManager.h"
+#include "CollisionManager.h"
 #include "PatternQueueManager.h"
 
 #include "D3dDevice.h"
@@ -33,6 +34,7 @@ GameScene::~GameScene()
 	if(m_pCount!=NULL)
 		delete m_pCount ;
 	
+	g_CollisionManager->DeleteAllObjects() ;
 	g_TextureManager->ClearTexture() ;
 }
 
@@ -135,4 +137,5 @@ void GameScene::GameLoop()
 
 	g_PatternQueueManager->Update() ;
 	g_BossManager->Update() ;
+	g_CollisionManager->Update() ;
 }

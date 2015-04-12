@@ -147,6 +147,9 @@
     <ClCompile Include="Pattern_Irregular62.cpp">
       <Filter>Pattern\Irregular\Boss6</Filter>
     </ClCompile>
+    <ClCompile Include="CollisionManager.cpp">
+      <Filter>Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -300,6 +303,9 @@
     </ClInclude>
     <ClInclude Include="Pattern_Irregular62.h">
       <Filter>Pattern\Irregular\Boss6</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionManager.h">
+      <Filter>Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

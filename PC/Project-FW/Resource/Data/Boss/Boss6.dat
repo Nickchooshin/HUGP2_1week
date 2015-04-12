@@ -5,15 +5,15 @@
 <BOUNDING_BOX>
 0.0f, 0.0f, 0.0f, 0.0f
 <COLLISION>
-1
+0
 <END>
 
 <NAME>
 "obj2"
 <IMAGE>
 "Resource/Image/Boss/obj_bss6_02.png"
-<BOUNDING_BOX>
-0.0f, 0.0f, 0.0f, 0.0f
+<BOUNDING_ELLIPSE>
+-1.0f, 2.0f, 47.0f, 106.0f
 <COLLISION>
 1
 <END>
@@ -23,7 +23,7 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss6_03.png"
 <BOUNDING_BOX>
-0.0f, 0.0f, 0.0f, 0.0f
+-137.0f, 215.0f, 137.0f, -215.0f
 <COLLISION>
 1
 <END>

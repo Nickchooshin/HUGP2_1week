@@ -5,7 +5,7 @@
 class CBoss : public CObjects
 {
 protected :
-	bool m_bLife, m_bCollision ;
+	bool m_bLife ;
 
 public :
 	CBoss() ;
@@ -16,8 +16,4 @@ public :
 
 	void SetImage(char *strImage) ;
 	void SetImage(float fWidth, float fHeight, char *strImage) ;
-	void SetBoundingBox(BBOX Box) ;
-	void SetCollision(bool bCollision) ;
-
-	bool BeCollision() const ;
 } ;

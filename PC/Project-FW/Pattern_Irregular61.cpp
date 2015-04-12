@@ -3,6 +3,7 @@
 
 #include "D3dDevice.h"
 #include "BossManager.h"
+#include "CollisionManager.h"
 #include "MusicManager.h"
 
 CPattern_Irregular61::CPattern_Irregular61() : CPattern(9999.0f),
