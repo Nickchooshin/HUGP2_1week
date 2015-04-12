@@ -15,8 +15,6 @@
 #include "D3dDevice.h"
 
 TitleScene::TitleScene() : m_pBackground(NULL),
-						   m_pStart(NULL), m_pGrade(NULL), m_pCredit(NULL), m_pExit(NULL),
-						   m_pPointer(NULL),
 						   m_nMenuNum(0)
 {
 }
@@ -25,17 +23,11 @@ TitleScene::~TitleScene()
 	if(m_pBackground!=NULL)
 		delete m_pBackground ;
 
-	if(m_pStart!=NULL)
-		delete m_pStart ;
-	if(m_pGrade!=NULL)
-		delete m_pGrade ;
-	if(m_pCredit!=NULL)
-		delete m_pCredit ;
-	if(m_pExit!=NULL)
-		delete m_pExit ;
-
-	if(m_pPointer!=NULL)
-		delete m_pPointer ;
+	for(int i=0; i<3; i++)
+	{
+		if(m_pButton[i]!=NULL)
+			delete m_pButton[i] ;
+	}
 
 	g_TextureManager->ClearTexture() ;
 }
@@ -55,28 +47,23 @@ void TitleScene::Init()
 	const float fWinHeight = g_D3dDevice->GetWinHeight() ;
 
 	m_pBackground = new CSprite ;
-	m_pBackground->Init("Resource/Image/Dummy/Title_Background.png") ;
+	m_pBackground->Init("Resource/Image/Title/main_bg.jpg") ;
 	m_pBackground->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 
-	m_pStart = new CSprite ;
-	m_pStart->Init("Resource/Image/Dummy/TitleButton/Start.png") ;
-	m_pStart->SetPosition(fWinWidth / 2.0f, fWinHeight - 450.0f) ;
+	m_pButton[0] = new CSprite ;
+	m_pButton[0]->Init(390.0f, 80.0f, "Resource/Image/Title/main_btn_1.png") ;
+	m_pButton[0]->SetPosition(fWinWidth / 2.0f, fWinHeight - 450.0f) ;
+	m_pButton[0]->SetTextureUV(390.0f, 0.0f, 780.0f, 80.0f) ;
 
-	m_pGrade = new CSprite ;
-	m_pGrade->Init("Resource/Image/Dummy/TitleButton/Grade.png") ;
-	m_pGrade->SetPosition(fWinWidth / 2.0f, fWinHeight - 520.0f) ;
+	m_pButton[1] = new CSprite ;
+	m_pButton[1]->Init(390.0f, 80.0f, "Resource/Image/Title/main_btn_2.png") ;
+	m_pButton[1]->SetPosition(fWinWidth / 2.0f, fWinHeight - 520.0f) ;
+	m_pButton[1]->SetTextureUV(0.0f, 0.0f, 390.0f, 80.0f) ;
 
-	m_pCredit = new CSprite ;
-	m_pCredit->Init("Resource/Image/Dummy/TitleButton/Credit.png") ;
-	m_pCredit->SetPosition(fWinWidth / 2.0f, fWinHeight - 590.0f) ;
-
-	m_pExit = new CSprite ;
-	m_pExit->Init("Resource/Image/Dummy/TitleButton/Exit.png") ;
-	m_pExit->SetPosition(fWinWidth / 2.0f, fWinHeight - 660.0f) ;
-
-	m_pPointer = new CSprite ;
-	m_pPointer->Init("Resource/Image/Dummy/TitleButton/Pointer.png") ;
-	m_pPointer->SetPosition(fWinWidth / 2.0f, fWinHeight - 450.0f) ;
+	m_pButton[2] = new CSprite ;
+	m_pButton[2]->Init(390.0f, 80.0f, "Resource/Image/Title/main_btn_3.png") ;
+	m_pButton[2]->SetPosition(fWinWidth / 2.0f, fWinHeight - 660.0f) ;
+	m_pButton[2]->SetTextureUV(0.0f, 0.0f, 390.0f, 80.0f) ;
 }
 
 void TitleScene::Destroy()
@@ -99,6 +86,13 @@ void TitleScene::Update(float dt)
 		case 0 :
 			g_SceneManager->ChangeScene(HowToScene::scene()) ;
 			return ;
+
+		case 1 :
+			return ;
+
+		case 2 :
+			PostQuitMessage(0) ;
+			return ;
 		}
 	}
 }
@@ -109,12 +103,8 @@ void TitleScene::Render()
 
 	m_pBackground->Render() ;
 
-	m_pStart->Render() ;
-	m_pGrade->Render() ;
-	m_pCredit->Render() ;
-	m_pExit->Render() ;
-
-	m_pPointer->Render() ;
+	for(int i=0; i<3; i++)
+		m_pButton[i]->Render() ;
 }
 
 void TitleScene::MenuSelect()
@@ -135,10 +125,7 @@ void TitleScene::MenuSelect()
 
 	if(m_nMenuNum!=prevMenuNum)
 	{
-		const float x = m_pPointer->GetPosition().x ;
-		const float fWinHeight = g_D3dDevice->GetWinHeight() ;
-		const float PointerY = 70.0f * m_nMenuNum ;
-
-		m_pPointer->SetPosition(x, fWinHeight - (450.0f + PointerY)) ;
+		m_pButton[prevMenuNum]->SetTextureUV(0.0f, 0.0f, 390.0f, 80.0f) ;
+		m_pButton[m_nMenuNum]->SetTextureUV(390.0f, 0.0f, 780.0f, 80.0f) ;
 	}
 }

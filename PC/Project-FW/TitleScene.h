@@ -8,8 +8,7 @@ class TitleScene : public Scene
 {
 private :
 	CSprite *m_pBackground ;
-	CSprite *m_pStart, *m_pGrade, *m_pCredit, *m_pExit ;
-	CSprite *m_pPointer ;
+	CSprite *m_pButton[3] ;
 
 	int m_nMenuNum ;
 
