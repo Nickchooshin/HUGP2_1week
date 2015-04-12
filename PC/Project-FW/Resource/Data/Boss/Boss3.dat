@@ -3,6 +3,7 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss3_01.png"
 <BOUNDING_BOX>
+1
 0.0f, 0.0f, 0.0f, 0.0f
 <COLLISION>
 0
@@ -13,6 +14,7 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss3_02.png"
 <BOUNDING_BOX>
+1
 0.0f, 0.0f, 0.0f, 0.0f
 <COLLISION>
 0
@@ -23,6 +25,7 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss3_03.png"
 <BOUNDING_LINE>
+1
 0.0f, 0.0f, 0.0f, 0.0f
 <COLLISION>
 1
@@ -33,6 +36,7 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss3_04.png"
 <BOUNDING_BOX>
+1
 0.0f, 0.0f, 0.0f, 0.0f
 <COLLISION>
 0
@@ -43,6 +47,7 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss3_05.png"
 <BOUNDING_ELLIPSE>
+1
 0.0f, 0.0f, 61.0f, 101.0f
 <COLLISION>
 1
@@ -53,6 +58,7 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss3_06.png"
 <BOUNDING_ELLIPSE>
+1
 -2.0f, 0.0f, 89.0f, 144.0f
 <COLLISION>
 1
@@ -63,6 +69,7 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss3_07.png"
 <BOUNDING_ELLIPSE>
+1
 0.0f, -2.0f, 144.0f, 89.0f
 <COLLISION>
 1

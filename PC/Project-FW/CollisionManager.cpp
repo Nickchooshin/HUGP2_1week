@@ -48,7 +48,8 @@ void CollisionManager::Update()
 
 bool CollisionManager::Collision(CObjects *pObject)
 {
-	IBounding::Type type = pObject->GetBounding()->_type ;
+	IBounding::Type type = pObject->GetBounding()[0]._type ;
+	const int num = pObject->GetBoundingNum() ;
 
 	BBOX hero = *(BBOX*)g_Hero->GetBounding() ;
 	hero._left += g_Hero->GetPosition().x ;
@@ -58,39 +59,63 @@ bool CollisionManager::Collision(CObjects *pObject)
 
 	if(type==IBounding::BOX)
 	{
-		BBOX object = *(BBOX*)pObject->GetBounding() ;
-		object._left += pObject->GetPosition().x ;
-		object._top += pObject->GetPosition().y ;
-		object._right += pObject->GetPosition().x ;
-		object._bottom += pObject->GetPosition().y ;
+		BBOX *object = (BBOX*)pObject->GetBounding() ;
 
-		return m_Collider.BeCollision(hero, object) ;
+		for(int i=0; i<num; i++)
+		{
+			BBOX temp = object[i] ;
+			temp._left += pObject->GetPosition().x ;
+			temp._top += pObject->GetPosition().y ;
+			temp._right += pObject->GetPosition().x ;
+			temp._bottom += pObject->GetPosition().y ;
+
+			if(m_Collider.BeCollision(hero, temp))
+				return true ;
+		}
 	}
 	else if(type==IBounding::CIRCLE)
 	{
-		BCIRCLE object = *(BCIRCLE*)pObject->GetBounding() ;
-		object._x += pObject->GetPosition().x ;
-		object._y += pObject->GetPosition().y ;
+		BCIRCLE *object = (BCIRCLE*)pObject->GetBounding() ;
 
-		return m_Collider.BeCollision(hero, object) ;
+		for(int i=0; i<num; i++)
+		{
+			BCIRCLE temp = object[i] ;
+			temp._x += pObject->GetPosition().x ;
+			temp._y += pObject->GetPosition().y ;
+
+			if(m_Collider.BeCollision(hero, temp))
+				return true ;
+		}
 	}
 	else if(type==IBounding::ELLIPSE)
 	{
-		BELLIPSE object = *(BELLIPSE*)pObject->GetBounding() ;
-		object._x += pObject->GetPosition().x ;
-		object._y += pObject->GetPosition().y ;
+		BELLIPSE *object = (BELLIPSE*)pObject->GetBounding() ;
 
-		return m_Collider.BeCollision(hero, object) ;
+		for(int i=0; i<num; i++)
+		{
+			BELLIPSE temp = object[i] ;
+			temp._x += pObject->GetPosition().x ;
+			temp._y += pObject->GetPosition().y ;
+
+			if(m_Collider.BeCollision(hero, temp))
+				return true ;
+		}
 	}
 	else if(type==IBounding::LINE)
 	{
-		BLINE object = *(BLINE*)pObject->GetBounding() ;
-		object._x1 += pObject->GetPosition().x ;
-		object._y1 += pObject->GetPosition().y ;
-		object._x2 += pObject->GetPosition().x ;
-		object._y2 += pObject->GetPosition().y ;
+		BLINE *object = (BLINE*)pObject->GetBounding() ;
 
-		return m_Collider.BeCollision(hero, object) ;
+		for(int i=0; i<num; i++)
+		{
+			BLINE temp = object[i] ;
+			temp._x1 += pObject->GetPosition().x ;
+			temp._y1 += pObject->GetPosition().y ;
+			temp._x2 += pObject->GetPosition().x ;
+			temp._y2 += pObject->GetPosition().y ;
+
+			if(m_Collider.BeCollision(hero, temp))
+				return true ;
+		}
 	}
 
 	return false ;

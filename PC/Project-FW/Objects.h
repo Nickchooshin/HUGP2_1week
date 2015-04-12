@@ -12,6 +12,7 @@ protected :
 	IBounding *m_pBounding ;
 	
 	POSITION m_Position ;
+	int m_nBoundingNum ;
 	bool m_bCollision ;
 
 public :
@@ -22,11 +23,12 @@ public :
 
 	void SetPosition(POSITION Position) ;
 	void SetPosition(float x, float y) ;
-	void SetBounding(IBounding *pBounding) ;
+	void SetBounding(IBounding *pBounding, int num) ;
 	void SetCollision(bool bCollision) ;
 
 	POSITION GetPosition() const ;
 	IBounding* GetBounding() const ;
+	int GetBoundingNum() const ;
 	bool BeCollision() const ;
 
 	virtual void Update() ;

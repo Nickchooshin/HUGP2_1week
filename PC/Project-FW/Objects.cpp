@@ -4,6 +4,7 @@
 CObjects::CObjects() : m_pSprite(NULL),
 					   m_pBounding(NULL),
 					   m_Position(),
+					   m_nBoundingNum(0),
 					   m_bCollision(true)
 {
 }
@@ -26,9 +27,10 @@ void CObjects::SetPosition(float x, float y)
 	m_Position.y = y ;
 }
 
-void CObjects::SetBounding(IBounding *pBounding)
+void CObjects::SetBounding(IBounding *pBounding, int num)
 {
 	m_pBounding = pBounding ;
+	m_nBoundingNum = num ;
 }
 
 void CObjects::SetCollision(bool bCollision)
@@ -44,6 +46,11 @@ POSITION CObjects::GetPosition() const
 IBounding* CObjects::GetBounding() const
 {
 	return m_pBounding ;
+}
+
+int CObjects::GetBoundingNum() const
+{
+	return m_nBoundingNum ;
 }
 
 bool CObjects::BeCollision() const

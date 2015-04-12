@@ -10,14 +10,47 @@ CBoss::CBoss(const CBoss *pBoss) : m_bLife(pBoss->m_bLife)
 {
 	m_pSprite = new CSprite(pBoss->m_pSprite) ;
 
+	m_nBoundingNum = pBoss->GetBoundingNum() ;
 	if(pBoss->m_pBounding->_type==IBounding::BOX)
-		m_pBounding = new BBOX(*(BBOX*)pBoss->m_pBounding) ;
+	{
+		BBOX *box = new BBOX[m_nBoundingNum] ;
+		BBOX *boss = (BBOX*)pBoss->m_pBounding ;
+		for(int i=0; i<m_nBoundingNum; i++)
+			box[i] = boss[i] ;
+		m_pBounding = box ;
+
+		//m_pBounding = new BBOX(*(BBOX*)pBoss->m_pBounding) ;
+	}
 	else if(pBoss->m_pBounding->_type==IBounding::CIRCLE)
-		m_pBounding = new BCIRCLE(*(BCIRCLE*)pBoss->m_pBounding) ;
+	{
+		BCIRCLE *circle = new BCIRCLE[m_nBoundingNum] ;
+		BCIRCLE *boss = (BCIRCLE*)pBoss->m_pBounding ;
+		for(int i=0; i<m_nBoundingNum; i++)
+			circle[i] = boss[i] ;
+		m_pBounding = circle ;
+
+		//m_pBounding = new BCIRCLE(*(BCIRCLE*)pBoss->m_pBounding) ;
+	}
 	else if(pBoss->m_pBounding->_type==IBounding::ELLIPSE)
-		m_pBounding = new BELLIPSE(*(BELLIPSE*)pBoss->m_pBounding) ;
+	{
+		BELLIPSE *ellipse = new BELLIPSE[m_nBoundingNum] ;
+		BELLIPSE *boss = (BELLIPSE*)pBoss->m_pBounding ;
+		for(int i=0; i<m_nBoundingNum; i++)
+			ellipse[i] = boss[i] ;
+		m_pBounding = ellipse ;
+
+		//m_pBounding = new BELLIPSE(*(BELLIPSE*)pBoss->m_pBounding) ;
+	}
 	else if(pBoss->m_pBounding->_type==IBounding::LINE)
-		m_pBounding = new BLINE(*(BLINE*)pBoss->m_pBounding) ;
+	{
+		BLINE *line = new BLINE[m_nBoundingNum] ;
+		BLINE *boss = (BLINE*)pBoss->m_pBounding ;
+		for(int i=0; i<m_nBoundingNum; i++)
+			line[i] = boss[i] ;
+		m_pBounding = line ;
+
+		//m_pBounding = new BLINE(*(BLINE*)pBoss->m_pBounding) ;
+	}
 	else
 		m_pBounding = NULL ;
 

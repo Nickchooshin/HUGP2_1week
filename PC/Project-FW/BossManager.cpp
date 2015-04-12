@@ -37,6 +37,7 @@ void BossManager::SetupBoss(char *strBossName)
 	char name[100], image[100] ;
 	float width, height ;
 	IBounding *bounding=NULL ;
+	int bounding_num ;
 	bool collision ;
 
 	while(DataLoader.GetItem(item))
@@ -63,47 +64,71 @@ void BossManager::SetupBoss(char *strBossName)
 		{
 			if(bounding!=NULL)
 				delete bounding ;
-			BBOX *pBox = new BBOX ;
+			
+			DataLoader.GetValue(bounding_num) ;
+			BBOX *pBox = new BBOX[bounding_num] ;
 
-			DataLoader.GetValue(pBox->_left) ;
-			DataLoader.GetValue(pBox->_top) ;
-			DataLoader.GetValue(pBox->_right) ;
-			DataLoader.GetValue(pBox->_bottom) ;
+			for(int i=0; i<bounding_num; i++)
+			{
+				DataLoader.GetValue(pBox[i]._left) ;
+				DataLoader.GetValue(pBox[i]._top) ;
+				DataLoader.GetValue(pBox[i]._right) ;
+				DataLoader.GetValue(pBox[i]._bottom) ;
+			}
+
 			bounding = pBox ;
 		}
 		else if(len==15 && strcmp(item, "BOUNDING_CIRCLE")==0)
 		{
 			if(bounding!=NULL)
 				delete bounding ;
-			BCIRCLE *pCircle = new BCIRCLE ;
+			
+			DataLoader.GetValue(bounding_num) ;
+			BCIRCLE *pCircle = new BCIRCLE[bounding_num] ;
 
-			DataLoader.GetValue(pCircle->_x) ;
-			DataLoader.GetValue(pCircle->_y) ;
-			DataLoader.GetValue(pCircle->_radius) ;
+			for(int i=0; i<bounding_num; i++)
+			{
+				DataLoader.GetValue(pCircle[i]._x) ;
+				DataLoader.GetValue(pCircle[i]._y) ;
+				DataLoader.GetValue(pCircle[i]._radius) ;
+			}
+
 			bounding = pCircle ;
 		}
 		else if(len==16 && strcmp(item, "BOUNDING_ELLIPSE")==0)
 		{
 			if(bounding!=NULL)
 				delete bounding ;
-			BELLIPSE *pEllipse = new BELLIPSE ;
 			
-			DataLoader.GetValue(pEllipse->_x) ;
-			DataLoader.GetValue(pEllipse->_y) ;
-			DataLoader.GetValue(pEllipse->_a) ;
-			DataLoader.GetValue(pEllipse->_b) ;
+			DataLoader.GetValue(bounding_num) ;
+			BELLIPSE *pEllipse = new BELLIPSE[bounding_num] ;
+			
+			for(int i=0; i<bounding_num; i++)
+			{
+				DataLoader.GetValue(pEllipse[i]._x) ;
+				DataLoader.GetValue(pEllipse[i]._y) ;
+				DataLoader.GetValue(pEllipse[i]._a) ;
+				DataLoader.GetValue(pEllipse[i]._b) ;
+			}
+
 			bounding = pEllipse ;
 		}
 		else if(len==13 && strcmp(item, "BOUNDING_LINE")==0)
 		{
 			if(bounding!=NULL)
 				delete bounding ;
-			BLINE *pLine = new BLINE ;
+
+			DataLoader.GetValue(bounding_num) ;
+			BLINE *pLine = new BLINE[bounding_num] ;
+
+			for(int i=0; i<bounding_num; i++)
+			{
+				DataLoader.GetValue(pLine[i]._x1) ;
+				DataLoader.GetValue(pLine[i]._y1) ;
+				DataLoader.GetValue(pLine[i]._x2) ;
+				DataLoader.GetValue(pLine[i]._y2) ;
+			}
 			
-			DataLoader.GetValue(pLine->_x1) ;
-			DataLoader.GetValue(pLine->_y1) ;
-			DataLoader.GetValue(pLine->_x2) ;
-			DataLoader.GetValue(pLine->_y2) ;
 			bounding = pLine ;
 		}
 		else if(len==9 && strcmp(item, "COLLISION")==0)
@@ -118,7 +143,7 @@ void BossManager::SetupBoss(char *strBossName)
 			CBoss *pBoss = new CBoss ;
 			pBoss->Init() ;
 			pBoss->SetImage(image) ;
-			pBoss->SetBounding(bounding) ;
+			pBoss->SetBounding(bounding, bounding_num) ;
 			pBoss->SetCollision(collision) ;
 
 			m_BossList[name] = pBoss ;
@@ -127,6 +152,7 @@ void BossManager::SetupBoss(char *strBossName)
 			memset(image, 0, strlen(image)) ;
 			width = height = 0.0f ;
 			bounding = NULL ;
+			bounding_num = 0 ;
 			collision = false ;
 		}
 	}

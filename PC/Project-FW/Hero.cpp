@@ -41,6 +41,7 @@ void CHero::Init()
 
 void CHero::Dead()
 {
+	printf("a") ;
 }
 
 void CHero::Update()
