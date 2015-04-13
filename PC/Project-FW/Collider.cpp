@@ -54,19 +54,21 @@ bool CCollider::BeCollision(BOUNDING_BOX A, BOUNDING_LINE B)
 
 	for(int i=0; i<4; i++)
 	{
-		if(!BeCollision(Line[i], B))
-			return false ;
+		if(BeCollision(Line[i], B))
+			return true ;
 	}
 
-	return true ;
+	return false ;
 }
 
 bool CCollider::BeCollision(BOUNDING_LINE A, BOUNDING_LINE B)
 {
+	float den ;
 	float u, v ;
 
-	u = ((B._x2-B._x1)*(A._y1-B._y1)-(B._y2-B._y1)*(A._x1-B._x1)) / ((A._x2-A._x1)*(B._y2-B._y1)-(B._x2-B._x1)*(A._y2-A._y1)) ;
-	v = ((A._x2-A._x1)*(A._y1-B._y1)-(A._y2-A._y1)*(A._x1-B._x1)) / ((A._x2-A._x1)*(B._y2-B._y1)-(B._x2-B._x1)*(A._y2-A._y1)) ;
+	den = ((A._x2-A._x1)*(B._y2-B._y1)-(B._x2-B._x1)*(A._y2-A._y1)) ;
+	u = ((B._x2-B._x1)*(A._y1-B._y1)-(B._y2-B._y1)*(A._x1-B._x1)) / den ;
+	v = ((A._x2-A._x1)*(A._y1-B._y1)-(A._y2-A._y1)*(A._x1-B._x1)) / den ;
 
 	if( (u>0.0f && u<1.0f) &&
 		(v>0.0f && v<1.0f) )

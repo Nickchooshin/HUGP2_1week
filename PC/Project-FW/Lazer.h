@@ -28,4 +28,5 @@ private :
 
 	void Degree() ;
 	void Length() ;
+	void SetLineCollider() ;
 } ;

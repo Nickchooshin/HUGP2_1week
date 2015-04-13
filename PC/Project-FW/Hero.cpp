@@ -27,7 +27,8 @@ CHero::CHero() : m_fSpeed(430.0f),
 
 	Data.CloseData() ;
 
-	m_pBounding = new BBOX(-20.0f, -20.0f, 20.0f, 20.0f) ;
+	m_pBounding = new BBOX(-20.0f, 20.0f, 20.0f, -20.0f) ;
+	m_nBoundingNum = 1 ;
 }
 CHero::~CHero()
 {
@@ -41,7 +42,6 @@ void CHero::Init()
 
 void CHero::Dead()
 {
-	printf("a") ;
 }
 
 void CHero::Update()

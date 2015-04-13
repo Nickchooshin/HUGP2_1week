@@ -2,15 +2,21 @@
 #include "Sprite.h"
 
 #include "D3dDevice.h"
+#include "CollisionManager.h"
 
 CLazer::CLazer() : m_LazerPosition(), m_endLazerPosition(),
 				   m_LazerVector(),
 				   m_fLength(0.0f), m_fDegree(0.0f),
 				   m_fTime(0.0f)
 {
+	m_pBounding = new BLINE ;
+	m_nBoundingNum = 1 ;
+
+	g_CollisionManager->AddObject(this) ;
 }
 CLazer::~CLazer()
 {
+	g_CollisionManager->DeleteObject(this) ;
 }
 
 void CLazer::Init()
@@ -46,6 +52,8 @@ void CLazer::Update()
 		Shoot() ;
 	else
 		Move() ;
+
+	SetLineCollider() ;
 
 	m_fTime += g_D3dDevice->GetTime() ;
 }
@@ -86,4 +94,13 @@ void CLazer::Length()
 	float squareX = temp.x * temp.x ;
 	float squareY = temp.y * temp.y ;
 	m_fLength = sqrt(squareX + squareY) / 245.0f ;
+}
+
+void CLazer::SetLineCollider()
+{
+	BLINE *pLine = (BLINE*)m_pBounding ;
+	pLine[0]._x1 = 0.0f ;
+	pLine[0]._y1 = 0.0f ;
+	pLine[0]._x2 = m_LazerPosition.x - m_Position.x ;
+	pLine[0]._y2 = m_LazerPosition.y - m_Position.y ;
 }
