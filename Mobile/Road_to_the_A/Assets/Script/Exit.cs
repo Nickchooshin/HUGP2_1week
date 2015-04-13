@@ -1,15 +1,10 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Exit : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+public class Exit : MonoBehaviour
+{
+	void Go_Exit()
+	{
+		Application.Quit ();
 	}
 }

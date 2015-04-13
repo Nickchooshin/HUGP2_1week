@@ -53,6 +53,7 @@ public class Pattern6_1 : Pattern_State
 	{
 		// Audio
 		GetComponent<AudioSource> ().clip = _sound[0];
+		GetComponent<AudioSource> ().volume = 0.1f;
 		GetComponent<AudioSource> ().Play ();
 		// Move
 		obj_safe.transform.localPosition = new Vector3(0.0f, -635.0f, 0.0f);

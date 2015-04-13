@@ -21,23 +21,23 @@ public class PatternManager : MonoBehaviour
 		gameObject.GetComponent<Pattern2_3> ().enabled = false;
 
 		// Pattern 3
-		//gameObject.GetComponent<Pattern3_1> ().enabled = false;
+		gameObject.GetComponent<Pattern3_1> ().enabled = false;
 		gameObject.GetComponent<Pattern3_2> ().enabled = false;
 		gameObject.GetComponent<Pattern3_3> ().enabled = false;
 
 		// Pattern 4
 		gameObject.GetComponent<Pattern4_1> ().enabled = false;
-		//gameObject.GetComponent<Pattern4_2> ().enabled = false;
+		gameObject.GetComponent<Pattern4_2> ().enabled = false;
 
 		// Pattern 5
-		//gameObject.GetComponent<Pattern5_1> ().enabled = false;
-		//gameObject.GetComponent<Pattern5_2> ().enabled = false;
+		gameObject.GetComponent<Pattern5_1> ().enabled = false;
+		gameObject.GetComponent<Pattern5_2> ().enabled = false;
 
 		// Pattern 6
 		gameObject.GetComponent<Pattern6_1> ().enabled = false;
 		gameObject.GetComponent<Pattern6_2> ().enabled = false;
 
-		// Pattern_Turn ();
+		Pattern_Turn ();
 	}
 
 	void FixedUpdate ()
@@ -122,7 +122,6 @@ public class PatternManager : MonoBehaviour
 			gameObject.GetComponent<Pattern4_1>().enabled = false;
 			gameObject.GetComponent<Pattern4_2>().enabled = true;
 		}
-		/*
 		else if (true == transform.GetComponent<Pattern4_2> ().end_check)
 		{
 			transform.GetComponent<Pattern4_2> ().end_check = false;
@@ -142,7 +141,6 @@ public class PatternManager : MonoBehaviour
 			gameObject.GetComponent<Pattern5_2>().enabled = false;
 			gameObject.GetComponent<Pattern6_1>().enabled = true;
 		}
-		*/
 		// Pattern 6
 		else if (true == transform.GetComponent<Pattern6_1> ().end_check)
 		{
@@ -150,13 +148,9 @@ public class PatternManager : MonoBehaviour
 			gameObject.GetComponent<Pattern6_1>().enabled = false;
 			gameObject.GetComponent<Pattern6_2>().enabled = true;
 		}
-		// end
-		/*
 		else if (true == transform.GetComponent<Pattern1_2> ().end_check)
 		{
 			transform.GetComponent<Pattern1_3> ().end_check = false;
-			return true;
 		}
-		*/
 	}
 }

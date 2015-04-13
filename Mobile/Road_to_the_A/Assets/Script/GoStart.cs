@@ -5,6 +5,6 @@ public class GoStart : MonoBehaviour
 {
 	void Go_Game()
 	{
-		Application.LoadLevel ("Game");
+		Application.LoadLevel ("How");
 	}
 }

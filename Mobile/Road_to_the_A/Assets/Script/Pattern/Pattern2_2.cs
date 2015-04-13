@@ -47,11 +47,13 @@ public class Pattern2_2 : Pattern_State
 		for (int i = 0; i < 20; ++i)
 			obj_warning [i].SetActive (true);
 
+		/*
 		if( (obj_caution.transform.localPosition.x - 40.0f) >
 		   GameObject.FindGameObjectWithTag("Player").transform.localPosition.x ||
 		   (obj_caution.transform.localPosition.x + 40.0f) <
 		   GameObject.FindGameObjectWithTag("Player").transform.localPosition.x )
 			Application.LoadLevel ("End");
+			*/
 	}
 	
 	public override void Move ()

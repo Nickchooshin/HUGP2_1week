@@ -4,7 +4,7 @@ using System.Collections;
 public class Pattern1_2 : Pattern_State
 {
 	private GameObject[] obj_warning = new GameObject[9];
-	private GameObject[] obj_caution = new GameObject[2];
+	private GameObject[] obj_caution = new GameObject[12];
 	public AudioClip _sound;
 	public bool end_check;
 	
@@ -21,19 +21,23 @@ public class Pattern1_2 : Pattern_State
 			obj_warning[i].gameObject.SetActive(false);
 		}
 
-		// caution
-		obj_caution[0] = Instantiate (Resources.Load ("Warning_back", typeof(GameObject))) as GameObject;
-		obj_caution[0].transform.parent = GameObject.Find ("Boss").transform;
-		obj_caution[0].transform.localScale = new Vector3(200.0f, 720.0f, 0.0f);
-		obj_caution[0].gameObject.SetActive(false);
-		
-		obj_caution[1] = Instantiate (Resources.Load ("Warning_guide", typeof(GameObject))) as GameObject;
-		obj_caution[1].transform.parent = GameObject.Find ("Boss").transform;
-		obj_caution[1].transform.localScale = new Vector3(120.0f, 120.0f, 0.0f);
-		obj_caution[1].gameObject.SetActive(false);
-
-		//GetComponent<AudioSource> ().clip = _sound;
-		//GetComponent<AudioSource> ().Play ();
+		for( int i = 0; i < 12; ++i )
+		{
+			if( 0 == i % 2 )
+			{
+				obj_caution[i] = Instantiate (Resources.Load ("Warning_back", typeof(GameObject))) as GameObject;
+				obj_caution[i].transform.parent = GameObject.Find ("Boss").transform;
+				obj_caution[i].transform.localScale = new Vector3(200.0f, 720.0f, 0.0f);
+				obj_caution[i].gameObject.SetActive(false);
+			}
+			else
+			{
+				obj_caution[i] = Instantiate (Resources.Load ("Warning_guide", typeof(GameObject))) as GameObject;
+				obj_caution[i].transform.parent = GameObject.Find ("Boss").transform;
+				obj_caution[i].transform.localScale = new Vector3(120.0f, 120.0f, 0.0f);
+				obj_caution[i].gameObject.SetActive(false);
+			}
+		}
 
 		Move ();
 	}
@@ -55,16 +59,46 @@ public class Pattern1_2 : Pattern_State
 		yield return new WaitForSeconds(3.2f);
 
 		for( int i = 0; i < 2; ++i )
-			obj_caution[i].gameObject.SetActive(true);
-
-		for( int i = 0; i < 3; ++i )
 		{
-			obj_caution[0].transform.localPosition = new Vector3(-500.0f + ((float)i*400.0f), 0.0f, 0.0f);
-			obj_caution[1].transform.localPosition = new Vector3(-500.0f + ((float)i*400.0f), 0.0f, 0.0f);
-			yield return new WaitForSeconds(0.5f);
+			for( int j = 0 + (i*6); j < 6 + (i*6); ++j )
+			{
+				if( 0 == i )
+				{
+					obj_caution[j].transform.localPosition = new Vector3(-500.0f + ((j/2)*400.0f), 0.0f, 0.0f);
+				}
+				else
+				{
+					obj_caution[j].transform.localPosition = new Vector3(-300.0f + (((j-6)/2)*400.0f), 0.0f, 0.0f);
+				}
+			}
 		}
 
 		for( int i = 0; i < 2; ++i )
+		{
+			for( int j = 0 + (i*6); j < 6 + (i*6); ++j )
+			{
+				if( 1 == i )
+				{
+					for( int k = 0; k < 6; ++k )
+						obj_caution[k].gameObject.SetActive(false);
+				}
+
+				obj_caution[j].gameObject.SetActive(true);
+			}
+			yield return new WaitForSeconds(0.5f);
+		}
+
+		for( int i = 0; i < 6 ; ++i )
+		{
+			for( int j = 6; j < 12; ++j )
+			{
+				obj_caution[j].gameObject.SetActive(false);
+			}
+			obj_caution[i].gameObject.SetActive(true);
+		}
+		yield return new WaitForSeconds(0.5f);
+
+		for( int i = 0; i < 12; ++i )
 			DestroyObject (obj_caution[i]);
 		yield return new WaitForSeconds(0.3f);
 
@@ -77,7 +111,7 @@ public class Pattern1_2 : Pattern_State
 
 		for( int i = 3; i < 6; ++i )
 		{
-			obj_warning[i].transform.localPosition = new Vector3(-500.0f + (((float)i-3) * 400.0f), 510.0f, 0.0f);
+			obj_warning[i].transform.localPosition = new Vector3(-300.0f + (((float)i-3) * 400.0f), 510.0f, 0.0f);
 			obj_warning[i].gameObject.SetActive(true);
 		}
 		yield return new WaitForSeconds(0.2f);

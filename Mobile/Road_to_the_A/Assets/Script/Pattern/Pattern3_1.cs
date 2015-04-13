@@ -43,6 +43,18 @@ public class Pattern3_1 : Pattern_State
 				obj_warning[i].transform.parent = GameObject.Find ("Boss").transform;
 				obj_warning[i].transform.localScale = new Vector3(12.0f, 10.0f, 0.0f);
 				obj_warning[i].gameObject.SetActive(false);
+				if( 2 == i )
+				{
+					obj_warning[i].transform.localPosition = new Vector3(-5.0f, 73.0f, 0.0f);
+					obj_warning[i].GetComponent<Enemy3_1> ()._to = new Vector3(-613.0f, -380.0f, 0.0f);
+					obj_warning[i].GetComponent<Enemy3_1> ()._to2 = new Vector3(-10.0f, -380.0f, 0.0f);
+				}
+				else if( 3 == i )
+				{
+					obj_warning[i].transform.localPosition = new Vector3(86.0f, 68.0f, 0.0f);
+					obj_warning[i].GetComponent<Enemy3_1> ()._to = new Vector3(613.0f, -430.0f, 0.0f);
+					obj_warning[i].GetComponent<Enemy3_1> ()._to2 = new Vector3(10.0f, -430.0f, 0.0f);
+				}
 			}
 		}
 
@@ -69,15 +81,11 @@ public class Pattern3_1 : Pattern_State
 		{
 			if( 2 == i )
 			{
-				obj_warning[i].transform.localPosition = new Vector3(-5.0f, 73.0f, 0.0f);
-				obj_warning[i].GetComponent<Enemy3_1> ()._to = new Vector3(-613.0f, -380.0f, 0.0f);
 				obj_warning[i].GetComponent<Enemy3_1> ().move_check = true;
 				obj_warning[i].GetComponent<Enemy3_1> ().dir_check = false;
 			}
 			else if( 3 == i )
 			{
-				obj_warning[i].transform.localPosition = new Vector3(86.0f, 68.0f, 0.0f);
-				obj_warning[i].GetComponent<Enemy3_1> ()._to = new Vector3(613.0f, -380.0f, 0.0f);
 				obj_warning[i].GetComponent<Enemy3_1> ().move_check = true;
 				obj_warning[i].GetComponent<Enemy3_1> ().dir_check = true;
 			}

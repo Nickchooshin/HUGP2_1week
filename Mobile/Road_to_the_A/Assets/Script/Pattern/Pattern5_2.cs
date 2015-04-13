@@ -5,6 +5,7 @@ public class Pattern5_2 : Pattern_State
 {
 	private GameObject[] obj_caution = new GameObject[2];
 	private GameObject obj_warning;
+	public AudioClip _sound;
 	
 	public bool end_check;
 	
@@ -26,7 +27,7 @@ public class Pattern5_2 : Pattern_State
 		// warning
 		obj_warning = Instantiate (Resources.Load ("Boss5_4", typeof(GameObject))) as GameObject;
 		obj_warning.transform.parent = GameObject.Find ("Boss").transform;
-		obj_warning.transform.localScale = new Vector3(580.0f, 600.0f, 0.0f);
+		obj_warning.transform.localScale = new Vector3(560.0f, 600.0f, 0.0f);
 		obj_warning.gameObject.SetActive(false);
 
 		Move ();
@@ -44,6 +45,11 @@ public class Pattern5_2 : Pattern_State
 	
 	IEnumerator Change_Image()
 	{
+		// Audio
+		GetComponent<AudioSource> ().clip = _sound;
+		GetComponent<AudioSource> ().Play ();
+
+		// Move
 		for (int i = 0; i < 2; ++i)
 		{
 			obj_caution[i].transform.localPosition =
@@ -59,6 +65,7 @@ public class Pattern5_2 : Pattern_State
 
 		obj_warning.transform.localPosition =
 			new Vector3 (obj_caution[0].transform.localPosition.x, 770.0f, 0.0f);
+		obj_warning.SetActive (true);
 		yield return new WaitForSeconds(2.0f);
 
 		end_check = true;

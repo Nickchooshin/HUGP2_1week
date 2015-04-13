@@ -63,7 +63,7 @@ public class Pattern5_1 : Pattern_State
 	{
 		obj_safe.transform.localPosition = new Vector3 (840.0f, 0.0f, 0.0f);
 		obj_safe.gameObject.SetActive(true);
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(3.5f);
 
 		for (int i = 0; i < 2; ++i)
 		{

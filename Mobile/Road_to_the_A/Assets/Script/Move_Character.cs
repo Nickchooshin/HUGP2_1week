@@ -20,6 +20,7 @@ public class Move_Character : MonoBehaviour
 	public bool midair;
 	static public bool m_jump = false;	// false : none, true : jump
 	static public bool reclick = false;
+	static public bool m_dead;
 
 	private float t;
 	private Vector3 dest;
@@ -41,6 +42,12 @@ public class Move_Character : MonoBehaviour
 
 		t = 0.7f;
 		v = 130.0f / 0.7f;
+
+		m_jump = false;
+		reclick = false;
+		m_dir = false;
+		m_move = false;
+		m_dead = false;
 
 		midair = true;
 
