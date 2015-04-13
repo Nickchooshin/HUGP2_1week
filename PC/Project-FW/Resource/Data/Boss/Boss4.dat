@@ -36,8 +36,11 @@
 <IMAGE>
 "Resource/Image/Boss/obj_bss4_04.png"
 <BOUNDING_BOX>
-1
-0.0f, 0.0f, 0.0f, 0.0f
+4
+-63.5f, -16.5f, 219.5f, -299.5f
+-166.5f, -228.0f, -63.5f, -300.0f
+-121.0f, -158.5f, -63.0f, -229.5f
+-200.0f, -257.0f, -162.0f, -301.0f
 <COLLISION>
 1
 <END>
