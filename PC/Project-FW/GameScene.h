@@ -1,19 +1,22 @@
 #pragma once
 
 #include "Scene.h"
+#include <fmod.hpp>
 
 class CSprite ;
-//class CHero ;
+class CCount ;
 
 class GameScene : public Scene
 {
 private :
 	CSprite *m_pBackground ;
-	CSprite *m_pCount ;
+	CSprite *m_pBottom, *m_pScore, *m_pText ;
 
-	//CHero *m_pHero ;
+	CCount *m_pCount ;
 
 	float m_fTime ;
+
+	FMOD::Sound *m_pBGM ;
 
 	void (GameScene::*m_pfnLoop)(void) ;
 

@@ -150,6 +150,12 @@
     <ClCompile Include="CollisionManager.cpp">
       <Filter>Manager</Filter>
     </ClCompile>
+    <ClCompile Include="GameoverScene.cpp">
+      <Filter>Scene\GameoverScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Count.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -307,6 +313,12 @@
     <ClInclude Include="CollisionManager.h">
       <Filter>Manager</Filter>
     </ClInclude>
+    <ClInclude Include="GameoverScene.h">
+      <Filter>Scene\GameoverScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Count.h">
+      <Filter>UI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -413,6 +425,12 @@
     </Filter>
     <Filter Include="Pattern\Irregular\Boss6">
       <UniqueIdentifier>{c0c067bd-e179-434c-b3b3-1382c4d1bf38}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\GameoverScene">
+      <UniqueIdentifier>{859c359d-57bb-4381-ba3d-d9c6ba732faf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{f130373e-33ee-40e9-9f97-7d2041746f83}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

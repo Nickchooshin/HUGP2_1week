@@ -83,7 +83,9 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
+    <ClCompile Include="Count.cpp" />
     <ClCompile Include="D3dSystem.cpp" />
+    <ClCompile Include="GameoverScene.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="Hero.cpp" />
     <ClCompile Include="HowToScene.cpp" />
@@ -137,8 +139,10 @@
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="Bounding.h" />
     <ClInclude Include="CollisionManager.h" />
+    <ClInclude Include="Count.h" />
     <ClInclude Include="D3dSystem.h" />
     <ClInclude Include="D3dDevice.h" />
+    <ClInclude Include="GameoverScene.h" />
     <ClInclude Include="GameScene.h" />
     <ClInclude Include="Hero.h" />
     <ClInclude Include="InputDevice.h" />

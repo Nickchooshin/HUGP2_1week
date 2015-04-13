@@ -15,7 +15,9 @@
 #include "D3dDevice.h"
 
 TitleScene::TitleScene() : m_pBackground(NULL),
-						   m_nMenuNum(0)
+						   m_nMenuNum(0),
+						   m_pBGM(NULL),
+						   m_pSEMenu(NULL), m_pSESelect(NULL)
 {
 }
 TitleScene::~TitleScene()
@@ -64,10 +66,17 @@ void TitleScene::Init()
 	m_pButton[2]->Init(390.0f, 80.0f, "Resource/Image/Title/main_btn_3.png") ;
 	m_pButton[2]->SetPosition(fWinWidth / 2.0f, fWinHeight - 660.0f) ;
 	m_pButton[2]->SetTextureUV(0.0f, 0.0f, 390.0f, 80.0f) ;
+
+	m_pBGM = g_MusicManager->LoadMusic("Resource/Sound/BGM-Main.mp3", true, true) ;
+	m_pSEMenu = g_MusicManager->LoadMusic("Resource/Sound/SE/SE_menu.mp3", false, false) ;
+	m_pSESelect = g_MusicManager->LoadMusic("Resource/Sound/SE/SE_select.mp3", false, false) ;
+
+	g_MusicManager->PlayMusic(m_pBGM) ;
 }
 
 void TitleScene::Destroy()
 {
+	g_MusicManager->StopMusic() ;
 }
 
 void TitleScene::Update(float dt)
@@ -81,6 +90,8 @@ void TitleScene::Update(float dt)
 
 	if(g_Keyboard->IsPressDown(DIK_RETURN))
 	{
+		g_MusicManager->PlayMusic(m_pSESelect, 1) ;
+
 		switch(m_nMenuNum)
 		{
 		case 0 :
@@ -113,7 +124,7 @@ void TitleScene::MenuSelect()
 
 	if(g_Keyboard->IsPressDown(DIK_DOWN))
 	{
-		if(m_nMenuNum<3)
+		if(m_nMenuNum<2)
 			++m_nMenuNum ;
 	}
 
@@ -127,5 +138,7 @@ void TitleScene::MenuSelect()
 	{
 		m_pButton[prevMenuNum]->SetTextureUV(0.0f, 0.0f, 390.0f, 80.0f) ;
 		m_pButton[m_nMenuNum]->SetTextureUV(390.0f, 0.0f, 780.0f, 80.0f) ;
+		
+		g_MusicManager->PlayMusic(m_pSEMenu, 1) ;
 	}
 }

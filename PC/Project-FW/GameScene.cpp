@@ -10,6 +10,7 @@
 #include "SceneManager.h"
 #include "TextureManager.h"
 
+#include "Count.h"
 #include "Hero.h"
 #include "BossManager.h"
 #include "CollisionManager.h"
@@ -18,8 +19,9 @@
 #include "D3dDevice.h"
 
 GameScene::GameScene() : m_pBackground(NULL),
-						 //m_pHero(NULL),
+						 m_pBottom(NULL), m_pScore(NULL), m_pText(NULL),
 						 m_fTime(0.0f),
+						 m_pBGM(NULL),
 						 m_pfnLoop(NULL)
 {
 }
@@ -27,9 +29,12 @@ GameScene::~GameScene()
 {
 	if(m_pBackground!=NULL)
 		delete m_pBackground ;
-
-	//if(m_pHero!=NULL)
-	//	delete m_pHero ;
+	if(m_pBottom!=NULL)
+		delete m_pBottom ;
+	if(m_pScore!=NULL)
+		delete m_pScore ;
+	if(m_pText!=NULL)
+		delete m_pText ;
 
 	if(m_pCount!=NULL)
 		delete m_pCount ;
@@ -53,18 +58,25 @@ void GameScene::Init()
 	const float fWinHeight = g_D3dDevice->GetWinHeight() ;
 
 	m_pBackground = new CSprite ;
-	m_pBackground->Init("Resource/Image/Dummy/Background.png") ;
+	m_pBackground->Init("Resource/Image/Game/play_bg.jpg") ;
 	m_pBackground->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 
-	m_pCount = new CSprite ;
-	m_pCount->Init(64.0f, 64.0f, "Resource/Image/Dummy/Count.png") ;
-	m_pCount->SetTextureUV(0.0f, 0.0f, 64.0f, 64.0f) ;
-	m_pCount->SetScale(2.0f, 2.0f) ;
+	m_pBottom = new CSprite ;
+	m_pBottom->Init("Resource/Image/Game/play_btm.png") ;
+	m_pBottom->SetPosition(fWinWidth / 2.0f, fWinHeight - 678.0f) ;
+	
+	m_pScore = new CSprite ;
+	m_pScore->Init("Resource/Image/Game/play_ui.png") ;
+	m_pScore->SetPosition(fWinWidth / 2.0f, fWinHeight - 153.0f) ;
+	
+	m_pText = new CSprite ;
+	m_pText->Init("Resource/Image/Game/play_txt.png") ;
+	m_pText->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
+
+	m_pCount = new CCount ;
+	m_pCount->Init() ;
 	m_pCount->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 
-	//m_pHero = new CHero ;
-	//m_pHero->Init() ;
-	//m_pHero->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 	g_Hero->Init() ;
 	g_Hero->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 
@@ -72,10 +84,16 @@ void GameScene::Init()
 
 	g_BossManager->SetupBoss("Boss3") ;
 	g_PatternQueueManager->LoadScript("Boss3_Pattern1") ;
+
+	m_pBGM = g_MusicManager->LoadMusic("Resource/Sound/BGM-Play.mp3", true, true) ;
+
+	g_MusicManager->PlayMusic(m_pBGM) ;
 }
 
 void GameScene::Destroy()
 {
+	g_MusicManager->StopMusic() ;
+	g_MusicManager->StopMusic(1) ;
 }
 
 void GameScene::Update(float dt)
@@ -93,38 +111,26 @@ void GameScene::Render()
 	g_CameraManager->CameraRun() ;
 
 	m_pBackground->Render() ;
-
-	//m_pHero->Render() ;
-	g_Hero->Render() ;
-
-	m_pCount->Render() ;
+	m_pText->Render() ;
+	m_pScore->Render() ;
+	m_pBottom->Render() ;
 
 	g_BossManager->Render() ;
+
+	g_Hero->Render() ;
+
+	if(m_pCount->BeLife())
+		m_pCount->Render() ;
 }
 
 void GameScene::Count()
 {
-	int time = (int)m_fTime ;
+	m_pCount->Update() ;
 
-	switch(time)
+	if(m_fTime>=3.0f)
 	{
-	case 0 :
-		m_pCount->SetTextureUV(0.0f, 0.0f, 64.0f, 64.0f) ;
-		break ;
-
-	case 1 :
-		m_pCount->SetTextureUV(64.0f, 0.0f, 128.0f, 64.0f) ;
-		break ;
-
-	case 2 :
-		m_pCount->SetTextureUV(0.0f, 64.0f, 64.0f, 128.0f) ;
-		break ;
-
-	case 3 :
-		m_pCount->SetTextureUV(64.0f, 64.0f, 128.0f, 128.0f) ;
 		m_fTime = 0.0f ;
 		m_pfnLoop = &GameScene::GameLoop ;
-		return ;
 	}
 
 	m_fTime += g_D3dDevice->GetTime() ;
@@ -132,7 +138,9 @@ void GameScene::Count()
 
 void GameScene::GameLoop()
 {
-	//m_pHero->Update() ;
+	if(m_pCount->BeLife())
+		m_pCount->Update() ;
+
 	g_Hero->Update() ;
 
 	g_PatternQueueManager->Update() ;

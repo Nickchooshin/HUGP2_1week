@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Scene.h"
+#include <fmod.hpp>
 
 class CSprite ;
 
@@ -11,6 +12,9 @@ private :
 	CSprite *m_pButton[3] ;
 
 	int m_nMenuNum ;
+
+	FMOD::Sound *m_pBGM ;
+	FMOD::Sound *m_pSEMenu, *m_pSESelect ;
 
 public :
 	static Scene* scene() ;
