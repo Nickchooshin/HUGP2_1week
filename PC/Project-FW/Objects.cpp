@@ -13,7 +13,7 @@ CObjects::~CObjects()
 	if(m_pSprite!=NULL)
 		delete m_pSprite ;
 	if(m_pBounding!=NULL)
-		delete m_pBounding ;
+		delete []m_pBounding ;
 }
 
 void CObjects::SetPosition(POSITION Position)

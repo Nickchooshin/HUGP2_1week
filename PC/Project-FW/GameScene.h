@@ -16,6 +16,7 @@ private :
 
 	float m_fTime ;
 	float m_fTextX, m_fTextY, m_fTextDirection ;
+	int m_nBossNum, m_nPatternNum ;
 
 	FMOD::Sound *m_pBGM ;
 
@@ -37,4 +38,5 @@ private :
 
 	void Count() ;
 	void BackgroundTextMoving() ;
+	void NextPattern() ;
 } ;

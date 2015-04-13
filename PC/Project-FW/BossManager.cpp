@@ -14,20 +14,16 @@ BossManager::BossManager()
 }
 BossManager::~BossManager()
 {
-	std::map<std::string, CBoss*>::iterator iter_boss ;
-	std::vector<CPattern*>::iterator iter_pattern ;
-
-	for(iter_boss=m_BossList.begin(); iter_boss!=m_BossList.end(); iter_boss++)
-		delete iter_boss->second ;
-
-	for(iter_pattern=m_PatternList.begin(); iter_pattern!=m_PatternList.end(); iter_pattern++)
-		delete *iter_pattern ;
+	ClearBoss() ;
+	ClearPattern() ;
 }
 
 void BossManager::SetupBoss(char *strBossName)
 {
 	CDataLoader DataLoader ;
 	char filepath[100] ;
+
+	ClearBoss() ;
 
 	sprintf_s(filepath, "Resource/Data/Boss/%s.dat", strBossName) ;
 	DataLoader.OpenData(filepath) ;
@@ -204,4 +200,28 @@ void BossManager::Render()
 		pPattern = m_PatternList[i] ;
 		pPattern->Render() ;
 	}
+}
+
+void BossManager::ClearBoss()
+{
+	if(m_BossList.empty())
+		return ;
+
+	std::map<std::string, CBoss*>::iterator iter, iter_end=m_BossList.end() ;
+
+	for(iter=m_BossList.begin(); iter!=iter_end; iter++)
+		delete iter->second ;
+	m_BossList.clear() ;
+}
+
+void BossManager::ClearPattern()
+{
+	if(m_PatternList.empty())
+		return ;
+
+	std::vector<CPattern*>::iterator iter, iter_end=m_PatternList.end() ;
+
+	for(iter=m_PatternList.begin(); iter!=iter_end; iter++)
+		delete *iter ;
+	m_PatternList.clear() ;
 }

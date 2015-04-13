@@ -1,4 +1,5 @@
 #include "GameScene.h"
+#include "TitleScene.h"
 
 #include "Keyboard.h"
 #include "Mouse.h"
@@ -22,6 +23,7 @@ GameScene::GameScene() : m_pBackground(NULL),
 						 m_pBottom(NULL), m_pScore(NULL), m_pText(NULL),
 						 m_fTime(0.0f),
 						 m_fTextX(0.0f), m_fTextY(0.0f), m_fTextDirection(1.0f),
+						 m_nBossNum(1), m_nPatternNum(1),
 						 m_pBGM(NULL),
 						 m_pfnLoop(NULL)
 {
@@ -85,8 +87,8 @@ void GameScene::Init()
 
 	m_pfnLoop = &GameScene::Count ;
 
-	g_BossManager->SetupBoss("Boss3") ;
-	g_PatternQueueManager->LoadScript("Boss3_Pattern1") ;
+	g_BossManager->SetupBoss("Boss1") ;
+	g_PatternQueueManager->LoadScript("Boss1_Pattern1") ;
 
 	m_pBGM = g_MusicManager->LoadMusic("Resource/Sound/BGM-Play.mp3", true, true) ;
 
@@ -138,6 +140,8 @@ void GameScene::GameLoop()
 	g_PatternQueueManager->Update() ;
 	g_BossManager->Update() ;
 	g_CollisionManager->Update() ;
+
+	NextPattern() ;
 }
 
 void GameScene::Count()
@@ -171,4 +175,56 @@ void GameScene::BackgroundTextMoving()
 	}
 
 	m_pText->SetPosition(m_fTextX, m_fTextY) ;
+}
+
+void GameScene::NextPattern()
+{
+	if(g_PatternQueueManager->BeQueueEnd())
+	{
+		if(m_fTime>=2.0f)
+		{
+			if(m_nBossNum<4)
+			{
+				if(m_nPatternNum==3)
+				{
+					++m_nBossNum ;
+					m_nPatternNum = 1 ;
+
+					char boss_name[20] ;
+					sprintf_s(boss_name, "Boss%d", m_nBossNum) ;
+					g_BossManager->SetupBoss(boss_name) ;
+				}
+				else
+					++m_nPatternNum ;
+			}
+			else
+			{
+				if(m_nPatternNum==2)
+				{
+					++m_nBossNum ;
+					m_nPatternNum = 1 ;
+
+					if(m_nBossNum>6)
+					{
+						g_SceneManager->ChangeScene(TitleScene::scene()) ;
+						return ;
+					}
+				
+					char boss_name[20] ;
+					sprintf_s(boss_name, "Boss%d", m_nBossNum) ;
+					g_BossManager->SetupBoss(boss_name) ;
+				}
+				else
+					++m_nPatternNum ;
+			}
+
+			char pattern_name[20] ;
+			sprintf_s(pattern_name, "Boss%d_Pattern%d", m_nBossNum, m_nPatternNum) ;
+			g_PatternQueueManager->LoadScript(pattern_name) ;
+
+			m_fTime = 0.0f ;
+		}
+		else
+			m_fTime += g_D3dDevice->GetTime() ;
+	}
 }

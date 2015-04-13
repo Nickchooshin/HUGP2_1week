@@ -27,6 +27,9 @@ public :
 	void Update() ;
 
 	void Render() ;
+private :
+	void ClearBoss() ;
+	void ClearPattern() ;
 } ;
 
 #define g_BossManager BossManager::GetInstance()
