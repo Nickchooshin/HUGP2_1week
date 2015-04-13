@@ -21,6 +21,7 @@
 GameScene::GameScene() : m_pBackground(NULL),
 						 m_pBottom(NULL), m_pScore(NULL), m_pText(NULL),
 						 m_fTime(0.0f),
+						 m_fTextX(0.0f), m_fTextY(0.0f), m_fTextDirection(1.0f),
 						 m_pBGM(NULL),
 						 m_pfnLoop(NULL)
 {
@@ -71,7 +72,9 @@ void GameScene::Init()
 	
 	m_pText = new CSprite ;
 	m_pText->Init("Resource/Image/Game/play_txt.png") ;
-	m_pText->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
+	m_fTextX = (fWinWidth / 2.0f) - 110.0f ;
+	m_fTextY = (fWinHeight / 2.0f) ;
+	m_pText->SetPosition(m_fTextX, m_fTextY) ;
 
 	m_pCount = new CCount ;
 	m_pCount->Init() ;
@@ -103,6 +106,8 @@ void GameScene::Update(float dt)
 	g_Joystick->Update() ;
 	g_MusicManager->Loop() ;
 
+	BackgroundTextMoving() ;
+
 	(this->*m_pfnLoop)() ;
 }
 
@@ -123,6 +128,18 @@ void GameScene::Render()
 		m_pCount->Render() ;
 }
 
+void GameScene::GameLoop()
+{
+	if(m_pCount->BeLife())
+		m_pCount->Update() ;
+
+	g_Hero->Update() ;
+
+	g_PatternQueueManager->Update() ;
+	g_BossManager->Update() ;
+	g_CollisionManager->Update() ;
+}
+
 void GameScene::Count()
 {
 	m_pCount->Update() ;
@@ -136,14 +153,22 @@ void GameScene::Count()
 	m_fTime += g_D3dDevice->GetTime() ;
 }
 
-void GameScene::GameLoop()
+void GameScene::BackgroundTextMoving()
 {
-	if(m_pCount->BeLife())
-		m_pCount->Update() ;
+	const float fTime = g_D3dDevice->GetTime() ;
 
-	g_Hero->Update() ;
+	m_fTextX += 55.0f * fTime * m_fTextDirection ;
 
-	g_PatternQueueManager->Update() ;
-	g_BossManager->Update() ;
-	g_CollisionManager->Update() ;
+	if(m_fTextX<=530.0f)
+	{
+		m_fTextX = 530.0f ;
+		m_fTextDirection = 1.0f ;
+	}
+	else if(m_fTextX>=750.0f)
+	{
+		m_fTextX = 750.0f ;
+		m_fTextDirection = -1.0f ;
+	}
+
+	m_pText->SetPosition(m_fTextX, m_fTextY) ;
 }

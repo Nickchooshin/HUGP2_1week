@@ -15,6 +15,7 @@ private :
 	CCount *m_pCount ;
 
 	float m_fTime ;
+	float m_fTextX, m_fTextY, m_fTextDirection ;
 
 	FMOD::Sound *m_pBGM ;
 
@@ -32,6 +33,8 @@ public :
 	void Update(float dt) ;
 	void Render() ;
 private :
-	void Count() ;
 	void GameLoop() ;
+
+	void Count() ;
+	void BackgroundTextMoving() ;
 } ;
