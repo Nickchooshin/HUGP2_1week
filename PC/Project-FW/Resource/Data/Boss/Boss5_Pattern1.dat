@@ -1,7 +1,7 @@
 SOUND "SE_bss5_01.mp3"
 MOVE NORMAL "obj1", 1505.0f, 370.0f, 1020.0f, 370.0f, 1.0f
 WAIT 1.0f
-STAY "obj1", 1080.0f, 300.0f, 0.5f
+STAY "obj1", 1020.0f, 370.0f, 0.5f
 WAIT 0.5f
 MOVE NORMAL "obj1", 1020.0f, 370.0f, 1505.0f, 370.0f, 1.0f
 WAIT 2.0f

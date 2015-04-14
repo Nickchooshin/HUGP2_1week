@@ -14,8 +14,7 @@ BossManager::BossManager()
 }
 BossManager::~BossManager()
 {
-	ClearBoss() ;
-	ClearPattern() ;
+	Clear() ;
 }
 
 void BossManager::SetupBoss(char *strBossName)
@@ -168,6 +167,12 @@ CBoss* BossManager::GetBossInstance(std::string name)
 	g_CollisionManager->AddObject(pBoss) ;
 
 	return pBoss ;
+}
+
+void BossManager::Clear()
+{
+	ClearBoss() ;
+	ClearPattern() ;
 }
 
 void BossManager::Update()

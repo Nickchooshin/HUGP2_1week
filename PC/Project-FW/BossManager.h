@@ -24,6 +24,8 @@ public :
 
 	CBoss* GetBossInstance(std::string name) ;
 
+	void Clear() ;
+
 	void Update() ;
 
 	void Render() ;

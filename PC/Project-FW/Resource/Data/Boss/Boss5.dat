@@ -15,7 +15,7 @@
 "Resource/Image/Boss/obj_bss5_02.png"
 <BOUNDING_CIRCLE>
 1
-0.0f, 0.0f, 50.0f
+0.0f, 0.0f, 25.0f
 <COLLISION>
 1
 <END>
@@ -37,7 +37,7 @@
 "Resource/Image/Boss/obj_bss5_04.png"
 <BOUNDING_CIRCLE>
 1
-0.0f, 0.0f, 565.0f, 565.0f
+0.0f, 0.0f, 282.5f, 282.5f
 <COLLISION>
 0
 <END>

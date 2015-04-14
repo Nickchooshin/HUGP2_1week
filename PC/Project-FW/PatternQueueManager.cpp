@@ -18,10 +18,7 @@ CPatternQueueManager::CPatternQueueManager() : m_pNowCommand(NULL),
 }
 CPatternQueueManager::~CPatternQueueManager()
 {
-	ClearQueue() ;
-
-	if(m_pNowCommand!=NULL)
-		delete m_pNowCommand ;
+	Clear() ;
 }
 
 bool CPatternQueueManager::LoadScript(char *filename)
@@ -81,7 +78,7 @@ const bool CPatternQueueManager::BeQueueEnd() const
 	return m_bQueueEnd ;
 }
 
-void CPatternQueueManager::ClearQueue()
+void CPatternQueueManager::Clear()
 {
 	CPatternCommand *temp ;
 
@@ -90,6 +87,12 @@ void CPatternQueueManager::ClearQueue()
 		temp = m_CommandQueue.front() ;
 		m_CommandQueue.pop() ;
 		delete temp ;
+	}
+
+	if(m_pNowCommand!=NULL)
+	{
+		delete m_pNowCommand ;
+		m_pNowCommand = NULL ;
 	}
 }
 

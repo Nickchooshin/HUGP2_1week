@@ -15,7 +15,7 @@
 "Resource/Image/Boss/obj_bss6_02.png"
 <BOUNDING_ELLIPSE>
 1
--1.0f, 2.0f, 47.0f, 106.0f
+-1.0f, 2.0f, 23.5f, 53.0f
 <COLLISION>
 1
 <END>

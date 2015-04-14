@@ -13,13 +13,23 @@ CNumberUI::~CNumberUI()
 		delete m_pSprite ;
 }
 
-void CNumberUI::Init()
+void CNumberUI::Init(int type)
 {
 	m_pSprite = new CSprite ;
 
-	m_fWidth = 20.0f ;
-	m_fHeight = 30.0f ;
-	m_pSprite->Init(m_fWidth, m_fHeight, "Resource/Image/Game/play_score.png") ;
+	if(type==0)
+	{
+		m_fWidth = 20.0f ;
+		m_fHeight = 30.0f ;
+		m_pSprite->Init(m_fWidth, m_fHeight, "Resource/Image/Game/play_score.png") ;
+	}
+	else if(type==1)
+	{
+		m_fWidth = 50.0f ;
+		m_fHeight = 80.0f ;
+		m_pSprite->Init(m_fWidth, m_fHeight, "Resource/Image/Gameover/rst_score.png") ;
+	}
+	
 	m_pSprite->SetTextureUV(0.0f, 0.0f, m_fWidth, m_fHeight) ;
 }
 

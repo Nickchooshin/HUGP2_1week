@@ -13,7 +13,8 @@
 
 #include "D3dDevice.h"
 
-HowToScene::HowToScene() : m_pHowToPlay(NULL)
+HowToScene::HowToScene() : m_pHowToPlay(NULL),
+						   m_pSESelect(NULL)
 {
 }
 HowToScene::~HowToScene()
@@ -41,10 +42,13 @@ void HowToScene::Init()
 	m_pHowToPlay = new CSprite ;
 	m_pHowToPlay->Init("Resource/Image/HowTo/htp_bg.jpg") ;
 	m_pHowToPlay->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
+	
+	m_pSESelect = g_MusicManager->LoadMusic("Resource/Sound/SE/SE_select.mp3", false, false) ;
 }
 
 void HowToScene::Destroy()
 {
+	g_MusicManager->StopMusic() ;
 }
 
 void HowToScene::Update(float dt)
@@ -55,7 +59,11 @@ void HowToScene::Update(float dt)
 	g_MusicManager->Loop() ;
 
 	if(g_Keyboard->IsPressDown(DIK_RETURN))
+	{
+		g_MusicManager->PlayMusic(m_pSESelect, 1) ;
+
 		g_SceneManager->ChangeScene(GameScene::scene()) ;
+	}
 }
 
 void HowToScene::Render()

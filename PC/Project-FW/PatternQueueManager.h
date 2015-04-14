@@ -21,7 +21,7 @@ public :
 
 	const bool BeQueueEnd() const ;
 
-	void ClearQueue() ;
+	void Clear() ;
 
 	void Update() ;
 private :

@@ -43,6 +43,8 @@ void CreditScene::Init()
 	m_pCredit = new CSprite ;
 	m_pCredit->Init("Resource/Image/Credit/crd_bg.jpg") ;
 	m_pCredit->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
+	
+	m_pSESelect = g_MusicManager->LoadMusic("Resource/Sound/SE/SE_select.mp3", false, false) ;
 }
 
 void CreditScene::Destroy()
@@ -57,7 +59,11 @@ void CreditScene::Update(float dt)
 	g_MusicManager->Loop() ;
 
 	if(g_Keyboard->IsPressDown(DIK_RETURN))
+	{
+		g_MusicManager->PlayMusic(m_pSESelect, 1) ;
+
 		g_SceneManager->ChangeScene(TitleScene::scene()) ;
+	}
 }
 
 void CreditScene::Render()

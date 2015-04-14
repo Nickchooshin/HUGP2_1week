@@ -15,7 +15,7 @@
 "Resource/Image/Boss/obj_bss1_02.png"
 <BOUNDING_ELLIPSE>
 1
-0.0f, 0.0f, 372.0f, 540.0f
+0.0f, 0.0f, 186.0f, 270.0f
 <COLLISION>
 1
 <END>
@@ -26,7 +26,7 @@
 "Resource/Image/Boss/obj_bss1_03.png"
 <BOUNDING_ELLIPSE>
 1
-0.0f, 1.0f, 185.0f, 267.0f
+0.0f, 1.0f, 92.5f, 133.5f
 <COLLISION>
 1
 <END>
@@ -37,7 +37,7 @@
 "Resource/Image/Boss/obj_bss1_04.png"
 <BOUNDING_ELLIPSE>
 1
-1.0f, 0.0f, 137.0f, 209.0f
+1.0f, 0.0f, 68.5f, 104.5f
 <COLLISION>
 1
 <END>

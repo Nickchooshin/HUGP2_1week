@@ -10,15 +10,23 @@ private :
 	float m_fJump, m_fGravity ;
 	float m_fYVelocity ;
 
-	bool m_bJump ;
+	bool m_bJump, m_bDead ;
+
+	long m_lStartTime, m_lEndTime ;
+	bool m_bStart ;
 
 public :
 	CHero() ;
 	~CHero() ;
 
 	void Init() ;
+
+	const int GetScore() const ;
+	const int GetRank() const ;
+	const bool BeDead() const ;
 	
 	void Dead() ;
+	void Clear() ;
 
 	void Update() ;
 private :

@@ -15,6 +15,7 @@ private :
 
 	CCountUI *m_pCountUI ;
 	CScoreUI *m_pScoreUI ;
+	CSprite *m_pScore, *m_pRank ;
 
 	float m_fTime ;
 	float m_fTextX, m_fTextY, m_fTextDirection ;
@@ -40,5 +41,6 @@ private :
 
 	void Count() ;
 	void BackgroundTextMoving() ;
+	void Rank() ;
 	void NextPattern() ;
 } ;

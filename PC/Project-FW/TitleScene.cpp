@@ -76,7 +76,6 @@ void TitleScene::Init()
 
 void TitleScene::Destroy()
 {
-	g_MusicManager->StopMusic() ;
 }
 
 void TitleScene::Update(float dt)

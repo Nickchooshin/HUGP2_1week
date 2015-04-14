@@ -14,7 +14,7 @@ public :
 	CNumberUI() ;
 	~CNumberUI() ;
 
-	void Init() ;
+	void Init(int type) ;
 	
 	void SetPosition(float fX, float fY) ;
 	void SetNumber(int nNum) ;
