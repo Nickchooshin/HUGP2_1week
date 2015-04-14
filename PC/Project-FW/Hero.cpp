@@ -13,22 +13,6 @@ CHero::CHero() : m_fSpeed(300.0f),
 				 m_lStartTime(0), m_lEndTime(0),
 				 m_bStart(false)
 {
-	char item[100] ;
-	CDataLoader Data ;
-	Data.OpenData("Resource/Data/Hero.dat") ;
-
-	while(Data.GetItem(item))
-	{
-		if(strcmp(item, "SPEED")==0)
-			Data.GetValue(m_fSpeed) ;
-		else if(strcmp(item, "JUMP")==0)
-			Data.GetValue(m_fJump) ;
-		else if(strcmp(item, "GRAVITY")==0)
-			Data.GetValue(m_fGravity) ;
-	}
-
-	Data.CloseData() ;
-
 	m_pSprite = new CSprite ;
 	m_pSprite->Init("Resource/Image/Game/chr.png") ;
 
