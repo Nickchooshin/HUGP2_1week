@@ -6,8 +6,8 @@ MOVE NORMAL "obj4", 646.0f, 318.0f, 646.0f, 1030.0f, 2.373333f
 WAIT 2.5f
 
 IRREGULAR "Boss3_Pattern2"
-WAIT 3.0f
+WAIT 2.4f
 
-WAIT 2.055f
+WAIT 1.644f
 
 #WAIT 2.0f

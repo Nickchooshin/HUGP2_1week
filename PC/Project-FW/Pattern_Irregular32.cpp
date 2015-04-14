@@ -41,7 +41,7 @@ void CPattern_Irregular32::EventCreate()
 	{
 		CBoss *pBoss = m_BossList[i] ;
 		POSITION position = pBoss->GetPosition() ;
-		position.y -= 400.0f * fTime ;
+		position.y -= 500.0f * fTime ;
 
 		if(position.y<=-51.0f)
 		{
@@ -54,7 +54,7 @@ void CPattern_Irregular32::EventCreate()
 			pBoss->SetPosition(position) ;
 	}
 
-	if(m_nNum<3 && m_fTime>=1.5f)
+	if(m_nNum<3 && m_fTime>=1.2f)
 	{
 		CreateBoss() ;
 

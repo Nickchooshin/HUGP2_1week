@@ -104,7 +104,6 @@ void CWinSystem::MsgLoop(int Frame)
 		}
 		else
 		{
-			//t = (float)(GetTickCount() - dwOldTime) * 0.001f ;
 			t = (float)(timeGetTime() - dwOldTime) * 0.001f ;
 
 			if(t>=fFrameTime)
@@ -116,7 +115,6 @@ void CWinSystem::MsgLoop(int Frame)
 				DWORD dwFrameTime = (DWORD)(fFrameTime * nElapsedFrame * 1000.0f) ;
 				DWORD dwRemainTime = dwElapsedTime - dwFrameTime ;
 
-				//dwOldTime = GetTickCount() - dwRemainTime ;
 				dwOldTime = timeGetTime() - dwRemainTime ;
 
 				DWORD t1 = timeGetTime() ;
@@ -124,14 +122,6 @@ void CWinSystem::MsgLoop(int Frame)
 				DWORD t2 = timeGetTime() ;
 				Render() ;
 				DWORD t3 = timeGetTime() ;
-				//printf("%f %f\n", (float)(t2 - t1) * 0.001f, (float)(t3 - t2) * 0.001f) ;
-
-				/*DWORD dwElapsedTime = (DWORD)(t * 1000.0f) ;
-				DWORD dwFrameTime = (DWORD)(fFrameTime * nElapsedFrame * 1000.0f) ;
-				DWORD dwRemainTime = dwElapsedTime - dwFrameTime ;
-
-				//dwOldTime = GetTickCount() - dwRemainTime ;
-				dwOldTime = timeGetTime() - dwRemainTime ;*/
 			}
 		}
 	}

@@ -10,7 +10,7 @@
 CPattern_Irregular52::CPattern_Irregular52() : CPattern(9999.0f),
 											   m_pWarning(NULL),
 											   m_Position(),
-											   m_moveVector(), m_accVector(1000.0f, 0.0f),
+											   m_moveVector(), m_accVector(800.0f, 0.0f),
 											   m_pSound(NULL),
 											   m_State(CHASE),
 											   m_pfnEvent(&CPattern_Irregular52::EventChase)

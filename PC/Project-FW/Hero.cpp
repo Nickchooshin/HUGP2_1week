@@ -6,7 +6,7 @@
 
 #include "D3dDevice.h"
 
-CHero::CHero() : m_fSpeed(300.0f),
+CHero::CHero() : m_fSpeed(320.0f),
 				 m_fJump(742.85715f), m_fGravity(2122.449f),
 				 m_fYVelocity(0.0f),
 				 m_bJump(false), m_bDead(false),
