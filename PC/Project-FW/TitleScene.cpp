@@ -1,4 +1,6 @@
 #include "TitleScene.h"
+#include "HowToScene.h"
+#include "CreditScene.h"
 
 #include "Keyboard.h"
 #include "Mouse.h"
@@ -9,8 +11,6 @@
 #include "MusicManager.h"
 #include "SceneManager.h"
 #include "TextureManager.h"
-
-#include "HowToScene.h"
 
 #include "D3dDevice.h"
 
@@ -99,6 +99,7 @@ void TitleScene::Update(float dt)
 			return ;
 
 		case 1 :
+			g_SceneManager->ChangeScene(CreditScene::scene()) ;
 			return ;
 
 		case 2 :

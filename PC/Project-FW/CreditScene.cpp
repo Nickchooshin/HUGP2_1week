@@ -1,5 +1,5 @@
-#include "HowToScene.h"
-#include "GameScene.h"
+#include "CreditScene.h"
+#include "TitleScene.h"
 
 #include "Keyboard.h"
 #include "Mouse.h"
@@ -11,43 +11,45 @@
 #include "SceneManager.h"
 #include "TextureManager.h"
 
+#include "GameScene.h"
+
 #include "D3dDevice.h"
 
-HowToScene::HowToScene() : m_pHowToPlay(NULL)
+CreditScene::CreditScene() : m_pCredit(NULL)
 {
 }
-HowToScene::~HowToScene()
+CreditScene::~CreditScene()
 {
-	if(m_pHowToPlay!=NULL)
-		delete m_pHowToPlay ;
+	if(m_pCredit!=NULL)
+		delete m_pCredit ;
 	
 	g_TextureManager->ClearTexture() ;
 }
 
-Scene* HowToScene::scene()
+Scene* CreditScene::scene()
 {
-	Scene *scene = new HowToScene ;
+	Scene *scene = new CreditScene ;
 
 	return scene ;
 }
 
-void HowToScene::Init()
+void CreditScene::Init()
 {
 	g_CameraManager->AddCamera(new CCamera()) ;
 
 	const float fWinWidth = g_D3dDevice->GetWinWidth() ;
 	const float fWinHeight = g_D3dDevice->GetWinHeight() ;
 
-	m_pHowToPlay = new CSprite ;
-	m_pHowToPlay->Init("Resource/Image/HowTo/htp_bg.jpg") ;
-	m_pHowToPlay->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
+	m_pCredit = new CSprite ;
+	m_pCredit->Init("Resource/Image/Credit/crd_bg.jpg") ;
+	m_pCredit->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 }
 
-void HowToScene::Destroy()
+void CreditScene::Destroy()
 {
 }
 
-void HowToScene::Update(float dt)
+void CreditScene::Update(float dt)
 {
 	g_Keyboard->Update() ;
 	g_Mouse->Update() ;
@@ -55,12 +57,12 @@ void HowToScene::Update(float dt)
 	g_MusicManager->Loop() ;
 
 	if(g_Keyboard->IsPressDown(DIK_RETURN))
-		g_SceneManager->ChangeScene(GameScene::scene()) ;
+		g_SceneManager->ChangeScene(TitleScene::scene()) ;
 }
 
-void HowToScene::Render()
+void CreditScene::Render()
 {
 	g_CameraManager->CameraRun() ;
 
-	m_pHowToPlay->Render() ;
+	m_pCredit->Render() ;
 }

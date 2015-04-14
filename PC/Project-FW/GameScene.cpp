@@ -11,7 +11,8 @@
 #include "SceneManager.h"
 #include "TextureManager.h"
 
-#include "Count.h"
+#include "CountUI.h"
+#include "ScoreUI.h"
 #include "Hero.h"
 #include "BossManager.h"
 #include "CollisionManager.h"
@@ -20,7 +21,9 @@
 #include "D3dDevice.h"
 
 GameScene::GameScene() : m_pBackground(NULL),
-						 m_pBottom(NULL), m_pScore(NULL), m_pText(NULL),
+						 m_pBottom(NULL), m_pText(NULL),
+						 m_pCountUI(NULL),
+						 m_pScoreUI(NULL),
 						 m_fTime(0.0f),
 						 m_fTextX(0.0f), m_fTextY(0.0f), m_fTextDirection(1.0f),
 						 m_nBossNum(1), m_nPatternNum(1),
@@ -34,13 +37,13 @@ GameScene::~GameScene()
 		delete m_pBackground ;
 	if(m_pBottom!=NULL)
 		delete m_pBottom ;
-	if(m_pScore!=NULL)
-		delete m_pScore ;
 	if(m_pText!=NULL)
 		delete m_pText ;
 
-	if(m_pCount!=NULL)
-		delete m_pCount ;
+	if(m_pCountUI!=NULL)
+		delete m_pCountUI ;
+	if(m_pScoreUI!=NULL)
+		delete m_pScoreUI ;
 	
 	g_CollisionManager->DeleteAllObjects() ;
 	g_TextureManager->ClearTexture() ;
@@ -68,19 +71,19 @@ void GameScene::Init()
 	m_pBottom->Init("Resource/Image/Game/play_btm.png") ;
 	m_pBottom->SetPosition(fWinWidth / 2.0f, fWinHeight - 678.0f) ;
 	
-	m_pScore = new CSprite ;
-	m_pScore->Init("Resource/Image/Game/play_ui.png") ;
-	m_pScore->SetPosition(fWinWidth / 2.0f, fWinHeight - 153.0f) ;
-	
 	m_pText = new CSprite ;
 	m_pText->Init("Resource/Image/Game/play_txt.png") ;
 	m_fTextX = (fWinWidth / 2.0f) - 110.0f ;
 	m_fTextY = (fWinHeight / 2.0f) + 10.0f ;
 	m_pText->SetPosition(m_fTextX, m_fTextY) ;
 
-	m_pCount = new CCount ;
-	m_pCount->Init() ;
-	m_pCount->SetPosition(fWinWidth / 2.0f, fWinHeight - 153.0f) ;
+	m_pCountUI = new CCountUI ;
+	m_pCountUI->Init() ;
+	m_pCountUI->SetPosition(fWinWidth / 2.0f, fWinHeight - 153.0f) ;
+
+	m_pScoreUI = new CScoreUI ;
+	m_pScoreUI->Init() ;
+	m_pScoreUI->SetPosition(fWinWidth / 2.0f, fWinHeight - 153.0f) ;
 
 	g_Hero->Init() ;
 	g_Hero->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
@@ -119,21 +122,21 @@ void GameScene::Render()
 
 	m_pBackground->Render() ;
 	m_pText->Render() ;
-	m_pScore->Render() ;
+	m_pScoreUI->Render() ;
 	m_pBottom->Render() ;
 
 	g_BossManager->Render() ;
 
 	g_Hero->Render() ;
 
-	if(m_pCount->BeLife())
-		m_pCount->Render() ;
+	if(m_pCountUI->BeLife())
+		m_pCountUI->Render() ;
 }
 
 void GameScene::GameLoop()
 {
-	if(m_pCount->BeLife())
-		m_pCount->Update() ;
+	if(m_pCountUI->BeLife())
+		m_pCountUI->Update() ;
 
 	g_Hero->Update() ;
 
@@ -146,15 +149,15 @@ void GameScene::GameLoop()
 
 void GameScene::Count()
 {
-	m_pCount->Update() ;
+	m_pCountUI->Update() ;
 
-	if(m_fTime>=3.0f)
+	if(!m_pCountUI->BeCount())
 	{
-		m_fTime = 0.0f ;
 		m_pfnLoop = &GameScene::GameLoop ;
-	}
+		(this->*m_pfnLoop)() ;
 
-	m_fTime += g_D3dDevice->GetTime() ;
+		printf("%f\n", timeGetTime() * 0.001f) ;
+	}
 }
 
 void GameScene::BackgroundTextMoving()
@@ -206,6 +209,7 @@ void GameScene::NextPattern()
 
 					if(m_nBossNum>6)
 					{
+						printf("%f\n", timeGetTime() * 0.001f) ;
 						g_SceneManager->ChangeScene(TitleScene::scene()) ;
 						return ;
 					}

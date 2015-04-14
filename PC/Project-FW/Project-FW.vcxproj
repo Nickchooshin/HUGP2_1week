@@ -86,7 +86,8 @@
     <ClCompile Include="Camera.cpp" />
     <ClCompile Include="CameraManager.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
-    <ClCompile Include="Count.cpp" />
+    <ClCompile Include="CountUI.cpp" />
+    <ClCompile Include="CreditScene.cpp" />
     <ClCompile Include="D3dSystem.cpp" />
     <ClCompile Include="GameoverScene.cpp" />
     <ClCompile Include="GameScene.cpp" />
@@ -101,6 +102,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Mouse.cpp" />
     <ClCompile Include="MusicManager.cpp" />
+    <ClCompile Include="NumberUI.cpp" />
     <ClCompile Include="Objects.cpp" />
     <ClCompile Include="Pattern.cpp" />
     <ClCompile Include="PatternCommand.cpp" />
@@ -128,6 +130,7 @@
     <ClCompile Include="Position.cpp" />
     <ClCompile Include="Return.cpp" />
     <ClCompile Include="SceneManager.cpp" />
+    <ClCompile Include="ScoreUI.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="TextureManager.cpp" />
     <ClCompile Include="TitleScene.cpp" />
@@ -142,7 +145,8 @@
     <ClInclude Include="CameraManager.h" />
     <ClInclude Include="Bounding.h" />
     <ClInclude Include="CollisionManager.h" />
-    <ClInclude Include="Count.h" />
+    <ClInclude Include="CountUI.h" />
+    <ClInclude Include="CreditScene.h" />
     <ClInclude Include="D3dSystem.h" />
     <ClInclude Include="D3dDevice.h" />
     <ClInclude Include="GameoverScene.h" />
@@ -156,6 +160,7 @@
     <ClInclude Include="LineEffect.h" />
     <ClInclude Include="Mouse.h" />
     <ClInclude Include="MusicManager.h" />
+    <ClInclude Include="NumberUI.h" />
     <ClInclude Include="Objects.h" />
     <ClInclude Include="Pattern.h" />
     <ClInclude Include="PatternCommand.h" />
@@ -184,6 +189,7 @@
     <ClInclude Include="Return.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="SceneManager.h" />
+    <ClInclude Include="ScoreUI.h" />
     <ClInclude Include="Singleton.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextureManager.h" />

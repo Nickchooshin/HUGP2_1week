@@ -4,25 +4,27 @@
 
 class CSprite ;
 
-class CCount
+class CCountUI
 {
 private :
 	CSprite *m_pSprite ;
 
 	int m_nNum ;
 	float m_fTime ;
-	bool m_bStart, m_bLife ;
+	bool m_bStart ;
+	bool m_bCount, m_bLife ;
 	
 	FMOD::Sound *m_pSECount, *m_pSEStart ;
 
 public :
-	CCount() ;
-	~CCount() ;
+	CCountUI() ;
+	~CCountUI() ;
 
 	void Init() ;
 
 	void SetPosition(float x, float y) ;
-
+	
+	const bool BeCount() const ;
 	const bool BeLife() const ;
 
 	void Update() ;

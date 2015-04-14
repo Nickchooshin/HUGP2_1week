@@ -4,15 +4,17 @@
 #include <fmod.hpp>
 
 class CSprite ;
-class CCount ;
+class CCountUI ;
+class CScoreUI ;
 
 class GameScene : public Scene
 {
 private :
 	CSprite *m_pBackground ;
-	CSprite *m_pBottom, *m_pScore, *m_pText ;
+	CSprite *m_pBottom, *m_pText ;
 
-	CCount *m_pCount ;
+	CCountUI *m_pCountUI ;
+	CScoreUI *m_pScoreUI ;
 
 	float m_fTime ;
 	float m_fTextX, m_fTextY, m_fTextDirection ;

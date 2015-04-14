@@ -153,8 +153,17 @@
     <ClCompile Include="GameoverScene.cpp">
       <Filter>Scene\GameoverScene</Filter>
     </ClCompile>
-    <ClCompile Include="Count.cpp">
+    <ClCompile Include="CountUI.cpp">
       <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="NumberUI.cpp">
+      <Filter>UI\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="ScoreUI.cpp">
+      <Filter>UI\Number</Filter>
+    </ClCompile>
+    <ClCompile Include="CreditScene.cpp">
+      <Filter>Scene\CreditScene</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -316,8 +325,17 @@
     <ClInclude Include="GameoverScene.h">
       <Filter>Scene\GameoverScene</Filter>
     </ClInclude>
-    <ClInclude Include="Count.h">
+    <ClInclude Include="CountUI.h">
       <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="NumberUI.h">
+      <Filter>UI\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="ScoreUI.h">
+      <Filter>UI\Number</Filter>
+    </ClInclude>
+    <ClInclude Include="CreditScene.h">
+      <Filter>Scene\CreditScene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -431,6 +449,12 @@
     </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{f130373e-33ee-40e9-9f97-7d2041746f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI\Number">
+      <UniqueIdentifier>{5beb51be-c383-407d-a535-b2baed9cd074}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scene\CreditScene">
+      <UniqueIdentifier>{393c7bc6-8df9-48d5-819c-5ea9ff30048c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
