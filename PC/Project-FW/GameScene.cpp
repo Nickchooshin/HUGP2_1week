@@ -27,7 +27,7 @@ GameScene::GameScene() : m_pBackground(NULL),
 						 m_pScore(NULL), m_pRank(NULL),
 						 m_fTime(0.0f),
 						 m_fTextX(0.0f), m_fTextY(0.0f), m_fTextDirection(1.0f),
-						 m_nBossNum(4), m_nPatternNum(2),
+						 m_nBossNum(1), m_nPatternNum(1),
 						 m_pBGM(NULL),
 						 m_pfnLoop(NULL)
 {
@@ -105,8 +105,8 @@ void GameScene::Init()
 
 	m_pfnLoop = &GameScene::Count ;
 
-	g_BossManager->SetupBoss("Boss4") ;
-	g_PatternQueueManager->LoadScript("Boss4_Pattern2") ;
+	g_BossManager->SetupBoss("Boss1") ;
+	g_PatternQueueManager->LoadScript("Boss1_Pattern1") ;
 
 	m_pBGM = g_MusicManager->LoadMusic("Resource/Sound/BGM-Play.mp3", true, true) ;
 }

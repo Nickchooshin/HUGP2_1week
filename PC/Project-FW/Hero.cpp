@@ -36,7 +36,7 @@ void CHero::Init()
 const int CHero::GetScore() const
 {
 	float time = (float)(m_lEndTime - m_lStartTime) * 0.001f ;
-	int score = (int)((time / 144.260833f) * 10000.0f) ;
+	int score = (int)((time / 144.820666f) * 10000.0f) ;
 
 	return score ;
 }
@@ -44,7 +44,7 @@ const int CHero::GetScore() const
 const int CHero::GetRank() const
 {
 	float time = (float)(m_lEndTime - m_lStartTime) * 0.001f ;
-	int percent = (int)((time / 144.260833f) * 100.0f) ;
+	int percent = (int)((time / 144.820666f) * 100.0f) ;
 	int rank ;
 
 	if(percent<=9)
@@ -81,7 +81,7 @@ void CHero::Dead()
 
 void CHero::Clear()
 {
-	m_lEndTime = m_lStartTime + 144261 ;
+	m_lEndTime = m_lStartTime + 144821 ;
 }
 
 void CHero::Update()
