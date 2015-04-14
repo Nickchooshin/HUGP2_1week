@@ -14,6 +14,11 @@ public class Hit_Character : MonoBehaviour
 		if( "Enemy" == other.tag )
 			Move_Character.m_dead = true;
 	}
+
+	void FixedUpdate()
+	{
+		End_Game ();
+	}
 	
 	void End_Game()
 	{

@@ -63,11 +63,10 @@ public class Pattern2_3 : Pattern_State
 		}
 
 		obj_warning[4].GetComponent<Enemy2_3> ().move_check = true;
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(2.2f);
 
 		for( int i = 0; i < 5; ++i )
 			DestroyObject(obj_warning[i]);
-		yield return new WaitForSeconds(2.0f);
 		
 		end_check = true;
 	}

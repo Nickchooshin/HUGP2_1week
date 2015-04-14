@@ -88,7 +88,7 @@ public class Pattern4_2 : Pattern_State
 			obj_warning[i].SetActive(true);
 			yield return new WaitForSeconds(0.1f);
 	    }
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
 
 		DestroyObject (obj_boss);
 		for (int i = 0; i < 25; ++i)

@@ -94,7 +94,7 @@ public class Pattern3_3 : Pattern_State
 		obj_warning[4].transform.localPosition = new Vector3(-680.0f, -310.0f, 0.0f);
 		obj_warning[4].GetComponent<Enemy3_3> ().move_dir = true;
 		obj_warning[4].SetActive (true);
-		yield return new WaitForSeconds(4.0f);
+		yield return new WaitForSeconds(2.0f);
 
 		for (int i = 0; i < 2; ++i)
 			DestroyObject (obj_caution [i]);

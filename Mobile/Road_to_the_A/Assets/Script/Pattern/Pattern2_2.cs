@@ -28,7 +28,7 @@ public class Pattern2_2 : Pattern_State
 		// caution
 		obj_caution = Instantiate (Resources.Load ("Boss2_3", typeof(GameObject))) as GameObject;
 		obj_caution.transform.parent = GameObject.Find ("Boss").transform;
-		obj_caution.transform.localScale = new Vector3(80.0f, 720.0f, 0.0f);
+		obj_caution.transform.localScale = new Vector3(130.0f, 720.0f, 0.0f);
 		obj_caution.GetComponent<Warning> ().chase_check = true;
 		obj_caution.gameObject.SetActive(false);
 		
@@ -47,13 +47,11 @@ public class Pattern2_2 : Pattern_State
 		for (int i = 0; i < 20; ++i)
 			obj_warning [i].SetActive (true);
 
-		/*
-		if( (obj_caution.transform.localPosition.x - 40.0f) >
-		   GameObject.FindGameObjectWithTag("Player").transform.localPosition.x ||
-		   (obj_caution.transform.localPosition.x + 40.0f) <
-		   GameObject.FindGameObjectWithTag("Player").transform.localPosition.x )
-			Application.LoadLevel ("End");
-			*/
+		if ((obj_caution.transform.localPosition.x - 65.0f) >
+			GameObject.FindGameObjectWithTag ("Player").transform.localPosition.x ||
+			(obj_caution.transform.localPosition.x + 65.0f) <
+			GameObject.FindGameObjectWithTag ("Player").transform.localPosition.x)
+			Move_Character.m_dead = true;
 	}
 	
 	public override void Move ()
@@ -68,7 +66,7 @@ public class Pattern2_2 : Pattern_State
 		yield return new WaitForSeconds(2.0f);
 
 		obj_caution.SetActive (true);
-		yield return new WaitForSeconds(0.5f);
+		yield return new WaitForSeconds(1.0f);
 
 		obj_caution.SetActive (false);
 		yield return new WaitForSeconds(0.2f);
@@ -80,7 +78,7 @@ public class Pattern2_2 : Pattern_State
 		DestroyObject (obj_caution);
 		for (int i = 0; i < 20; ++i)
 			DestroyObject (obj_warning[i]);
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(0.5f);
 		
 		end_check = true;
 	}

@@ -14,7 +14,7 @@ public class Safe4_2 : MonoBehaviour
 	{
 		tri_check = true;
 		move_check = false;
-		move_speed = 1000.0f / 1.0f;
+		move_speed = 1200.0f / 1.0f;
 
 		_transform = GetComponent<Transform> ();
 	}

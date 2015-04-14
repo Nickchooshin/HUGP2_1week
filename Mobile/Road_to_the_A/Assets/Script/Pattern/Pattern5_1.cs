@@ -93,7 +93,7 @@ public class Pattern5_1 : Pattern_State
 		obj_warning[26].transform.localPosition =
 			new Vector3(0.0f, -410.0f, 0.0f);
 		obj_warning[26].SetActive (true);
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
 		
 		DestroyObject (obj_safe);
 		for (int i = 0; i < 27; ++i)

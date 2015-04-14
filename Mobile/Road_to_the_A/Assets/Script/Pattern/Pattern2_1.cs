@@ -57,17 +57,10 @@ public class Pattern2_1 : Pattern_State
 	{
 		obj_safe.transform.localPosition = new Vector3(0.0f, -10.0f, 0.0f);
 		obj_safe.gameObject.SetActive(true);
-		yield return new WaitForSeconds(3.0f);
+		yield return new WaitForSeconds(2.0f);
 
 		DestroyObject (obj_safe);
 		yield return new WaitForSeconds(0.3f);
-		
-		for( int i = 0; i < 2; ++i )
-			obj_caution[i].gameObject.SetActive(false);
-		yield return new WaitForSeconds(1.5f);
-
-		for( int i = 0; i < 2; ++i )
-			obj_caution[i].GetComponent<Warning> ().chase_check = true;
 
 		for( int i = 0; i < 3; ++i )
 		{
@@ -78,20 +71,20 @@ public class Pattern2_1 : Pattern_State
 			for( int j = 0; j < 2; ++j )
 				obj_caution[j].gameObject.SetActive(false);
 				
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.2f);
 			
 			obj_warning[i].SetActive(true);
 			obj_warning[i].transform.localPosition =
 				new Vector3(obj_caution[0].transform.localPosition.x, 500.0f, 0.0f);
 			yield return new WaitForSeconds(0.2f);
 		}
+		yield return new WaitForSeconds(1.4f);
+
 		for (int i = 0; i < 2; ++i)
 			DestroyObject (obj_caution [i]);
-		yield return new WaitForSeconds(2.1f);
 
 		for (int i = 0; i < 3; ++i)
 			DestroyObject (obj_warning [i]);
-		yield return new WaitForSeconds(2.0f);
 
 		end_check = true;
 	}

@@ -33,7 +33,7 @@ public class Move_Character : MonoBehaviour
 	void Start()
 	{
 		// move time : 1.0f / jump time : 0.7f
-		moveSpeed = 450.0f / 1.0f;
+		moveSpeed = 320.0f / 1.0f;
 		jumpSpeed = 742.85715f;
 		gr = -2122.499f;
 
@@ -52,6 +52,8 @@ public class Move_Character : MonoBehaviour
 		midair = true;
 
 		_transform = GetComponent<Transform> ();
+
+		ScoreManager.getInstance ();
 	}
 
 	void FixedUpdate ()
@@ -60,6 +62,18 @@ public class Move_Character : MonoBehaviour
 			Move_Process ();
 
 		Jump_Process ();
+
+		if( true == m_move && false == m_dead )
+			ScoreManager.getInstance().Score_Cal ();
+	}
+
+	void OnDisable()
+	{
+		m_dir = false;
+		m_move = false;
+		m_jump = false;
+		reclick = false;
+		m_dead = false;
 	}
 
 	void Move_Process()

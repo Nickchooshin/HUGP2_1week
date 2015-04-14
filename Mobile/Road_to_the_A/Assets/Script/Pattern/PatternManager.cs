@@ -58,6 +58,9 @@ public class PatternManager : MonoBehaviour
 
 	void Pattern_Turn()
 	{
+		if( true == Move_Character.m_dead )
+			Application.LoadLevel ("End");
+
 		// Pattern 1
 		if (true == transform.GetComponent<Pattern1_1> ().end_check)
 		{
@@ -148,9 +151,11 @@ public class PatternManager : MonoBehaviour
 			gameObject.GetComponent<Pattern6_1>().enabled = false;
 			gameObject.GetComponent<Pattern6_2>().enabled = true;
 		}
-		else if (true == transform.GetComponent<Pattern1_2> ().end_check)
+		else if (true == transform.GetComponent<Pattern6_2> ().end_check)
 		{
-			transform.GetComponent<Pattern1_3> ().end_check = false;
+			transform.GetComponent<Pattern6_2> ().end_check = false;
+			ScoreManager.getInstance().game_Clear = true;
+			Application.LoadLevel ("End");
 		}
 	}
 }

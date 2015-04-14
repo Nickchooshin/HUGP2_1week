@@ -63,11 +63,11 @@ public class Pattern1_3 : Pattern_State
 		{
 			if( i < 4 )
 			{
-				obj_caution[i].transform.localPosition = new Vector3(-450.0f + ((float)i*300.0f), 0.0f, 0.0f);
+				obj_caution[i].transform.localPosition = new Vector3(-555.0f + ((float)i*370.0f), 0.0f, 0.0f);
 			}
 			else
 			{
-				obj_caution[i].transform.localPosition = new Vector3(-450.0f + (((float)i-4)*300.0f), 0.0f, 0.0f);
+				obj_caution[i].transform.localPosition = new Vector3(-555.0f + (((float)i-4)*370.0f), 0.0f, 0.0f);
 			}
 			obj_caution[i].SetActive(true);
 		}
@@ -81,7 +81,7 @@ public class Pattern1_3 : Pattern_State
 
 		for (int i = 0; i < 4; ++i)
 		{
-			obj_warning[i].transform.localPosition = new Vector3 (-450.0f + ((float)i * 300.0f), -210.0f, 0.0f);
+			obj_warning[i].transform.localPosition = new Vector3 (-555.0f + ((float)i * 370.0f), -210.0f, 0.0f);
 			obj_warning[i].SetActive(true);
 		}
 		yield return new WaitForSeconds (2.2f);
@@ -121,9 +121,9 @@ public class Pattern1_3 : Pattern_State
 			obj_warning [i].GetComponent<Enemy1_3> ().move = true;
 
 			// Speed
-			obj_warning [i].GetComponent<Enemy1_3> ().moveSpeed = 400.0f / 1.0f;
+			obj_warning [i].GetComponent<Enemy1_3> ().moveSpeed = 1200.0f / 1.0f;
 		}
-		yield return new WaitForSeconds (2.0f);
+		yield return new WaitForSeconds (1.5f);
 
 		for (int i = 0; i < 4; ++i)
 			DestroyObject (obj_warning [i]);

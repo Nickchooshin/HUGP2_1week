@@ -139,7 +139,7 @@ public class Pattern1_2 : Pattern_State
 		{
 			DestroyObject(obj_warning[i]);
 		}
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(0.4f);
 		
 		end_check = true;
 	}

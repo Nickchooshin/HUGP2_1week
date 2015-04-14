@@ -57,7 +57,7 @@ public class Pattern5_2 : Pattern_State
 			obj_caution[i].GetComponent<Warning> ().chaseA_check = true;
 			obj_caution[i].SetActive(true);
 		}
-		yield return new WaitForSeconds(6.0f);
+		yield return new WaitForSeconds(4.0f);
 
 		for (int i = 0; i < 2; ++i)
 			obj_caution [i].SetActive (false);
@@ -66,7 +66,12 @@ public class Pattern5_2 : Pattern_State
 		obj_warning.transform.localPosition =
 			new Vector3 (obj_caution[0].transform.localPosition.x, 770.0f, 0.0f);
 		obj_warning.SetActive (true);
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
+
+		for( int i = 0; i < 2; ++i )
+			DestroyObject(obj_caution[i]);
+
+		DestroyObject (obj_warning);
 
 		end_check = true;
 	}

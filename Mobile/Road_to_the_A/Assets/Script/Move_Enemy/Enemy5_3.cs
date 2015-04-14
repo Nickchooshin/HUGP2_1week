@@ -10,7 +10,7 @@ public class Enemy5_3 : MonoBehaviour
 	
 	void Start ()
 	{
-		moveSpeed = 800.0f / 1.0f;
+		moveSpeed = 2200.0f / 1.0f;
 		_transform = GetComponent<Transform> ();
 		
 		GetComponent<AudioSource> ().clip = _sound;

@@ -20,7 +20,7 @@ public class Enemy3_3 : MonoBehaviour
 			GetComponent<AudioSource> ().clip = _sound[0];
 			GetComponent<AudioSource> ().Play ();
 
-			moveSpeed = 900.0f / 0.3f;
+			moveSpeed = 1800.0f / 0.3f;
 			dir = new Vector3(0.0f, 1.0f, 0.0f);
 			dir.Normalize();
 		}
@@ -29,7 +29,7 @@ public class Enemy3_3 : MonoBehaviour
 			GetComponent<AudioSource> ().clip = _sound[1];
 			GetComponent<AudioSource> ().Play ();
 
-			moveSpeed = 900.0f / 1.0f;
+			moveSpeed = 1800.0f / 1.0f;
 			dir = new Vector3(1.0f, 0.0f, 0.0f);
 			dir.Normalize();
 		}

@@ -46,13 +46,15 @@ public class Pattern3_2 : Pattern_State
 		yield return new WaitForSeconds(2.0f);
 
 		obj_safe.GetComponent<Safe3_2>().move_check = true;
+		yield return new WaitForSeconds(2.5f);
+
 		for (int i = 0; i < 14; ++i)
 		{
 			obj_warning [i].transform.localPosition =
 				new Vector3(Random.Range(-640.0f, 640.0f), 410.0f , 0.0f);
 			obj_warning [i].SetActive (true);
 		}
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(1.2f);
 
 		for (int i = 14; i < 28; ++i)
 		{
@@ -60,7 +62,7 @@ public class Pattern3_2 : Pattern_State
 				new Vector3(Random.Range(-640.0f, 640.0f), 410.0f , 0.0f);
 			obj_warning [i].SetActive (true);
 		}
-		yield return new WaitForSeconds(1.0f);
+		yield return new WaitForSeconds(1.2f);
 		
 		for (int i = 28; i < 42; ++i)
 		{
@@ -68,7 +70,7 @@ public class Pattern3_2 : Pattern_State
 				new Vector3(Random.Range(-640.0f, 640.0f), 410.0f , 0.0f);
 			obj_warning [i].SetActive (true);
 		}
-		yield return new WaitForSeconds(4.0f);
+		yield return new WaitForSeconds(2.0f);
 
 		DestroyObject (obj_safe);
 		for( int i = 0; i < 42; ++i )

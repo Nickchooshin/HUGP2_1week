@@ -17,7 +17,7 @@ public class Enemy2_3 : MonoBehaviour
 	{
 		dir_check = false;
 		move_check = false;
-		moveSpeed = 500.0f / 1.0f;
+		moveSpeed = 1000.0f / 1.0f;
 //		r = Vector2.zero;
 
 		_mytransform = GetComponent<Transform> ();

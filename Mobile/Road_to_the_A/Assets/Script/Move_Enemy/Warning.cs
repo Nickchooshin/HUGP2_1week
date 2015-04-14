@@ -17,7 +17,7 @@ public class Warning : MonoBehaviour
 	{
 		first = false;
 		speed = 0.0f;
-		accel = 1000.0f;
+		accel = 800.0f;
 		dis = Vector3.zero;
 
 		_mytransform = GetComponent<Transform> ();

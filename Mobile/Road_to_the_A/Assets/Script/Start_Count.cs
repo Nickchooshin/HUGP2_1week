@@ -21,7 +21,7 @@ public class Start_Count : MonoBehaviour
 
 	IEnumerator Change_Image()
 	{
-		sprite.spriteName = "play_c_1";
+		sprite.spriteName = "play_c_3";
 		GetComponent<AudioSource> ().clip = _sound[0];
 		GetComponent<AudioSource> ().Play ();
 		yield return new WaitForSeconds(1);
@@ -31,7 +31,7 @@ public class Start_Count : MonoBehaviour
 		GetComponent<AudioSource> ().Play ();
 		yield return new WaitForSeconds(1);
 
-		sprite.spriteName = "play_c_3";
+		sprite.spriteName = "play_c_1";
 		GetComponent<AudioSource> ().clip = _sound[0];
 		GetComponent<AudioSource> ().Play ();
 		yield return new WaitForSeconds(1);

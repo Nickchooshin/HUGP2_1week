@@ -12,7 +12,7 @@ public class Enemy2_1 : MonoBehaviour
 	void Start ()
 	{
 		check = true;
-		moveSpeed = 600.0f / 1.0f;
+		moveSpeed = 1200.0f / 1.0f;
 		_transform = GetComponent<Transform> ();
 	}
 

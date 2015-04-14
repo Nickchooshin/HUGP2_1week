@@ -48,7 +48,7 @@ public class Pattern6_2 : Pattern_State
 		// Audio
 		GetComponent<AudioSource> ().clip = _sound;
 		GetComponent<AudioSource> ().Play ();
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
 
 		for( int i = 0; i < 2; ++i )
 		{

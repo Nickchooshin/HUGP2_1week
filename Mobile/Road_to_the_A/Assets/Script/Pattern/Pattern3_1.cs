@@ -46,14 +46,14 @@ public class Pattern3_1 : Pattern_State
 				if( 2 == i )
 				{
 					obj_warning[i].transform.localPosition = new Vector3(-5.0f, 73.0f, 0.0f);
-					obj_warning[i].GetComponent<Enemy3_1> ()._to = new Vector3(-613.0f, -380.0f, 0.0f);
-					obj_warning[i].GetComponent<Enemy3_1> ()._to2 = new Vector3(-10.0f, -380.0f, 0.0f);
+					obj_warning[i].GetComponent<Enemy3_1> ()._to = new Vector3(-640.0f, -400.0f, 0.0f);
+					obj_warning[i].GetComponent<Enemy3_1> ()._to2 = new Vector3(-10.0f, -400.0f, 0.0f);
 				}
 				else if( 3 == i )
 				{
 					obj_warning[i].transform.localPosition = new Vector3(86.0f, 68.0f, 0.0f);
-					obj_warning[i].GetComponent<Enemy3_1> ()._to = new Vector3(613.0f, -430.0f, 0.0f);
-					obj_warning[i].GetComponent<Enemy3_1> ()._to2 = new Vector3(10.0f, -430.0f, 0.0f);
+					obj_warning[i].GetComponent<Enemy3_1> ()._to = new Vector3(560.0f, -400.0f, 0.0f);
+					obj_warning[i].GetComponent<Enemy3_1> ()._to2 = new Vector3(-80.0f, -400.0f, 0.0f);
 				}
 			}
 		}
@@ -83,19 +83,30 @@ public class Pattern3_1 : Pattern_State
 			{
 				obj_warning[i].GetComponent<Enemy3_1> ().move_check = true;
 				obj_warning[i].GetComponent<Enemy3_1> ().dir_check = false;
+				obj_warning[i].GetComponent<Enemy3_1> ().stop = 1;
 			}
 			else if( 3 == i )
 			{
 				obj_warning[i].GetComponent<Enemy3_1> ().move_check = true;
 				obj_warning[i].GetComponent<Enemy3_1> ().dir_check = true;
+				obj_warning[i].GetComponent<Enemy3_1> ().stop = 1;
 			}
 			obj_warning [i].SetActive (true);
 		}
-		yield return new WaitForSeconds(2.5f);
+		yield return new WaitForSeconds(1.0f);
+
+		for( int i = 2; i < 4; ++i )
+			obj_warning[i].GetComponent<Enemy3_1> ().stop = 0;
+		yield return new WaitForSeconds(0.7f);
+
+		for( int i = 2; i < 4; ++i )
+			obj_warning[i].GetComponent<Enemy3_1> ().stop = 2;
+		yield return new WaitForSeconds(2.3f);
 
 		DestroyObject (obj_safe);
 		for (int i = 0; i < 4; ++i)
 			DestroyObject (obj_warning [i]);
+		yield return new WaitForSeconds(0.5f);
 		
 		end_check = true;
 	}
