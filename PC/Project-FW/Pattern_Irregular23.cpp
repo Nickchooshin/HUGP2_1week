@@ -10,11 +10,13 @@ CPattern_Irregular23::CPattern_Irregular23() : CPattern(9999.0f),
 											   m_nBossNum(0),
 											   m_pfnEvent(&CPattern_Irregular23::EventWait)
 {
-	m_BossPosition[0] = POSITION(140.0f, 80.0f) ;
-	m_BossPosition[1] = POSITION(640.0f, 80.0f) ;
-	m_BossPosition[2] = POSITION(1140.0f, 80.0f) ;
-	m_BossPosition[3] = POSITION(140.0f, 600.0f) ;
-	m_BossPosition[4] = POSITION(1140.0f, 600.0f) ;
+	const float fWinHeight = g_D3dDevice->GetWinHeight() ;
+
+	m_BossPosition[0] = POSITION(140.0f, fWinHeight - 80.0f) ;
+	m_BossPosition[1] = POSITION(1140.0f, fWinHeight - 600.0f) ;
+	m_BossPosition[2] = POSITION(1140.0f, fWinHeight - 80.0f) ;
+	m_BossPosition[3] = POSITION(140.0f, fWinHeight - 600.0f) ;
+	m_BossPosition[4] = POSITION(640.0f, fWinHeight - 80.0f) ;
 
 	for(int i=0; i<5; i++)
 	{
@@ -67,7 +69,7 @@ void CPattern_Irregular23::EventWait()
 	{
 		m_MoveVector[m_nBossNum] = g_Hero->GetPosition() - m_BossPosition[m_nBossNum] ;
 		float force = pow(pow(m_MoveVector[m_nBossNum].x, 2) + pow(m_MoveVector[m_nBossNum].y, 2), 0.5f) ;
-		m_MoveVector[m_nBossNum] = m_MoveVector[m_nBossNum] * (500.0f / force) ;
+		m_MoveVector[m_nBossNum] = m_MoveVector[m_nBossNum] * (1000.0f / force) ;
 
 		m_fTime = 0.0f ;
 		++m_nBossNum ;
@@ -82,7 +84,7 @@ void CPattern_Irregular23::EventShoot()
 	{
 		m_MoveVector[m_nBossNum] = g_Hero->GetPosition() - m_BossPosition[m_nBossNum] ;
 		float force = pow(pow(m_MoveVector[m_nBossNum].x, 2) + pow(m_MoveVector[m_nBossNum].y, 2), 0.5f) ;
-		m_MoveVector[m_nBossNum] = m_MoveVector[m_nBossNum] * (500.0f / force) ;
+		m_MoveVector[m_nBossNum] = m_MoveVector[m_nBossNum] * (1000.0f / force) ;
 
 		m_fTime = 0.0f ;
 		++m_nBossNum ;

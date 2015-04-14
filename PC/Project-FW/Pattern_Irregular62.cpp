@@ -58,7 +58,7 @@ void CPattern_Irregular62::EventChase()
 
 void CPattern_Irregular62::EventAttack()
 {
-	m_Position.y = 945.0f + (-1170 * (m_fTime/1.95f)) ;
+	m_Position.y = 945.0f + (-1170 * (m_fTime/0.9f)) ;
 	m_pBoss->SetPosition(m_Position) ;
 
 	if(m_Position.y<=-225.0f)

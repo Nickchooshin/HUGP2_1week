@@ -10,12 +10,13 @@
 CPattern_Irregular52::CPattern_Irregular52() : CPattern(9999.0f),
 											   m_pWarning(NULL),
 											   m_Position(),
-											   m_moveVector(), m_accVector(1500.0f, 0.0f),
+											   m_moveVector(), m_accVector(1000.0f, 0.0f),
 											   m_pSound(NULL),
 											   m_State(CHASE),
 											   m_pfnEvent(&CPattern_Irregular52::EventChase)
 {
 	m_Position = g_Hero->GetPosition() ;
+	m_Position.y = 360.0f ;
 
 	m_pWarning = new CSprite ;
 	m_pWarning->Init(600.0f, 720.0f, "Resource/Image/warning.png") ;
@@ -84,11 +85,9 @@ void CPattern_Irregular52::EventWait()
 
 void CPattern_Irregular52::EventAttack()
 {
-	m_Position.y = 1105.0f + (-1490.0f * (m_fTime/1.8625)) ;
+	m_Position.y = 1020.0f + (-1320.0f * (m_fTime/0.6f)) ;
 	m_pBoss->SetPosition(m_Position) ;
 
-	if(m_fTime>=1.8625)
-	{
+	if(m_fTime>=0.6f)
 		m_bLife = false ;
-	}
 }

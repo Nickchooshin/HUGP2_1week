@@ -11,11 +11,14 @@
 CPattern_Irregular22::CPattern_Irregular22() : CPattern(9999.0f),
 											   m_pWarning(NULL),
 											   m_pLineEffect(NULL),
+											   m_fX(0.0f),
 											   m_pSound(NULL),
 											   m_pfnEvent(&CPattern_Irregular22::EventWarning)
 {
+	m_fX = g_Hero->GetPosition().x ;
+
 	m_pWarning = g_BossManager->GetBossInstance("obj3") ;
-	m_pWarning->SetPosition(g_Hero->GetPosition().x, 360.0f) ;
+	m_pWarning->SetPosition(m_fX, 360.0f) ;
 
 	m_pLineEffect = new CLineEffect ;
 
@@ -38,16 +41,16 @@ void CPattern_Irregular22::Update()
 
 void CPattern_Irregular22::Render()
 {
-	if(m_fTime<=0.5f)
+	if(m_fTime<=1.0f)
 		m_pWarning->Render() ;
 
-	if(m_fTime>=0.7f)
+	if(m_fTime>=1.2f)
 		m_pLineEffect->Render() ;
 }
 
 void CPattern_Irregular22::EventWarning()
 {
-	if(m_fTime>=0.5f)
+	if(m_fTime>=1.0f)
 	{
 		g_MusicManager->PlayMusic(m_pSound, 1) ;
 
@@ -58,7 +61,7 @@ void CPattern_Irregular22::EventWarning()
 
 void CPattern_Irregular22::EventWaitLineEffect()
 {
-	if(m_fTime>=0.7f)
+	if(m_fTime>=1.2f)
 	{
 		m_pfnEvent = &CPattern_Irregular22::EventLineEffect ;
 		(this->*m_pfnEvent)() ;
@@ -69,6 +72,10 @@ void CPattern_Irregular22::EventLineEffect()
 {
 	m_pLineEffect->Update() ;
 
-	if(m_fTime>=3.7f)
+	POSITION position = g_Hero->GetPosition() ;
+	if(position.x-20.0f<m_fX-65.0f || position.x+20.0f>m_fX+65.0f)
+		g_Hero->Dead() ;
+
+	if(m_fTime>=4.2f)
 		m_bLife = false ;
 }

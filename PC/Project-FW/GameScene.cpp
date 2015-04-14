@@ -94,8 +94,6 @@ void GameScene::Init()
 	g_PatternQueueManager->LoadScript("Boss1_Pattern1") ;
 
 	m_pBGM = g_MusicManager->LoadMusic("Resource/Sound/BGM-Play.mp3", true, true) ;
-
-	g_MusicManager->PlayMusic(m_pBGM) ;
 }
 
 void GameScene::Destroy()
@@ -153,6 +151,8 @@ void GameScene::Count()
 
 	if(!m_pCountUI->BeCount())
 	{
+		g_MusicManager->PlayMusic(m_pBGM) ;
+
 		m_pfnLoop = &GameScene::GameLoop ;
 		(this->*m_pfnLoop)() ;
 

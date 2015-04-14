@@ -48,7 +48,7 @@ void CLazer::SetLazerPosition(float startX, float startY, float endX, float endY
 
 void CLazer::Update()
 {
-	if(m_fTime<=0.5f)
+	if(m_fTime<=1.5f)
 		Shoot() ;
 	else
 		Move() ;
@@ -61,7 +61,7 @@ void CLazer::Update()
 void CLazer::Shoot()
 {
 	m_pSprite->SetAngle(m_fDegree) ;
-	m_pSprite->SetScale(1.0f, m_fLength * (m_fTime/0.5f)) ;
+	m_pSprite->SetScale(1.0f, m_fLength * (m_fTime/1.5f)) ;
 }
 
 void CLazer::Move()

@@ -20,9 +20,9 @@ CPattern_Irregular31::CPattern_Irregular31() : CPattern(9999.0f),
 	}
 
 	m_pLazer[0]->SetPosition(635.0f, fWinHeight-287.0f) ;
-	m_pLazer[0]->SetLazerPosition(27.f, fWinHeight-646.0f, 630.0f, fWinHeight-646.0f) ;
+	m_pLazer[0]->SetLazerPosition(27.f, fWinHeight-646.0f, 620.0f, fWinHeight-646.0f) ;
 	m_pLazer[1]->SetPosition(726.0f, fWinHeight-292.0f) ;
-	m_pLazer[1]->SetLazerPosition(1252.f, fWinHeight-646.0f, 650.0f, fWinHeight-646.0f) ;
+	m_pLazer[1]->SetLazerPosition(1252.f, fWinHeight-646.0f, 660.0f, fWinHeight-646.0f) ;
 }
 CPattern_Irregular31::~CPattern_Irregular31()
 {
@@ -62,7 +62,7 @@ void CPattern_Irregular31::EventShootLazer()
 	for(int i=0; i<2; i++)
 		m_pLazer[i]->Update() ;
 
-	if(m_fTime>=2.7f)
+	if(m_fTime>=3.7f)
 	{
 		m_pfnEvent = &CPattern_Irregular31::EventMoveLazer ;
 		(this->*m_pfnEvent)() ;
@@ -74,8 +74,6 @@ void CPattern_Irregular31::EventMoveLazer()
 	for(int i=0; i<2; i++)
 		m_pLazer[i]->Update() ;
 
-	if(m_fTime>=5.0f)
-	{
+	if(m_fTime>=6.0f)
 		m_bLife = false ;
-	}
 }

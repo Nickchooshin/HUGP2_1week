@@ -11,6 +11,7 @@ class CPattern_Irregular22 : public CPattern
 private :
 	CBoss *m_pWarning ;
 	CLineEffect *m_pLineEffect ;
+	float m_fX ;
 
 	FMOD::Sound *m_pSound ;
 

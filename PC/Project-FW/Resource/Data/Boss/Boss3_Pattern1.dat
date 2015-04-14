@@ -1,6 +1,6 @@
 SOUND "SE_bss3_01.mp3"
 IRREGULAR "Boss3_Pattern1"
-WAIT 5.0f
+WAIT 6.0f
 
 STAY "obj1", 646.0f, 318.0f, 2.5f
 WAIT 0.5f

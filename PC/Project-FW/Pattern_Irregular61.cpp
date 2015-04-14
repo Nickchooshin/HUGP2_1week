@@ -19,8 +19,8 @@ CPattern_Irregular61::CPattern_Irregular61() : CPattern(9999.0f),
 	m_pBoss->SetPosition(70.0f, 120.0f) ;
 	m_pBoss2->SetPosition(1210.0f, 120.0f) ;
 
-	m_pSound[0] = g_MusicManager->LoadMusic("Resource/Sound/SE_bss6_04.mp3", false, false) ;
-	m_pSound[1] = g_MusicManager->LoadMusic("Resource/Sound/SE_bss6_05.mp3", false, false) ;
+	m_pSound[0] = g_MusicManager->LoadMusic("Resource/Sound/SE_bss/SE_bss6_04.mp3", false, false) ;
+	m_pSound[1] = g_MusicManager->LoadMusic("Resource/Sound/SE_bss/SE_bss6_05.mp3", false, false) ;
 }
 CPattern_Irregular61::~CPattern_Irregular61()
 {
