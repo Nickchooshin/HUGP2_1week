@@ -81,7 +81,7 @@ void CHero::Dead()
 
 void CHero::Clear()
 {
-	m_lEndTime = m_lStartTime + (long)(144.260833f * 1000.0f) ;
+	m_lEndTime = m_lStartTime + 144261 ;
 }
 
 void CHero::Update()
