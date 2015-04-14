@@ -20,9 +20,9 @@ CPattern_Irregular31::CPattern_Irregular31() : CPattern(9999.0f),
 	}
 
 	m_pLazer[0]->SetPosition(635.0f, fWinHeight-287.0f) ;
-	m_pLazer[0]->SetLazerPosition(27.f, fWinHeight-646.0f, 610.0f, fWinHeight-646.0f) ;
+	m_pLazer[0]->SetLazerPosition(27.f, fWinHeight-646.0f, 580.0f, fWinHeight-646.0f) ;
 	m_pLazer[1]->SetPosition(726.0f, fWinHeight-292.0f) ;
-	m_pLazer[1]->SetLazerPosition(1252.f, fWinHeight-646.0f, 670.0f, fWinHeight-646.0f) ;
+	m_pLazer[1]->SetLazerPosition(1252.f, fWinHeight-646.0f, 700.0f, fWinHeight-646.0f) ;
 }
 CPattern_Irregular31::~CPattern_Irregular31()
 {

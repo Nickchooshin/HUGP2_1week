@@ -24,7 +24,7 @@ INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR, INT )
 
 	g_SceneManager->StartScene(TitleScene::scene()) ;
 
-	WinSystem.WinSet("Roads to the A - 1.00v", WS_OVERLAPPED | WS_SYSMENU | WS_MINIMIZEBOX, 1280, 720) ;	// WS_THICKFRAME - 윈도우창 늘리기/줄이기 크기조정 지원안함.
+	WinSystem.WinSet("Roads to the A - 1.01v", WS_OVERLAPPED | WS_SYSMENU | WS_MINIMIZEBOX, 1280, 720) ;	// WS_THICKFRAME - 윈도우창 늘리기/줄이기 크기조정 지원안함.
 	WinSystem.WinMsg() ;
 	WinSystem.WinEnd() ;
 
