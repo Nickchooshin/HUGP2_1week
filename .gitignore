@@ -34,3 +34,16 @@
 /PC/Project-FW/Debug
 /PC/Project-FW/Release
 *.sdf
+
+/Mobile/*.sln
+/Mobile/*.userprefs
+/Mobile/*.csproj
+/Mobile/*.pidb
+/Mobile/*.unityproj
+/Mobile/.DS_Store
+/Mobile/Library/FailedAssetImports.txt
+/Mobile/Library/cache/
+/Mobile/Library/previews/
+/Mobile/Library/ScriptAssemblies
+/Mobile/obj
+/Mobile/Temp
