@@ -343,6 +343,7 @@
     <ClInclude Include="Pattern_Irregular21.h">
       <Filter>Pattern\Irregular\Boss2</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Input">
@@ -467,5 +468,9 @@
     <None Include="HowToScene.h">
       <Filter>Scene\HowToScene</Filter>
     </None>
+    <None Include="Resource\icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Project-FW.rc" />
   </ItemGroup>
 </Project>

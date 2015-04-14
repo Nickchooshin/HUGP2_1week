@@ -2,6 +2,7 @@
 #include "D3dSystem.h"
 #include "SceneManager.h"
 #include "D3dDevice.h"
+#include "resource.h"
 
 #include "Mouse.h"
 
@@ -27,7 +28,7 @@ void CWinSystem::WinSet(LPCTSTR TitleName, DWORD WinStyle, int WinWidth, int Win
 	m_wc.cbClsExtra = 0L ;
 	m_wc.cbWndExtra = 0L ;
 	m_wc.hInstance = m_hInst ;
-	m_wc.hIcon = NULL ;
+	m_wc.hIcon = LoadIcon(m_hInst, MAKEINTRESOURCE(IDI_ICON1)) ;
 	m_wc.hCursor = LoadCursor(NULL, IDC_ARROW) ;
 	m_wc.hbrBackground = NULL ;
 	m_wc.lpszMenuName = NULL ;
@@ -92,7 +93,6 @@ void CWinSystem::MsgLoop(int Frame)
 	ZeroMemory(&msg, sizeof(msg));
 
 	float fFrameTime = (1.0f / Frame) ;
-	//dwOldTime = GetTickCount() ;
 	dwOldTime = timeGetTime() ;
 
 	while( msg.message!=WM_QUIT ) // WM_QUIT메시지 발생시 종료
