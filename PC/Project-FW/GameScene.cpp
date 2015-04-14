@@ -75,12 +75,12 @@ void GameScene::Init()
 	m_pText = new CSprite ;
 	m_pText->Init("Resource/Image/Game/play_txt.png") ;
 	m_fTextX = (fWinWidth / 2.0f) - 110.0f ;
-	m_fTextY = (fWinHeight / 2.0f) ;
+	m_fTextY = (fWinHeight / 2.0f) + 10.0f ;
 	m_pText->SetPosition(m_fTextX, m_fTextY) ;
 
 	m_pCount = new CCount ;
 	m_pCount->Init() ;
-	m_pCount->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
+	m_pCount->SetPosition(fWinWidth / 2.0f, fWinHeight - 153.0f) ;
 
 	g_Hero->Init() ;
 	g_Hero->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;

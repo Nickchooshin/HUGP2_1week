@@ -40,7 +40,7 @@ void HowToScene::Init()
 	const float fWinHeight = g_D3dDevice->GetWinHeight() ;
 
 	m_pHowToPlay = new CSprite ;
-	m_pHowToPlay->Init("Resource/Image/Dummy/HowToPlay.png") ;
+	m_pHowToPlay->Init("Resource/Image/HowTo/htp_bg.jpg") ;
 	m_pHowToPlay->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 }
 

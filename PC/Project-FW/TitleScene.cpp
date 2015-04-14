@@ -53,19 +53,19 @@ void TitleScene::Init()
 	m_pBackground->SetPosition(fWinWidth / 2.0f, fWinHeight / 2.0f) ;
 
 	m_pButton[0] = new CSprite ;
-	m_pButton[0]->Init(390.0f, 80.0f, "Resource/Image/Title/main_btn_1.png") ;
-	m_pButton[0]->SetPosition(fWinWidth / 2.0f, fWinHeight - 450.0f) ;
-	m_pButton[0]->SetTextureUV(390.0f, 0.0f, 780.0f, 80.0f) ;
+	m_pButton[0]->Init(180.0f, 60.0f, "Resource/Image/Title/main_btn_1.png") ;
+	m_pButton[0]->SetPosition(1000.0f, fWinHeight - 480.0f) ;
+	m_pButton[0]->SetTextureUV(0.0f, 0.0f, 180.0f, 60.0f) ;
 
 	m_pButton[1] = new CSprite ;
-	m_pButton[1]->Init(390.0f, 80.0f, "Resource/Image/Title/main_btn_2.png") ;
-	m_pButton[1]->SetPosition(fWinWidth / 2.0f, fWinHeight - 520.0f) ;
-	m_pButton[1]->SetTextureUV(0.0f, 0.0f, 390.0f, 80.0f) ;
+	m_pButton[1]->Init(180.0f, 60.0f, "Resource/Image/Title/main_btn_2.png") ;
+	m_pButton[1]->SetPosition(1000.0f, fWinHeight - 570.0f) ;
+	m_pButton[1]->SetTextureUV(180.0f, 0.0f, 360.0f, 60.0f) ;
 
 	m_pButton[2] = new CSprite ;
-	m_pButton[2]->Init(390.0f, 80.0f, "Resource/Image/Title/main_btn_3.png") ;
-	m_pButton[2]->SetPosition(fWinWidth / 2.0f, fWinHeight - 660.0f) ;
-	m_pButton[2]->SetTextureUV(0.0f, 0.0f, 390.0f, 80.0f) ;
+	m_pButton[2]->Init(180.0f, 60.0f, "Resource/Image/Title/main_btn_3.png") ;
+	m_pButton[2]->SetPosition(1000.0f, fWinHeight - 660.0f) ;
+	m_pButton[2]->SetTextureUV(180.0f, 0.0f, 360.0f, 60.0f) ;
 
 	m_pBGM = g_MusicManager->LoadMusic("Resource/Sound/BGM-Main.mp3", true, true) ;
 	m_pSEMenu = g_MusicManager->LoadMusic("Resource/Sound/SE/SE_menu.mp3", false, false) ;
@@ -136,8 +136,8 @@ void TitleScene::MenuSelect()
 
 	if(m_nMenuNum!=prevMenuNum)
 	{
-		m_pButton[prevMenuNum]->SetTextureUV(0.0f, 0.0f, 390.0f, 80.0f) ;
-		m_pButton[m_nMenuNum]->SetTextureUV(390.0f, 0.0f, 780.0f, 80.0f) ;
+		m_pButton[prevMenuNum]->SetTextureUV(180.0f, 0.0f, 360.0f, 60.0f) ;
+		m_pButton[m_nMenuNum]->SetTextureUV(0.0f, 0.0f, 180.0f, 60.0f) ;
 		
 		g_MusicManager->PlayMusic(m_pSEMenu, 1) ;
 	}

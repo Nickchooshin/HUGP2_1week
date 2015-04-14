@@ -21,7 +21,7 @@ CCount::~CCount()
 void CCount::Init()
 {
 	m_pSprite = new CSprite ;
-	m_pSprite->Init(64.0f, 64.0f, "Resource/Image/Dummy/Count.png") ;
+	m_pSprite->Init(520.0f, 160.0f, "Resource/Image/Game/play_c.png") ;
 	m_pSprite->SetTextureUV(0.0f, 0.0f, 64.0f, 64.0f) ;
 
 	m_nNum = -1 ;
@@ -59,22 +59,22 @@ void CCount::Update()
 		switch(m_nNum)
 		{
 		case 0 :
-			m_pSprite->SetTextureUV(0.0f, 0.0f, 64.0f, 64.0f) ;
+			m_pSprite->SetTextureUV(0.0f, 320.0f, 520.0f, 480.0f) ;
 			g_MusicManager->PlayMusic(m_pSECount, 1) ;
 			break ;
 
 		case 1 :
-			m_pSprite->SetTextureUV(64.0f, 0.0f, 128.0f, 64.0f) ;
+			m_pSprite->SetTextureUV(0.0f, 160.0f, 520.0f, 320.0f) ;
 			g_MusicManager->PlayMusic(m_pSECount, 1) ;
 			break ;
 
 		case 2 :
-			m_pSprite->SetTextureUV(0.0f, 64.0f, 64.0f, 128.0f) ;
+			m_pSprite->SetTextureUV(0.0f, 0.0f, 520.0f, 160.0f) ;
 			g_MusicManager->PlayMusic(m_pSECount, 1) ;
 			break ;
 
 		case 3 :
-			m_pSprite->SetTextureUV(64.0f, 64.0f, 128.0f, 128.0f) ;
+			m_pSprite->SetTextureUV(0.0f, 480.0f, 520.0f, 640.0f) ;
 			g_MusicManager->PlayMusic(m_pSEStart, 1) ;
 			break ;
 
