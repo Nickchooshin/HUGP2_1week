@@ -165,6 +165,9 @@
     <ClCompile Include="CreditScene.cpp">
       <Filter>Scene\CreditScene</Filter>
     </ClCompile>
+    <ClCompile Include="Pattern_Irregular21.cpp">
+      <Filter>Pattern\Irregular\Boss2</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Camera.h">
@@ -336,6 +339,9 @@
     </ClInclude>
     <ClInclude Include="CreditScene.h">
       <Filter>Scene\CreditScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Pattern_Irregular21.h">
+      <Filter>Pattern\Irregular\Boss2</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
