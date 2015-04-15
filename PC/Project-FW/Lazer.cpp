@@ -4,7 +4,8 @@
 #include "D3dDevice.h"
 #include "CollisionManager.h"
 
-CLazer::CLazer() : m_LazerPosition(), m_endLazerPosition(),
+CLazer::CLazer() : m_LazerPosition(),
+				   m_startLazerPosition(), m_endLazerPosition(),
 				   m_LazerVector(),
 				   m_fLength(0.0f), m_fDegree(0.0f),
 				   m_fTime(0.0f)
@@ -29,8 +30,9 @@ void CLazer::Init()
 
 void CLazer::SetLazerPosition(POSITION startPosition, POSITION endPosition)
 {
-	m_LazerPosition = startPosition ;
+	m_startLazerPosition = startPosition ;
 	m_endLazerPosition = endPosition ;
+	m_LazerPosition = m_startLazerPosition ;
 	m_LazerVector = m_endLazerPosition - m_LazerPosition ;
 	m_LazerVector = (m_LazerVector / abs(m_LazerVector.x)) * 300.0f ;
 	
@@ -52,6 +54,11 @@ void CLazer::Update()
 		Shoot() ;
 	else if(m_fTime>=1.7f)
 		Move() ;
+	else
+	{
+		m_LazerPosition = m_startLazerPosition ;
+		m_pSprite->SetScale(1.0f, m_fLength) ;
+	}
 
 	SetLineCollider() ;
 
@@ -62,6 +69,8 @@ void CLazer::Shoot()
 {
 	m_pSprite->SetAngle(m_fDegree) ;
 	m_pSprite->SetScale(1.0f, m_fLength * (m_fTime/1.0f)) ;
+
+	m_LazerPosition = (m_startLazerPosition * (m_fTime/1.0f)) ;
 }
 
 void CLazer::Move()

@@ -5,7 +5,8 @@
 class CLazer : public CObjects
 {
 private :
-	POSITION m_LazerPosition, m_endLazerPosition ;
+	POSITION m_LazerPosition ;
+	POSITION m_startLazerPosition, m_endLazerPosition ;
 	VECTOR m_LazerVector ;
 
 	float m_fLength, m_fDegree ;
